@@ -4,7 +4,14 @@
   <url>
     <loc>http://yoursite.com/2020/12/06/blog/</loc>
     
-    <lastmod>2020-12-07</lastmod>
+    <lastmod>2020-12-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/12/05/hello-world/</loc>
+    
+    <lastmod>2020-12-08</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/2020/12/06/test/</loc>
     
     <lastmod>2020-12-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/12/05/hello-world/</loc>
-    
-    <lastmod>2020-12-05</lastmod>
     
   </url>
   
