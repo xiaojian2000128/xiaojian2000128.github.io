@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/12/06/blog/</loc>
+    <loc>http://www.55555hub.xyz/2020/12/06/blog/</loc>
     
     <lastmod>2020-12-08</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/12/05/hello-world/</loc>
+    <loc>http://www.55555hub.xyz/2020/12/05/hello-world/</loc>
     
     <lastmod>2020-12-08</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://www.55555hub.xyz/tags/index.html</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://www.55555hub.xyz/categories/index.html</loc>
     
     <lastmod>2020-12-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/12/06/test/</loc>
+    <loc>http://www.55555hub.xyz/2020/12/06/test/</loc>
     
     <lastmod>2020-12-06</lastmod>
     
@@ -38,7 +38,7 @@
   
 
   <url>
-    <loc>http://yoursite.com/</loc>
+    <loc>http://www.55555hub.xyz/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -46,21 +46,21 @@
 
   
   <url>
-    <loc>http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://www.55555hub.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/web/</loc>
+    <loc>http://www.55555hub.xyz/tags/web/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>http://www.55555hub.xyz/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -69,21 +69,21 @@
 
   
   <url>
-    <loc>http://yoursite.com/categories/%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>http://www.55555hub.xyz/categories/%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/C-C/</loc>
+    <loc>http://www.55555hub.xyz/categories/%E5%AE%9E%E8%B7%B5/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E5%AE%9E%E8%B7%B5/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://www.55555hub.xyz/categories/C-C/</loc>
     <lastmod>2020-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
