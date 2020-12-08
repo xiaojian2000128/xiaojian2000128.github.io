@@ -3241,3 +3241,6 @@ code {
   border-radius: 100%;
   background-color: rgba(0,0,0,0.75);
 }
+.vpower.txt-right {
+  display: none;
+}
