@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test</title>
+    <url>/2020/12/06/test/</url>
+    <content><![CDATA[<h1 id="使用C"><a href="#使用C" class="headerlink" title="使用C++"></a>使用C++</h1><h2 id="使用C-1"><a href="#使用C-1" class="headerlink" title="使用C"></a>使用C</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>blog</title>
     <url>/2020/12/06/blog/</url>
     <content><![CDATA[<ul>
@@ -15,12 +32,10 @@
 <li><p>撒点附近k</p>
 <ul>
 <li><p>sdjfkasd</p>
-<a id="more"></a></li>
+<h1 id="sdfkjasdlfkj"><a href="#sdfkjasdlfkj" class="headerlink" title="sdfkjasdlfkj"></a>sdfkjasdlfkj</h1></li>
 <li><pre><code class="java">print.ou
 </code></pre>
-<p><a href="www.55555hub.xyz">这是一个链接</a></p>
 </li>
-<li><h1 id=""><a href="#" class="headerlink" title=""></a><img src="./imgs/%E7%99%BD%E9%B8%BD%E4%B8%8E%E5%9C%A3%E5%A0%82.png" alt="白鸽"></h1></li>
 </ul>
 </li>
 </ul>
@@ -28,6 +43,9 @@
 </ol>
 </li>
 </ul>
+<p><a href="www.55555hub.xyz">这是一个链接</a></p>
+<a id="more"></a>
+<pre><code>                                        # ![白鸽](./imgs/白鸽与圣堂.png)</code></pre>
 <p>参考资料</p>
 <blockquote>
 <ul>
@@ -64,22 +82,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2020/12/06/test/</url>
-    <content><![CDATA[<h1 id="使用C"><a href="#使用C" class="headerlink" title="使用C++"></a>使用C++</h1><h2 id="使用C-1"><a href="#使用C-1" class="headerlink" title="使用C"></a>使用C</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<ul>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-</ul>
-</blockquote>
-]]></content>
-      <categories>
-        <category>C/C++</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
 </search>
