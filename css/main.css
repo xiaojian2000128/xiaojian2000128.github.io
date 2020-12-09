@@ -2786,6 +2786,13 @@ mark.search-keyword {
   color: #ff2a2a;
   font-weight: bold;
 }
+mjx-container[jax="CHTML"][display="true"],
+.has-jax {
+  overflow: auto hidden;
+}
+mjx-container[display="true"] + br {
+  display: none;
+}
 .use-motion .animated {
   animation-fill-mode: none;
   visibility: inherit;
@@ -3087,7 +3094,7 @@ mark.search-keyword {
   }
 }
 body {
-  background: url("/assets/background.jpg");
+  background: url("/images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -3242,5 +3249,8 @@ code {
   background-color: rgba(0,0,0,0.75);
 }
 .vpower.txt-right {
+  display: none;
+}
+.cc-license.site-overview-item.animated {
   display: none;
 }
