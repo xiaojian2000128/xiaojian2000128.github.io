@@ -3193,7 +3193,7 @@ body {
   display: none !important;
 }
 .back-to-top {
-  right: 60px;
+  right: 40px;
   width: 70px;
   height: 900px;
   top: -900px;
@@ -3206,7 +3206,7 @@ body {
 }
 .back-to-top.back-to-top-on {
   bottom: unset;
-  top: calc(100vh - 900px - 290px);
+  top: calc(100vh - 900px - 200px);
 }
 .highlight figcaption {
   margin: 0em;
@@ -3291,4 +3291,11 @@ code {
 }
 .book-mark-link {
   display: none;
+}
+/* 鼠标样式 */
+* {
+  cursor: url("/images/default.cur"), auto;
+}
+:link {
+  cursor: url("/images/pointer.cur"), auto;
 }
