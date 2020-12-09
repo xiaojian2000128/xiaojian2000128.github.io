@@ -3206,7 +3206,7 @@ body {
 }
 .back-to-top.back-to-top-on {
   bottom: unset;
-  top: calc(100vh - 900px - 200px);
+  top: calc(100vh - 900px - 290px);
 }
 .highlight figcaption {
   margin: 0em;
