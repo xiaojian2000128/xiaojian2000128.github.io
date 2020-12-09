@@ -607,9 +607,14 @@ mjx-container[display="true"] + br {
                 console.error('Failed to save visitor count', error);
               });
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
           }
         })
         .catch(error => {
@@ -636,7 +641,7 @@ mjx-container[display="true"] + br {
         });
     }
 
-    const { app_id, app_key, server_url } = {"enable":true,"app_id":"X0No5BUJDwK7jTz1ypXWwLaA-MdYXbMMI","app_key":"ePSSYsRBCG3L58CJ0wqW0ypl","server_url":null,"security":true};
+    const { app_id, app_key, server_url } = {"enable":true,"app_id":"X0No5BUJDwK7jTz1ypXWwLaA-MdYXbMMI","app_key":"ePSSYsRBCG3L58CJ0wqW0ypl","server_url":null,"security":false};
     function fetchData(api_server) {
       const Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
@@ -675,15 +680,6 @@ mjx-container[display="true"] + br {
   
 
 
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
-  <script>
-      pbOptions = {};
-        pbOptions.iconStyle = "box";
-        pbOptions.boxForm = "horizontal";
-        pbOptions.position = "bottomCenter";
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-  </script>
 <script>
 NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
@@ -696,6 +692,15 @@ NexT.utils.loadComments('#valine-comments', () => {
 });
 </script>
 
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
  
 <script>
   var OriginTitile = document.title;
