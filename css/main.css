@@ -3253,3 +3253,9 @@ code {
 .cc-license.site-overview-item.animated {
   display: none;
 }
+.post-sticky-flag {
+  display: none;
+}
+.vimg {
+  src: "/images/avatar.jpg";
+}
