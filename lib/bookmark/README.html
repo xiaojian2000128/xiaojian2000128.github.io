@@ -561,9 +561,8 @@ mjx-container[display="true"] + br {
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>-->
 
-<!-- 评论框美化 -->
 <style>
-    #comments .veditor{
+    #veditor.vinput{
         min-height: 10rem;
         background-image: url(https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091751.png);
         background-size: contain;
@@ -572,6 +571,27 @@ mjx-container[display="true"] + br {
         background-color: rgba(255,255,255,0);
         resize: none;}
 </style>
+
+<script>
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    })
+</script>
 
 
     </div>
