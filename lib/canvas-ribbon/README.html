@@ -618,6 +618,15 @@ mjx-container[display="true"] + br {
   
 
 
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
 <script>
 NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
@@ -630,14 +639,32 @@ NexT.utils.loadComments('#valine-comments', () => {
 });
 </script>
 
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+    
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+   
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
   <script>
-      pbOptions = {};
-        pbOptions.iconStyle = "box";
-        pbOptions.boxForm = "horizontal";
-        pbOptions.position = "bottomCenter";
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
   </script>
 
 </body>
@@ -648,3 +675,5 @@ NexT.utils.loadComments('#valine-comments', () => {
 <script type="text/javascript" src="/js/fireworks.js"></script>
 
 <script src="/live2d-widget/autoload.js"></script>
+
+
