@@ -15,7 +15,8 @@
 <li><p>撒点附近k</p>
 <ul>
 <li><p>sdjfkasd        </p>
-<h6 id="白鸥体"><a href="#白鸥体" class="headerlink" title="白鸥体"></a>白鸥体</h6></li>
+<p>白鸥体</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -23,8 +24,12 @@
 </ol>
 </li>
 </ul>
-<a id="more"></a>
-
+<a id="more"></a>    
+<p>$$<br>撒旦法撒旦X^{3}<br>$$<br>$x^{2}$</p>
+<p>$X_{i}$</p>
+<p>$\sum_{i=1}^{n}$   </p>
+<h2 id="1-X-3"><a href="#1-X-3" class="headerlink" title="$$1+X^{3}$$"></a>$$1+X^{3}$$</h2><p>$$<br>X^{3}<br>$$</p>
+<p>$$<br>aa^{3}<br>$$</p>
 <h1 id="sdfkjasdlfkj"><a href="#sdfkjasdlfkj" class="headerlink" title="sdfkjasdlfkj"></a>sdfkjasdlfkj</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -91,17 +96,6 @@
       </tags>
   </entry>
   <entry>
-    <title>测试</title>
-    <url>/2020/12/10/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<ul>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-</ul>
-</blockquote>
-]]></content>
-  </entry>
-  <entry>
     <title>图床</title>
     <url>/2020/12/09/%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p><img src="https://pictrue-1304449289.cos.ap-nanjing.myqcloud.com/img%E7%9D%A1%E8%A7%89.png"></p>
@@ -133,5 +127,16 @@
       <tags>
         <tag>博客搭建</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2020/12/10/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+]]></content>
   </entry>
 </search>
