@@ -102,14 +102,14 @@
   </url>
   
   <url>
-    <loc>http://www.55555hub.xyz/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>http://www.55555hub.xyz/tags/web/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.55555hub.xyz/tags/web/</loc>
+    <loc>http://www.55555hub.xyz/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -118,14 +118,14 @@
 
   
   <url>
-    <loc>http://www.55555hub.xyz/categories/C-C/</loc>
+    <loc>http://www.55555hub.xyz/categories/%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.55555hub.xyz/categories/%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>http://www.55555hub.xyz/categories/C-C/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
