@@ -3021,6 +3021,7 @@ body {
   background: url("/images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: 50% 50%;
   opacity: 0.8;
 }
 @media (max-width: 767px) {
@@ -3049,7 +3050,6 @@ body {
   font-size: 20px;
 }
 .post-body h1 {
-  font-size: 27px;
   font-weight: bold;
   background-color: #845ec2;
   box-shadow: 0 0 0 1px #5f5a4b, 1px 1px 6px 1px rgba(10,10,0,0.5);
@@ -3060,7 +3060,6 @@ body {
   text-shadow: 2px 2px 3px #222;
 }
 .post-body h2 {
-  font-size: 23px;
   font-weight: bold;
   background-color: #009efa;
   box-shadow: 0 0 0 1px #5f5a4b, 1px 1px 6px 1px rgba(10,10,0,0.5);
@@ -3071,16 +3070,13 @@ body {
   text-shadow: 2px 2px 3px #222;
 }
 .post-body h3 {
-  background: #00d2fc;
-  box-shadow: 0 0 0 1px #5f5a4b, 1px 1px 6px 1px rgba(10,10,0,0.5);
-  color: #fff;
-  font-size: 15px;
   font-weight: bold;
   height: 24px;
-  line-height: 23px;
+  padding: 5px 0 5px 10px;
+}
+.post-body p {
   margin: 12px 0 !important;
   padding: 5px 0 5px 10px;
-  text-shadow: 2px 2px 3px #222;
 }
 .post-block.page {
   margin-top: 40px;
