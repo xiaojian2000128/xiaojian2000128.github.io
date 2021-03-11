@@ -442,20 +442,6 @@ mjx-container[display="true"] + br {
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Valine：</span>
-  
-    <a title="valine" href="/2020/12/06/test/test/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/06/test/test/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
       </div>
       <div class="post-meta">
     <span class="post-meta-item" title="本文字数">
@@ -557,7 +543,6 @@ mjx-container[display="true"] + br {
 
 
 
-    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -682,18 +667,6 @@ mjx-container[display="true"] + br {
     zIndex="-1"
     count="120" 
     src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js">
-</script>
-
-<script>
-NexT.utils.loadComments('#valine-comments', () => {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
-    new Valine(Object.assign({"enable":true,"appId":"X0No5BUJDwK7jTz1ypXWwLaA-MdYXbMMI","appKey":"ePSSYsRBCG3L58CJ0wqW0ypl","serverURLs":null,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://sdn.geekzu.org/avatar/"}, {
-      el: '#valine-comments',
-      path: "/2020/12/06/test/test/",
-      serverURLs: "https://x0no5buj.api.lncldglobal.com"
-    }));
-  }, window.Valine);
-});
 </script>
 
  
