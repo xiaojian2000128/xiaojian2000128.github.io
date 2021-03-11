@@ -230,4 +230,31 @@ extern cJSON *cJSON_Parse(const char *value);
 </blockquote>
 ]]></content>
   </entry>
+  <entry>
+    <title>hexo文章发布</title>
+    <url>/2021/03/11/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Hexo/</url>
+    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
+<li>cd 55555Blog</li>
+<li>hexo new [-p 路径] 文章的标题<ul>
+<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
+</ul>
+</li>
+<li>hexo c</li>
+<li>hexo g</li>
+<li>hexo d</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
 </search>
