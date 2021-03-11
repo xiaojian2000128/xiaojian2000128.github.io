@@ -194,4 +194,36 @@
         <tag>项目管理</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CJson</title>
+    <url>/2020/12/14/CJson/</url>
+    <content><![CDATA[<h2 id="CJson"><a href="#CJson" class="headerlink" title="CJson"></a>CJson</h2><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol>
+<li><pre><code class="c">//参数:一个字符串 
+//作用:返回一个cJSON对象
+extern cJSON *cJSON_Parse(const char *value); 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. ```c</span><br><span class="line">   //参数:一个字符串, 指向转化末尾的指针, 是否检验为空的指示</span><br><span class="line">   //作用:返回字符串末尾的指针, 为空检验</span><br><span class="line">   extern cJSON *cJSON_ParseWithOpts(const char *value, const char **return_parse_end, int require_null_terminated); </span><br></pre></td></tr></table></figure>
+
+   1. ```c
+      //作用:开辟一个空间, 储存cJson对象, 并将内存其初始化为0
+      static cJSON *cJSON_New_Item(void)
+      <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. ```c</span><br><span class="line">   //作用: 就是malloc,进行了封装</span><br><span class="line">   static void *(*cJSON_malloc)(size_t sz) = malloc;</span><br></pre></td></tr></table></figure>
+
+   2. ```c
+      //参数:字符串
+      //作用:跳过字符串前面的不可打印的字符
+      static const char *skip(const char *in);
+      <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">3. ```c</span><br><span class="line">   //参数:一个cJSON对象,最开始的可打印的字符串的开开头</span><br><span class="line">   //作用:如果字符串为"null", 则把json的类型改为cJSON_NULL</span><br><span class="line">   //                "false",                cJSON_False, </span><br><span class="line">   //                "true",                 cJSON_True,  将json的valueint = 1</span><br><span class="line">   //返回:字符串的末尾</span><br><span class="line">   static const char *parse_value(cJSON *item, const char *value)</span><br></pre></td></tr></table></figure>
+
+
+</code></pre>
+</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+]]></content>
+  </entry>
 </search>
