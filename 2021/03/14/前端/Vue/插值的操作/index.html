@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="55555">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-14T05:27:46.000Z">
-<meta property="article:modified_time" content="2021-03-15T13:16:14.038Z">
+<meta property="article:modified_time" content="2021-03-16T01:00:56.133Z">
 <meta property="article:author" content="天 问">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
@@ -245,7 +245,7 @@ mjx-container[display="true"] + br {
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -319,7 +319,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -360,7 +360,7 @@ mjx-container[display="true"] + br {
     <div class="widget-wrap">
         <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="220" height="250" id="resCanvas" style="width=100%">
-                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
         </div>
     </div>
@@ -428,7 +428,7 @@ mjx-container[display="true"] + br {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-15 21:16:14" itemprop="dateModified" datetime="2021-03-15T21:16:14+08:00">2021-03-15</time>
+        <time title="修改时间：2021-03-16 09:00:56" itemprop="dateModified" datetime="2021-03-16T09:00:56+08:00">2021-03-16</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -510,57 +510,40 @@ mjx-container[display="true"] + br {
 </li>
 <li><p>computed: {}里定义的也是函数,由于是计算属性,尽量取名词</p>
 </li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.books);</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>mustache中计算属性函数不用带()</p>
 <ul>
-<li><pre><code class="javascript">    for(let i = 0; i &lt; this.books.length; i++)
-          result += this.books[i].price;
-  return result
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">+ ```javascript</span><br><span class="line">  	for(let i in this.books)</span><br></pre></td></tr></table></figure></code></pre>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.books.length; i++)</span><br><span class="line">        result += <span class="built_in">this</span>.books[i].price;</span><br><span class="line">   <span class="keyword">return</span> result	</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>获得的是每一个对象的索引</p>
 </li>
-<li><pre><code class="javascript">    for(let i of this.books)
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  获得是每一个对象 </span><br><span class="line"></span><br><span class="line">+ ```javascript</span><br><span class="line">  	computed: {</span><br><span class="line">          fullName: {</span><br><span class="line">              get: function(){</span><br><span class="line">                  </span><br><span class="line">              },</span><br><span class="line">              set: function()</span><br><span class="line">              {</span><br><span class="line">                  </span><br><span class="line">              }</span><br><span class="line">          }</span><br><span class="line">      }</span><br></pre></td></tr></table></figure></code></pre>
+<li>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> <span class="built_in">this</span>.books)</span><br></pre></td></tr></table></figure>
+
+<p>获得是每一个对象 </p>
 </li>
-<li><p>计算属性一般是没有属性的set方法的</p>
-</li>
-<li><p>字符串实现.split(“ “)</p>
-<ul>
-<li>计算属性,只调用了一次,对每次的第一次改变进行缓存,它的效率更高</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>let/var</p>
-<ul>
-<li>var的作用域为全局作用域,就算它在一个代码块之内,例如if和for循环之中,</li>
-<li>闭包可以解决var变量为全局变量的情 况</li>
-</ul>
-</li>
-<li><p>const</p>
-<ul>
-<li>一旦给const赋值后,不能修改</li>
-<li>const定义表示标识符后,必须进行赋值</li>
-<li>const不能变换指向的对象,可以修改对象的内容</li>
-</ul>
-</li>
-<li><p>SE6的对象增强写法</p>
-<ul>
-<li><pre><code class="javascript">    const obj = {
-        name: 'why',
-        age: 18
+<li><pre><code class="javascript">    computed: {
+        fullName: {
+            get: function(){
+
+            },
+            set: function()
+            {
+
+            }
+        }
     }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 属性的增强写法:如果对象的属性等于变量名可以</span><br><span class="line"></span><br><span class="line">  + ```java</span><br><span class="line">    	const obj = {</span><br><span class="line">            name,</span><br><span class="line">            age,</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    + 计算属性一般是没有属性的set方法的</span><br><span class="line">    </span><br><span class="line">    + 字符串实现.split(" ")</span><br><span class="line">    </span><br><span class="line">      + 计算属性,只调用了一次,对每次的第一次改变进行缓存,它的效率更高</span><br><span class="line">  </span><br><span class="line">+ let/var</span><br><span class="line"></span><br><span class="line">  + var的作用域为全局作用域,就算它在一个代码块之内,例如if和for循环之中,</span><br><span class="line">  + 闭包可以解决var变量为全局变量的情 况</span><br><span class="line"></span><br><span class="line">+ const</span><br><span class="line"></span><br><span class="line">  + 一旦给const赋值后,不能修改</span><br><span class="line">  + const定义表示标识符后,必须进行赋值</span><br><span class="line">  + const不能变换指向的对象,可以修改对象的内容</span><br><span class="line"></span><br><span class="line">+ SE6的对象增强写法</span><br><span class="line"></span><br><span class="line">  + ```javascript</span><br><span class="line">    	const obj = {</span><br><span class="line">            name: 'why',</span><br><span class="line">            age: 18</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
 </li>
-<li><p>方法的增强写法</p>
+</ul>
+</li>
+<li><p>属性的增强写法:如果对象的属性等于变量名可以</p>
 <ul>
 <li><pre><code class="java">    const obj = {
-        getFullName(){
-
-        }
-    }</code></pre>
+        name,
+        age,
+    }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 方法的增强写法</span><br><span class="line"></span><br><span class="line">  + ```java</span><br><span class="line">    	const obj = {</span><br><span class="line">            getFullName(){</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
 </li>
 </ul>
 </li>
@@ -662,7 +645,13 @@ mjx-container[display="true"] + br {
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\16\前端\Vue\v-model\" rel="bookmark">v-model的使用</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2021\03\14\前端\Vue\HelloVuejs的初体验\" rel="bookmark">如何在html中使用vue</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\16\前端\Vue\组件化开发\" rel="bookmark">组件的使用</a></div>
     </li>
   </ul>
 
@@ -700,6 +689,9 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/" rel="next" title="v-model的使用">
+                  v-model的使用 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -756,14 +748,14 @@ mjx-container[display="true"] + br {
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">4k</span>
+    <span title="站点总字数">6k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4 分钟</span>
+    <span title="站点阅读时长">5 分钟</span>
   </span>
 </div>
 

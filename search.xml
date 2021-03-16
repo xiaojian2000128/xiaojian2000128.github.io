@@ -24,6 +24,58 @@
       </tags>
   </entry>
   <entry>
+    <title>slot的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>v-model的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/</url>
+    <content><![CDATA[<h2 id="v-model的基本使用"><a href="#v-model的基本使用" class="headerlink" title="v-model的基本使用"></a>v-model的基本使用</h2><ul>
+<li>input</li>
+<li>Textarea</li>
+</ul>
+<h2 id="v-model的原理"><a href="#v-model的原理" class="headerlink" title="v-model的原理"></a>v-model的原理</h2><ul>
+<li>可以通过v-bind和v-on实现双向绑定</li>
+<li>event在方法内不使用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="19.332ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 8544.7 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mo" transform="translate(444.7, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">在</text><text data-variant="normal" transform="translate(900, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">元</text><text data-variant="normal" transform="translate(1800, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">素</text><text data-variant="normal" transform="translate(2700, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">的</text><text data-variant="normal" transform="translate(3600, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">属</text><text data-variant="normal" transform="translate(4500, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">性</text><text data-variant="normal" transform="translate(5400, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">类</text><text data-variant="normal" transform="translate(6300, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">要</text><text data-variant="normal" transform="translate(7200, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">写</text></g></g></g></svg></mjx-container></li>
+</ul>
+<h2 id="v-model结合radio类型"><a href="#v-model结合radio类型" class="headerlink" title="v-model结合radio类型"></a>v-model结合radio类型</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">vlaue</span>=<span class="string">要发送的值</span> <span class="attr">v-model</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>name相同代表同一组值,如果v-model的变量名是系统的就代表同一组,这时可以省略name</li>
+</ul>
+<h2 id="v-model结合checkbox类型"><a href="#v-model结合checkbox类型" class="headerlink" title="v-model结合checkbox类型"></a>v-model结合checkbox类型</h2> <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"agree"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"agree"</span> <span class="attr">v-model</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>绑定到checkbox单选框</li>
+<li>绑定到checkbox多选框</li>
+<li>&lt;label&gt; 标签的 for 属性应当与相关元素的 id 属性相同,有可能也需要在前面加:</li>
+</ul>
+<h2 id="v-model结合select类型"><a href="#v-model结合select类型" class="headerlink" title="v-model结合select类型"></a>v-model结合select类型</h2><ul>
+<li>单选下拉框</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">"abc"</span> <span class="attr">v-modle</span>=<span class="string">"变量名"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>下拉多选框,在select 中添加multiple,v-model绑定的是数组变量</li>
+</ul>
+<h2 id="v-model的修饰符"><a href="#v-model的修饰符" class="headerlink" title="v-model的修饰符"></a>v-model的修饰符</h2><ul>
+<li>lazy,回车或失去焦点之后,才会改变data里面的变量</li>
+<li>number,把文本转化为number类型</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model.number</span>=&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>+ trim,去除前后的空格</code></pre>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何在html中使用vue</title>
     <url>/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
     <content><![CDATA[<h2 id="Vue-js的导入"><a href="#Vue-js的导入" class="headerlink" title="Vue.js的导入"></a>Vue.js的导入</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--通过js导入vue.js的包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	   	<span class="comment">//在SE6语法中定义变量用const(常量)和let(变量)关键字代替var</span></span></span><br><span class="line"><span class="javascript">       	<span class="comment">//将把id为app的元素挂载到app对象,对div元素中的message进行替换</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: {</span><br><span class="line"><span class="javascript">            	message: <span class="string">"hello world"</span></span></span><br><span class="line">        }</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -101,57 +153,40 @@
 </li>
 <li><p>computed: {}里定义的也是函数,由于是计算属性,尽量取名词</p>
 </li>
+<li><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.books);</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>mustache中计算属性函数不用带()</p>
 <ul>
-<li><pre><code class="javascript">    for(let i = 0; i &lt; this.books.length; i++)
-          result += this.books[i].price;
-  return result
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">+ ```javascript</span><br><span class="line">  	for(let i in this.books)</span><br></pre></td></tr></table></figure></code></pre>
+<li><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.books.length; i++)</span><br><span class="line">        result += <span class="built_in">this</span>.books[i].price;</span><br><span class="line">   <span class="keyword">return</span> result	</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>获得的是每一个对象的索引</p>
 </li>
-<li><pre><code class="javascript">    for(let i of this.books)
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">  获得是每一个对象 </span><br><span class="line"></span><br><span class="line">+ ```javascript</span><br><span class="line">  	computed: {</span><br><span class="line">          fullName: {</span><br><span class="line">              get: function(){</span><br><span class="line">                  </span><br><span class="line">              },</span><br><span class="line">              set: function()</span><br><span class="line">              {</span><br><span class="line">                  </span><br><span class="line">              }</span><br><span class="line">          }</span><br><span class="line">      }</span><br></pre></td></tr></table></figure></code></pre>
+<li>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> <span class="built_in">this</span>.books)</span><br></pre></td></tr></table></figure>
+
+<p>获得是每一个对象 </p>
 </li>
-<li><p>计算属性一般是没有属性的set方法的</p>
-</li>
-<li><p>字符串实现.split(“ “)</p>
-<ul>
-<li>计算属性,只调用了一次,对每次的第一次改变进行缓存,它的效率更高</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>let/var</p>
-<ul>
-<li>var的作用域为全局作用域,就算它在一个代码块之内,例如if和for循环之中,</li>
-<li>闭包可以解决var变量为全局变量的情 况</li>
-</ul>
-</li>
-<li><p>const</p>
-<ul>
-<li>一旦给const赋值后,不能修改</li>
-<li>const定义表示标识符后,必须进行赋值</li>
-<li>const不能变换指向的对象,可以修改对象的内容</li>
-</ul>
-</li>
-<li><p>SE6的对象增强写法</p>
-<ul>
-<li><pre><code class="javascript">    const obj = {
-        name: 'why',
-        age: 18
+<li><pre><code class="javascript">    computed: {
+        fullName: {
+            get: function(){
+
+            },
+            set: function()
+            {
+
+            }
+        }
     }
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">+ 属性的增强写法:如果对象的属性等于变量名可以</span><br><span class="line"></span><br><span class="line">  + ```java</span><br><span class="line">    	const obj = {</span><br><span class="line">            name,</span><br><span class="line">            age,</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">    + 计算属性一般是没有属性的set方法的</span><br><span class="line">    </span><br><span class="line">    + 字符串实现.split(" ")</span><br><span class="line">    </span><br><span class="line">      + 计算属性,只调用了一次,对每次的第一次改变进行缓存,它的效率更高</span><br><span class="line">  </span><br><span class="line">+ let/var</span><br><span class="line"></span><br><span class="line">  + var的作用域为全局作用域,就算它在一个代码块之内,例如if和for循环之中,</span><br><span class="line">  + 闭包可以解决var变量为全局变量的情 况</span><br><span class="line"></span><br><span class="line">+ const</span><br><span class="line"></span><br><span class="line">  + 一旦给const赋值后,不能修改</span><br><span class="line">  + const定义表示标识符后,必须进行赋值</span><br><span class="line">  + const不能变换指向的对象,可以修改对象的内容</span><br><span class="line"></span><br><span class="line">+ SE6的对象增强写法</span><br><span class="line"></span><br><span class="line">  + ```javascript</span><br><span class="line">    	const obj = {</span><br><span class="line">            name: 'why',</span><br><span class="line">            age: 18</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
 </li>
-<li><p>方法的增强写法</p>
+</ul>
+</li>
+<li><p>属性的增强写法:如果对象的属性等于变量名可以</p>
 <ul>
 <li><pre><code class="java">    const obj = {
-        getFullName(){
-
-        }
-    }</code></pre>
+        name,
+        age,
+    }
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">+ 方法的增强写法</span><br><span class="line"></span><br><span class="line">  + ```java</span><br><span class="line">    	const obj = {</span><br><span class="line">            getFullName(){</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
 </li>
 </ul>
 </li>
@@ -231,6 +266,70 @@
 <li>map: 对每一数组中的元素使用该函数</li>
 <li>reduce: 对数组中所有的内容进行会总reduce(function(preValue, n), prev的初始初始化值),</li>
 <li>箭头函数</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>组件的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="创建组件构造器"><a href="#创建组件构造器" class="headerlink" title="创建组件构造器"></a>创建组件构造器</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpnC = Vue.extend({	</span><br><span class="line">    template: <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">				&lt;h2&gt;</span></span><br><span class="line"><span class="string">				&lt;/h2&gt;</span></span><br><span class="line"><span class="string">			&lt;div&gt;`</span></span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+
+<p>`:用在SE6中可以更方便的使用换行,更加直观</p>
+<h2 id="注册组件"><a href="#注册组件" class="headerlink" title="注册组件"></a>注册组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">"组件名"</span>, 组件的变量名)</span><br></pre></td></tr></table></figure>
+
+<p>Vue组件必须放在Vue已经挂载的元素或子元素中</p>
+<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><ul>
+<li>在&lt;script&gt;中注册,为全局组件</li>
+<li>在vue中components: {组件名: 组件构造器}</li>
+</ul>
+<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpnc2 = Vue.extend({</span><br><span class="line">    template: <span class="string">``</span>,</span><br><span class="line">    components: {</span><br><span class="line">        组件名: 组件构造器</span><br><span class="line">    }</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<p>el和template是替换关系</p>
+<h2 id="注册组件的语法糖"><a href="#注册组件的语法糖" class="headerlink" title="注册组件的语法糖"></a>注册组件的语法糖</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.component(</span><br><span class="line">	组件名: {</span><br><span class="line">    	template: <span class="string">""</span></span><br><span class="line">    	component: {</span><br><span class="line">    		</span><br><span class="line">    }</span><br><span class="line">    }</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件模版抽离的方法"><a href="#组件模版抽离的方法" class="headerlink" title="组件模版抽离的方法"></a>组件模版抽离的方法</h2><ul>
+<li>&lt;script type=”type/x-template” id=”cpn”&gt;</li>
+<li>&lt;template id=”cpn”&gt;</li>
+</ul>
+<h2 id="组件中的data"><a href="#组件中的data" class="headerlink" title="组件中的data()"></a>组件中的data()</h2><ul>
+<li>组件不能访问Vue实例数据,就算被注册了</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">data()</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">return</span> {<span class="attr">title</span>:<span class="string">"aaa"</span>}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>组件也有methods</li>
+<li>为什么data必须是函数,实例化多个组件时,是分离的</li>
+<li>如果必须要所有的对象都使用同一个值,返回一个在外部的对象,</li>
+</ul>
+<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><ul>
+<li>父组件-&gt;子组件:pass props<ul>
+<li>子组件:props:  [‘属性名1’,’属性名2’]</li>
+<li>父组件,v-bind:属性名=”父组件中的变量”</li>
+<li>props: {属性名: 类型}</li>
+<li>props: {属性名:{type: String, default: “aaaa”,requird: true}}</li>
+<li>如若类型时Array和Object,必须把default改为函数,返回相应的类型</li>
+</ul>
+</li>
+<li>props中的驼峰标识,通过:不能写驼峰,可以让-和驼峰配合</li>
+<li>&lt;template&gt;必须包含一个根</li>
+</ul>
+<h2 id="子组件-gt-父组件-emit-event"><a href="#子组件-gt-父组件-emit-event" class="headerlink" title="子组件->父组件:$emit event"></a>子组件-&gt;父组件:$emit event</h2><ul>
+<li>子组件:this.$emit(“自定义事件名”,对象)</li>
+<li>父组件:@自定义时间名 ,最好别用驼峰</li>
+<li>父组件:中的第一个参数默认为现在不是event</li>
+<li>将string转化为int,*1和parseInt</li>
+<li>watch:监听{属性名(新值,旧值)}</li>
+</ul>
+<h2 id="父子组件的访问方式"><a href="#父子组件的访问方式" class="headerlink" title="父子组件的访问方式:"></a>父子组件的访问方式:</h2><ul>
+<li>父组件访问子组件:<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="11.011ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 4866.8 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/></g><g data-mml-node="mi" transform="translate(433, 0)"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"/></g><g data-mml-node="mi" transform="translate(1009, 0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1354, 0)"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mi" transform="translate(1652, 0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g><g data-mml-node="mi" transform="translate(2172, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(2623, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(3089, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(3966.8, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">或</text></g></g></g></svg></mjx-container>refs</li>
+<li>子组件访问父组件:<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="9.248ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 4087.8 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"/></g><g data-mml-node="mi" transform="translate(503, 0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mi" transform="translate(1032, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1483, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(1949, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(2549, 0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mo" transform="translate(3187.8, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">或</text></g></g></g></svg></mjx-container>root</li>
 </ul>
 ]]></content>
       <categories>

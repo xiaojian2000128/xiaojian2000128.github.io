@@ -24,20 +24,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.55555hub.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Bookmark for NexT  Introduce  Bookmark is a plugin that allow the users save their reading position. The users could just click the bookmark icon (like 🔖) in left-top of the page to save the position">
-<meta property="og:type" content="website">
-<meta property="og:title" content="55555">
-<meta property="og:url" content="http://www.55555hub.xyz/lib/bookmark/README.html">
+<meta name="description" content="v-model的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="v-model的使用">
+<meta property="og:url" content="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/index.html">
 <meta property="og:site_name" content="55555">
-<meta property="og:description" content="Bookmark for NexT  Introduce  Bookmark is a plugin that allow the users save their reading position. The users could just click the bookmark icon (like 🔖) in left-top of the page to save the position">
+<meta property="og:description" content="v-model的使用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-08T06:12:52.201Z">
-<meta property="article:modified_time" content="2020-12-08T06:12:52.201Z">
+<meta property="article:published_time" content="2021-03-16T00:18:59.000Z">
+<meta property="article:modified_time" content="2021-03-16T02:03:58.992Z">
 <meta property="article:author" content="天 问">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.55555hub.xyz/lib/bookmark/README">
+<link rel="canonical" href="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/">
 
 
 <script class="page-configurations">
@@ -45,12 +46,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title> | 55555
-</title>
+<title>v-model的使用 | 55555</title>
   
 
 
@@ -305,7 +305,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Bookmark for NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">Introduce</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">If you want to use the CDN instead of clone this repo, please jump to the Step 3.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">Step 1 &amp;rarr; Go to NexT dir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">Step 2 &amp;rarr; Get module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.4.</span> <span class="nav-text">Step 3 &amp;rarr; Set it up</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">Update</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">v-model的基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">v-model的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E7%BB%93%E5%90%88radio%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">v-model结合radio类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E7%BB%93%E5%90%88checkbox%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">v-model结合checkbox类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E7%BB%93%E5%90%88select%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">v-model结合select类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">6.</span> <span class="nav-text">v-model的修饰符</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -387,80 +387,198 @@ mjx-container[display="true"] + br {
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/">
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/leaf.gif">
+      <meta itemprop="name" content="天 问">
+      <meta itemprop="description" content="逃离地球">
+    </span>
 
-<h1 class="post-title" itemprop="name headline">
-</h1>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="55555">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          v-model的使用
+        </h1>
 
-<div class="post-meta-container">
-  <ul class="breadcrumb">
-            <li><a href="/lib/">LIB</a></li>
-            <li><a href="/lib/bookmark/">BOOKMARK</a></li>
-            <li>README</li>
-          
-  </ul>
+        <div class="post-meta-container">
+		
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-03-16 08:18:59 / 修改时间：10:03:58" itemprop="dateCreated datePublished" datetime="2021-03-16T08:18:59+08:00">2021-03-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>639</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
 </div>
 
-</header>
+            <div class="post-description">v-model的使用</div>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body">
-          <h1 align="center">Bookmark for <a target="_blank" rel="noopener" href="https://github.com/theme-next">NexT</a></h1>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="v-model的基本使用"><a href="#v-model的基本使用" class="headerlink" title="v-model的基本使用"></a>v-model的基本使用</h2><ul>
+<li>input</li>
+<li>Textarea</li>
+</ul>
+<h2 id="v-model的原理"><a href="#v-model的原理" class="headerlink" title="v-model的原理"></a>v-model的原理</h2><ul>
+<li>可以通过v-bind和v-on实现双向绑定</li>
+<li>event在方法内不使用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="19.332ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 8544.7 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mo" transform="translate(444.7, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">在</text><text data-variant="normal" transform="translate(900, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">元</text><text data-variant="normal" transform="translate(1800, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">素</text><text data-variant="normal" transform="translate(2700, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">的</text><text data-variant="normal" transform="translate(3600, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">属</text><text data-variant="normal" transform="translate(4500, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">性</text><text data-variant="normal" transform="translate(5400, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">类</text><text data-variant="normal" transform="translate(6300, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">要</text><text data-variant="normal" transform="translate(7200, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">写</text></g></g></g></svg></mjx-container></li>
+</ul>
+<h2 id="v-model结合radio类型"><a href="#v-model结合radio类型" class="headerlink" title="v-model结合radio类型"></a>v-model结合radio类型</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">vlaue</span>=<span class="string">要发送的值</span> <span class="attr">v-model</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 align="center">Introduce</h2>
+<ul>
+<li>name相同代表同一组值,如果v-model的变量名是系统的就代表同一组,这时可以省略name</li>
+</ul>
+<h2 id="v-model结合checkbox类型"><a href="#v-model结合checkbox类型" class="headerlink" title="v-model结合checkbox类型"></a>v-model结合checkbox类型</h2> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"agree"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"agree"</span> <span class="attr">v-model</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>Bookmark is a plugin that allow the users save their reading position.</p>
-<p>The users could just click the bookmark icon (like 🔖) in left-top of the page to save the position.</p>
-<p>And when they visit your blog in the next time, they can continue the last reading position by clicking the bookmark icon from the home page.</p>
-<h1 align="center">Installation</h1>
+<ul>
+<li>绑定到checkbox单选框</li>
+<li>绑定到checkbox多选框</li>
+<li>&lt;label&gt; 标签的 for 属性应当与相关元素的 id 属性相同,有可能也需要在前面加:</li>
+</ul>
+<h2 id="v-model结合select类型"><a href="#v-model结合select类型" class="headerlink" title="v-model结合select类型"></a>v-model结合select类型</h2><ul>
+<li>单选下拉框</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">"abc"</span> <span class="attr">v-modle</span>=<span class="string">"变量名"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2>If you want to use the CDN instead of clone this repo, please jump to the Step 3.</h2>
+<ul>
+<li>下拉多选框,在select 中添加multiple,v-model绑定的是数组变量</li>
+</ul>
+<h2 id="v-model的修饰符"><a href="#v-model的修饰符" class="headerlink" title="v-model的修饰符"></a>v-model的修饰符</h2><ul>
+<li>lazy,回车或失去焦点之后,才会改变data里面的变量</li>
+<li>number,把文本转化为number类型</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model.number</span>=&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 align="center">Step 1 &rarr; Go to NexT dir</h2>
+<pre><code>+ trim,去除前后的空格</code></pre>
 
-<p>Change dir to <strong>NexT</strong> directory. There must be <code>layout</code>, <code>source</code>, <code>languages</code> and other directories:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ ls</span><br><span class="line">bower.json  _config.yml  docs  gulpfile.coffee  languages  layout  LICENSE.md  package.json  README.md  scripts  <span class="built_in">source</span>  <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
-<h2 align="center">Step 2 &rarr; Get module</h2>
-
-<p>Install module to <code>source/lib</code> directory:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-bookmark.git <span class="built_in">source</span>/lib/bookmark</span><br></pre></td></tr></table></figure>
-
-<h2 align="center">Step 3 &rarr; Set it up</h2>
-
-<p>Enable module in <strong>NexT</strong> <code>_config.yml</code> file:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bookmark:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>And, if you wants to use the CDN, then need to set:</strong></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">bookmark:</span> <span class="string">https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@latest/bookmark.min.js</span></span><br></pre></td></tr></table></figure>
-
-<h1 align="center">Update</h1>
-
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next/<span class="built_in">source</span>/lib/bookmark</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-
-      </div>
-      
-      
-      
     </div>
-  <ul class="breadcrumb">
-            <li><a href="/lib/">LIB</a></li>
-            <li><a href="/lib/bookmark/">BOOKMARK</a></li>
-            <li>README</li>
-          
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\14\前端\Vue\HelloVuejs的初体验\" rel="bookmark">如何在html中使用vue</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\14\前端\Vue\插值的操作\" rel="bookmark">mustache</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\03\16\前端\Vue\组件化开发\" rel="bookmark">组件的使用</a></div>
+    </li>
   </ul>
 
-    
-    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>天 问
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/" title="v-model的使用">http://www.55555hub.xyz/2021/03/16/前端/Vue/v-model/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          </div>
+
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="prev" title="mustache">
+                  <i class="fa fa-chevron-left"></i> mustache
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" rel="next" title="组件的使用">
+                  组件的使用 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 
@@ -581,7 +699,38 @@ mjx-container[display="true"] + br {
 
 
 
-  
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
 
 
  
