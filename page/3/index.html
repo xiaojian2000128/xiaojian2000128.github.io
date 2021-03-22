@@ -24,31 +24,30 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.55555hub.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta property="og:type" content="article">
-<meta property="og:title" content="mustache">
-<meta property="og:url" content="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/index.html">
+<meta name="description" content="逃离地球">
+<meta property="og:type" content="website">
+<meta property="og:title" content="55555">
+<meta property="og:url" content="http://www.55555hub.xyz/page/3/index.html">
 <meta property="og:site_name" content="55555">
+<meta property="og:description" content="逃离地球">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-14T05:27:46.000Z">
-<meta property="article:modified_time" content="2021-03-16T01:00:56.133Z">
 <meta property="article:author" content="天 问">
-<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="http://www.55555hub.xyz/page/3/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
-    isPost : true,
+    isHome : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
-<title>mustache | 55555</title>
+<title>55555</title>
   
 
 
@@ -290,7 +289,7 @@ mjx-container[display="true"] + br {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -303,7 +302,6 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mustache%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">Mustache语法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-once"><span class="nav-number">2.</span> <span class="nav-text">v-once</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-html"><span class="nav-number">3.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-text"><span class="nav-number">4.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-pre"><span class="nav-number">5.</span> <span class="nav-text">v-pre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-cloak"><span class="nav-number">6.</span> <span class="nav-text">v-cloak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind"><span class="nav-number">7.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">8.</span> <span class="nav-text">javascript高阶函数</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -385,10 +383,9 @@ mjx-container[display="true"] + br {
 </noscript>
 
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner index posts-expand">
 
-
-  
+    
 
 
 <div class="post-block">
@@ -396,7 +393,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/11/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/leaf.gif">
@@ -408,9 +405,12 @@ mjx-container[display="true"] + br {
       <meta itemprop="name" content="55555">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          mustache
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          
+              <span class="post-sticky-flag" title="置顶">
+                <i class="fa fa-thumbtack"></i>
+              </span><a href="/2021/03/11/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Hexo/" class="post-title-link" itemprop="url">hexo文章发布</a>
+        </h2>
 
         <div class="post-meta-container">
 		
@@ -420,27 +420,17 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-03-14 13:27:46" itemprop="dateCreated datePublished" datetime="2021-03-14T13:27:46+08:00">2021-03-14</time>
+      <time title="创建时间：2021-03-11 19:18:36 / 修改时间：20:07:44" itemprop="dateCreated datePublished" datetime="2021-03-11T19:18:36+08:00">2021-03-11</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-16 09:00:56" itemprop="dateModified" datetime="2021-03-16T09:00:56+08:00">2021-03-16</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+          <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">工具使用</span></a>
         </span>
     </span>
 
@@ -452,18 +442,17 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
+      <span>140</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
-            <div class="post-description"> </div>
         </div>
       </header>
 
@@ -471,235 +460,30 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Mustache语法"><a href="#Mustache语法" class="headerlink" title="Mustache语法:"></a>Mustache语法:</h2><h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><h2 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h2><h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h2><ul>
-<li>可以和属性选择器配合display:none</li>
-</ul>
-<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><ul>
-<li><p>属性里面的值变成了变量名</p>
-<ul>
-<li>如果属性是一个字符串,只能使用这一种方法,不能用{}语法和[]语法,但可以用函数名()返回单个值</li>
-<li>只有在vue中挂载了元素,element才能生效</li>
-<li>element的span有些奇怪,12应该是变量名,却把他当字符串来看</li>
-</ul>
-</li>
-<li><p>绑定class: </p>
-<ul>
-<li>{}代表是一个对象,key:value(这里面只能是boolean)</li>
-<li>[]里面既可以写’’,也可以写变量名</li>
-<li>函数名()可以调用函数</li>
-</ul>
-</li>
-<li><p>绑定style:</p>
-<ul>
-<li>{}代表是一个对象key(属性名):vlaue(属性值)<ul>
-<li>tip:     属性值必须要加单引号,否则当作变量名</li>
-<li>变量的值必须带’’,否则又会变成变量名</li>
-<li>key既可以用-,也可以用驼峰命名法</li>
-</ul>
-</li>
-<li>[]里面既可以写’’,也可以写变量名<ul>
-<li>数组里面只能写变量名,变量只能是对象,</li>
-</ul>
-</li>
-<li>函数名()可以调用函数</li>
-</ul>
-</li>
-<li><p>计算属性: </p>
-<ul>
-<li><p>函数也可以写在mustache语法中,要带()</p>
-</li>
-<li><p>computed: {}里定义的也是函数,由于是计算属性,尽量取名词</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.books);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mustache中计算属性函数不用带()</p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.books.length; i++)</span><br><span class="line">        result += <span class="built_in">this</span>.books[i].price;</span><br><span class="line">   <span class="keyword">return</span> result	</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获得的是每一个对象的索引</p>
-</li>
-<li>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> <span class="built_in">this</span>.books)</span><br></pre></td></tr></table></figure>
-
-<p>获得是每一个对象 </p>
-</li>
-<li><pre><code class="javascript">    computed: {
-        fullName: {
-            get: function(){
-
-            },
-            set: function()
-            {
-
-            }
-        }
-    }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    + 计算属性一般是没有属性的set方法的</span><br><span class="line">    </span><br><span class="line">    + 字符串实现.split(" ")</span><br><span class="line">    </span><br><span class="line">      + 计算属性,只调用了一次,对每次的第一次改变进行缓存,它的效率更高</span><br><span class="line">  </span><br><span class="line">+ let/var</span><br><span class="line"></span><br><span class="line">  + var的作用域为全局作用域,就算它在一个代码块之内,例如if和for循环之中,</span><br><span class="line">  + 闭包可以解决var变量为全局变量的情 况</span><br><span class="line"></span><br><span class="line">+ const</span><br><span class="line"></span><br><span class="line">  + 一旦给const赋值后,不能修改</span><br><span class="line">  + const定义表示标识符后,必须进行赋值</span><br><span class="line">  + const不能变换指向的对象,可以修改对象的内容</span><br><span class="line"></span><br><span class="line">+ SE6的对象增强写法</span><br><span class="line"></span><br><span class="line">  + ```javascript</span><br><span class="line">    	const obj = {</span><br><span class="line">            name: 'why',</span><br><span class="line">            age: 18</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
-</li>
-</ul>
-</li>
-<li><p>属性的增强写法:如果对象的属性等于变量名可以</p>
-<ul>
-<li><pre><code class="java">    const obj = {
-        name,
-        age,
-    }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 方法的增强写法</span><br><span class="line"></span><br><span class="line">  + ```java</span><br><span class="line">    	const obj = {</span><br><span class="line">            getFullName(){</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>v-on:时间监听</p>
-<ul>
-<li><p>如果方法没有参数,()小括号可省略</p>
-</li>
-<li><p>如果方法需要一个参数,但监听器确不写(),默认会将event对象传入</p>
-</li>
-<li><p>方法定义时,需要event对象,同时,又需要其它的参数@click=”aa(123,$event)”</p>
-</li>
-<li><p>数字是不会被解析成变量名</p>
-</li>
-<li><p>v-on的修饰符</p>
-<ul>
-<li>阻止冒泡:@click.stop</li>
-<li>阻止默认事件: @click.prevent</li>
-<li>特定的键监听: @keyup.enter</li>
-<li>自定义组件的监听: @ptn.native</li>
-<li>只执行一次: @click.once</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>条件判断:</p>
-<ul>
-<li>v-if判断组件内的元素是否展示,写基本类型是不会当作变量,而是直接当作值</li>
-<li>v-else同级变量之间,兄弟节点</li>
-<li>v-else-if同样是同级变量之间</li>
-<li>解决复用的方法:在组件后面添加key=”属性值”</li>
-<li>v-show: <ul>
-<li>与v-if的区别:会v-show是通过display属性来控制的,而v-if根本不会存在dom中</li>
-<li>当在显示和隐藏切换很频繁时,使用v-show,如果只有一次切换,通过v-if</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>v-for:</p>
-<ul>
-<li>v-for=”item in names”;</li>
-<li>v-for=”(item, index) in names”数组:小括号意味着元组,</li>
-<li>v-for=”item in info”对象,item得到的是value,</li>
-<li>v-for=”(value, key) in 对象”,重要的东西放在前面</li>
-<li>v-for=”(value,key,index) in 对象”,最后一个是对象属性的索引</li>
-<li>官方推荐:使用v-for时推荐使用key,key的值为item</li>
-<li>js往数组中插入元素app.letters.splice(索引,要删除的元素的个数,’’元素)</li>
-<li>js往数组末尾插入app.letters.push</li>
-</ul>
-</li>
-<li><p>当vue得知vue内的数据发生变化后,会响应的渲染数据,并不是所有的方法能做到响应式,例如直接this.letters[0] = “sdf”,没有对其进行监听,但对this.letters[0].a++又有监听</p>
-<ul>
-<li>push()</li>
-<li>pop()</li>
-<li>shift():删除数组的第一个元素</li>
-<li>unshift:在数组最前面添加一个或多个元素</li>
-<li>splice:如果只有一个元素,删除到末尾,splice(1,2,’a’,’b’),把索引1,2索引的元素替换为”a’’,”b”</li>
-<li>sort</li>
-<li>reverse</li>
-<li>可变参数function sum(…num),num实参的数组的表示符</li>
-<li>Vue.set(this.letters,0,”bbbbbb’’)</li>
-<li>点击列表,列表变红,每一个li有自己的index</li>
-</ul>
-</li>
-<li><p>引入css&lt;link sytle=”sytle” ref</p>
-</li>
-<li><p>js文件中直接写代码,不用写&lt;script&gt;</p>
-</li>
-<li><p>保留两位小数.toFixed,过滤器,实例的filters: “{函数 showPrice(price)},{-{item | showPrice}-} “</p>
-</li>
-<li><p>js中小于等于&lt;=</p>
-</li>
-</ul>
-<h2 id="javascript高阶函数"><a href="#javascript高阶函数" class="headerlink" title="javascript高阶函数"></a>javascript高阶函数</h2><ul>
-<li>filter: 的回调函数,必须返回一个boolean值,当返回true时,会加入,当返回false时,不会加入数组let newNums = nums.filter(functiong (n){})</li>
-<li>map: 对每一数组中的元素使用该函数</li>
-<li>reduce: 对数组中所有的内容进行会总reduce(function(preValue, n), prev的初始初始化值),</li>
-<li>箭头函数</li>
-</ul>
-
+          <p>使用hexo发布文章的一些步骤</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/11/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Hexo/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
 
     </div>
 	<div>
   
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
 </div>
 
 
     
     
     
-      
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\03\18\前端\Vue\Router\" rel="bookmark">Router的使用</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\03\14\前端\Vue\HelloVuejs的初体验\" rel="bookmark">如何在html中使用vue</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\03\18\前端\Vue\Vue脚手架\" rel="bookmark">Vue脚手架的使用</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\03\20\前端\Vue\axios\" rel="bookmark">网络模块的封装</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\03\16\前端\Vue\v-model\" rel="bookmark">v-model的使用</a></div>
-    </li>
-  </ul>
-
 
     <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>本文作者： </strong>天 问
-  </li>
-  <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/" title="mustache">http://www.55555hub.xyz/2021/03/14/前端/Vue/插值的操作/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
-          </div>
-
-
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/" rel="prev" title="如何在html中使用vue">
-                  <i class="fa fa-chevron-left"></i> 如何在html中使用vue
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/" rel="next" title="v-model的使用">
-                  v-model的使用 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
+      
     </footer>
   </article>
 </div>
@@ -709,7 +493,9 @@ mjx-container[display="true"] + br {
 
 
 
-
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
 
 <script>

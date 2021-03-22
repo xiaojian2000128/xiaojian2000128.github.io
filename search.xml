@@ -1,65 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo文章发布</title>
-    <url>/2021/03/11/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Hexo/</url>
-    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
-<li>cd 55555Blog</li>
-<li>hexo new [-p 路径] 文章的标题</li>
-<li>hexo c</li>
-<li>hexo g</li>
-<li>hexo d</li>
-</ol>
-<h2 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h2><ul>
-<li>文件头的描述信息的：的后面必须有空格</li>
-<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
-<li>第5,6步可联合写成 hexo g -d</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具使用</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何在html中使用vue</title>
-    <url>/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h2 id="Vue-js的导入"><a href="#Vue-js的导入" class="headerlink" title="Vue.js的导入"></a>Vue.js的导入</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--通过js导入vue.js的包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	   	<span class="comment">//在SE6语法中定义变量用const(常量)和let(变量)关键字代替var</span></span></span><br><span class="line"><span class="javascript">       	<span class="comment">//将把id为app的元素挂载到app对象,对div元素中的message进行替换</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: {</span><br><span class="line"><span class="javascript">            	message: <span class="string">"hello world"</span></span></span><br><span class="line">        }</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>注解:</p>
-<ul>
-<li>html注释:&lt;!– –&gt;</li>
-<li>javascript注释://</li>
-</ul>
-<h2 id="Vue列表的展示"><a href="#Vue列表的展示" class="headerlink" title="Vue列表的展示"></a>Vue列表的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'app'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in movies"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">scr</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Aue({</span></span><br><span class="line"><span class="javascript">        	el: <span class="string">"#id"</span>,</span></span><br><span class="line">        	data: {</span><br><span class="line"><span class="javascript">       			movies: [<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="string">"D"</span>]</span></span><br><span class="line">        	}</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Vue计数器的展示"><a href="#Vue计数器的展示" class="headerlink" title="Vue计数器的展示"></a>Vue计数器的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>当前计数: {{counter}}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter++"&gt;+&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter&amp;#45;&amp;#45;"&gt;-&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"add"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"sub"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>, <span class="comment">//用于挂载要管理的元素</span></span></span><br><span class="line">        data: {</span><br><span class="line">            counter: 0</span><br><span class="line">        },</span><br><span class="line">        methods: {</span><br><span class="line"><span class="javascript">            add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter++;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"add被执行"</span>)</span></span><br><span class="line">            },</span><br><span class="line"><span class="javascript">            sub: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter--;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"sub被执行"</span>)</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    })</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>@是v-on:的语法糖,也就是简写,</p>
-<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><ol>
-<li><ul>
-<li>Q: 什么时候使用{--{}–},什么时候不使用</li>
-<li>在标签的内容中使用,属性里面不能写</li>
-</ul>
-</li>
-<li><ul>
-<li>Q: this到底指向的是哪个对象,为什么要使用this </li>
-<li>A: this指向的app的对象,使用this还没有创建app对象,需要指定??</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Router的使用</title>
     <url>/2021/03/18/%E5%89%8D%E7%AB%AF/Vue/Router/</url>
     <content><![CDATA[<h2 id="后端路由和前端路由"><a href="#后端路由和前端路由" class="headerlink" title="后端路由和前端路由"></a>后端路由和前端路由</h2><ul>
@@ -122,6 +63,150 @@
 <li>manifest.js:为打包的代码做底层支撑</li>
 <li>vendor.js:提供第三方vue,router,axios</li>
 </ul>
+<p>路由懒加载,一个路由打包一个js,只有当用到的时候才会下载</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">"../compents/Home"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> home = <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">"../component/Home"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由的嵌套"><a href="#路由的嵌套" class="headerlink" title="路由的嵌套"></a>路由的嵌套</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path: <span class="string">'/home'</span>,</span><br><span class="line">component: Home,</span><br><span class="line">children: [</span><br><span class="line">    {</span><br><span class="line">        <span class="comment">//子路径前不要加/</span></span><br><span class="line">        path: <span class="string">'news'</span>,</span><br><span class="line">        component: HomeNews</span><br><span class="line">    }</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--to中必须写全路径--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/home/news"</span>&gt;</span>新闻<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><ul>
+<li>params:类型,路径参数,参数较少</li>
+<li>query:类型?查询(查询中用&amp;分隔参数),大量的参数</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"{path: '/profile', query: {name: '55555'}}"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">    {{$route.query.name}}</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">this</span>.$router.push({</span><br><span class="line">    path: <span class="string">'/profile'</span>,</span><br><span class="line">  	query: {</span><br><span class="line">        name: <span class="string">'55555'</span></span><br><span class="line">    }  </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="router和route"><a href="#router和route" class="headerlink" title="router和route"></a>router和route</h2><ul>
+<li>router是整个router对象</li>
+<li>route是当前活跃的路径的对象</li>
+<li>用插件要使用Vue.use(插件名),相当于插件.install</li>
+<li>注册时用大写,使用是用-</li>
+<li>所有的组件都继承自vue的原型</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.name = <span class="string">"哈哈"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="全局导航守卫"><a href="#全局导航守卫" class="headerlink" title="全局导航守卫"></a>全局导航守卫</h2><ul>
+<li>created()</li>
+<li>mounted()</li>
+<li>updated()</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在route中加上元数据</span></span><br><span class="line">meta{</span><br><span class="line">    title: <span class="string">'首页'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//router中写</span></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> {</span><br><span class="line">    <span class="comment">//必须调用next</span></span><br><span class="line">    <span class="comment">//为什么有match[0],只在第一层的路径进行了匹配</span></span><br><span class="line">    doucument.title = to.matched[<span class="number">0</span>].title</span><br><span class="line">    next(),</span><br><span class="line">})</span><br><span class="line"> </span><br><span class="line"><span class="comment">//后置钩子,不需要主动调用next</span></span><br><span class="line">afterEach</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由独享的守卫"><a href="#路由独享的守卫" class="headerlink" title="路由独享的守卫"></a>路由独享的守卫</h2><ul>
+<li><p>在route中配</p>
+<h2 id="组件内守卫"><a href="#组件内守卫" class="headerlink" title="组件内守卫"></a>组件内守卫</h2></li>
+<li><p>在组件中配</p>
+</li>
+</ul>
+<h2 id="Vue-keep-alive"><a href="#Vue-keep-alive" class="headerlink" title="Vue-keep-alive"></a>Vue-keep-alive</h2><ul>
+<li>keep-alive是Vue内置的一个组件,可以时被包含的组件,不被渲染,离开时不会被销毁,回来时不会被创建</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span><span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使以前的状态的得到保存,使用组件内守卫</p>
+<p>beforeRouteLeave,在离开之前,得到保存</p>
+<p>activated()和deactived()只有在keep-alive时,才是有效的</p>
+<ul>
+<li>keep-alive:include使用正则,只有满足条件的该正则的的名字的组件才会有用,exclude会排除,正则中不要随便加空格</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo文章发布</title>
+    <url>/2021/03/11/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Hexo/</url>
+    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
+<li>cd 55555Blog</li>
+<li>hexo new [-p 路径] 文章的标题</li>
+<li>hexo c</li>
+<li>hexo g</li>
+<li>hexo d</li>
+</ol>
+<h2 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h2><ul>
+<li>文件头的描述信息的：的后面必须有空格</li>
+<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
+<li>第5,6步可联合写成 hexo g -d</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认识Node</title>
+    <url>/2021/03/22/%E5%89%8D%E7%AB%AF/Node/%E8%AE%A4%E8%AF%86Nodejs/</url>
+    <content><![CDATA[<h2 id="什么是Node"><a href="#什么是Node" class="headerlink" title="什么是Node"></a>什么是Node</h2><ul>
+<li>是javaScript运行时环境,可以使js脱离浏览器执行</li>
+</ul>
+<p>浏览器中的javaScripte</p>
+<ul>
+<li>EcmaScript(js的语法)</li>
+<li>BOM</li>
+<li>DOM</li>
+</ul>
+<p>Node.js中的javaScript</p>
+<ul>
+<li>EcmaScript(js的语法)</li>
+<li>提供了一些服务器级别的操作API<ul>
+<li>文件读写</li>
+<li>服务网络的构建</li>
+<li>网络通信</li>
+<li>http服务器</li>
+</ul>
+</li>
+</ul>
+<p>npm是包管理工具</p>
+<h2 id="Node-js能做什么"><a href="#Node-js能做什么" class="headerlink" title="Node.js能做什么"></a>Node.js能做什么</h2><ul>
+<li>web服务器后台</li>
+<li>命令行工具(就像npm,git,hexo)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Node</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何在html中使用vue</title>
+    <url>/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="Vue-js的导入"><a href="#Vue-js的导入" class="headerlink" title="Vue.js的导入"></a>Vue.js的导入</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--通过js导入vue.js的包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	   	<span class="comment">//在SE6语法中定义变量用const(常量)和let(变量)关键字代替var</span></span></span><br><span class="line"><span class="javascript">       	<span class="comment">//将把id为app的元素挂载到app对象,对div元素中的message进行替换</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: {</span><br><span class="line"><span class="javascript">            	message: <span class="string">"hello world"</span></span></span><br><span class="line">        }</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注解:</p>
+<ul>
+<li>html注释:&lt;!– –&gt;</li>
+<li>javascript注释://</li>
+</ul>
+<h2 id="Vue列表的展示"><a href="#Vue列表的展示" class="headerlink" title="Vue列表的展示"></a>Vue列表的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'app'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in movies"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">scr</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Aue({</span></span><br><span class="line"><span class="javascript">        	el: <span class="string">"#id"</span>,</span></span><br><span class="line">        	data: {</span><br><span class="line"><span class="javascript">       			movies: [<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="string">"D"</span>]</span></span><br><span class="line">        	}</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Vue计数器的展示"><a href="#Vue计数器的展示" class="headerlink" title="Vue计数器的展示"></a>Vue计数器的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>当前计数: {{counter}}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter++"&gt;+&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter&amp;#45;&amp;#45;"&gt;-&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"add"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"sub"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>, <span class="comment">//用于挂载要管理的元素</span></span></span><br><span class="line">        data: {</span><br><span class="line">            counter: 0</span><br><span class="line">        },</span><br><span class="line">        methods: {</span><br><span class="line"><span class="javascript">            add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter++;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"add被执行"</span>)</span></span><br><span class="line">            },</span><br><span class="line"><span class="javascript">            sub: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter--;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"sub被执行"</span>)</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    })</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>@是v-on:的语法糖,也就是简写,</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><ol>
+<li><ul>
+<li>Q: 什么时候使用{--{}–},什么时候不使用</li>
+<li>在标签的内容中使用,属性里面不能写</li>
+</ul>
+</li>
+<li><ul>
+<li>Q: this到底指向的是哪个对象,为什么要使用this </li>
+<li>A: this指向的app的对象,使用this还没有创建app对象,需要指定??</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -136,8 +221,9 @@
     <url>/2021/03/18/%E5%89%8D%E7%AB%AF/Vue/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/</url>
     <content><![CDATA[<h2 id="Vue-CLI"><a href="#Vue-CLI" class="headerlink" title="Vue CLI"></a>Vue CLI</h2><ul>
 <li>CLI是Command-Line Interface,翻译为命令行界面</li>
-<li>拉取2.x模版,npm install -g @vue/cli-init ,vue init webpack my-project</li>
+<li>拉取2.x模版,npm install -g @vue/cli-init ,vue init webpack my-project(注意代理的问题)</li>
 <li>创建脚手架3 vue create my-project</li>
+<li>创建脚手架4和3差别不大</li>
 </ul>
 <h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><ul>
 <li>为JS在浏览器外提供了运行时环境</li>
@@ -162,27 +248,18 @@
       </tags>
   </entry>
   <entry>
-    <title>slot的使用</title>
-    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/</url>
-    <content><![CDATA[<h2 id="slot预留标签"><a href="#slot预留标签" class="headerlink" title="slot预留标签"></a>slot预留标签</h2><ul>
-<li>使用在组件标签内使用被的标签,可以在内使用多个</li>
-<li>在slot标签内预留一个默认的值</li>
+    <title>网络模块的封装</title>
+    <url>/2021/03/20/%E5%89%8D%E7%AB%AF/Vue/axios/</url>
+    <content><![CDATA[<h2 id="axios的使用"><a href="#axios的使用" class="headerlink" title="axios的使用"></a>axios的使用</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//默认前况下是get请求</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">''</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">5</span> </span><br><span class="line">axios({</span><br><span class="line">    baseURL: <span class="string">''</span>,</span><br><span class="line">    timeout: </span><br><span class="line">    url: </span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    <span class="comment">//针对get请求的拼接</span></span><br><span class="line">    params: {</span><br><span class="line">    </span><br><span class="line">	},</span><br><span class="line">     data: {</span><br><span class="line">      </span><br><span class="line">      }</span><br><span class="line">}).then(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">//axios发送并发请求</span></span><br><span class="line">axios.all([axios(), axios()]).then(<span class="function"><span class="params">results</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(results)</span><br><span class="line">})</span><br><span class="line"><span class="comment">//数组的解构</span></span><br><span class="line">int [name1,name2,name3] = array</span><br></pre></td></tr></table></figure>
+
+<p>axio是支持Promise的</p>
+<h2 id="axios的配置"><a href="#axios的配置" class="headerlink" title="axios的配置"></a>axios的配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = axios.create(</span><br><span class="line">{</span><br><span class="line">    baseURL: <span class="string">''</span></span><br><span class="line">    timeout: <span class="number">5000</span> </span><br><span class="line">   </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="axios的拦截器"><a href="#axios的拦截器" class="headerlink" title="axios的拦截器"></a>axios的拦截器</h2><ul>
+<li>比如每次发送网络请求时,都希望在界面中显示请求图标</li>
+<li>某些网络请求(比如登陆(token)),必须携带一些特殊信息</li>
 </ul>
-<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>默认替换的没有属性的</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">""</span>&gt;</span>text&lt;\span&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="编译的作用域"><a href="#编译的作用域" class="headerlink" title="编译的作用域"></a>编译的作用域</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">spn</span> <span class="attr">v-show</span>=<span class="string">"isShow"</span>&gt;</span><span class="tag">&lt;/<span class="name">spn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>一开始把子组件当作普通的元素,用的是父组件的模版</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span> = <span class="string">"item in xxx.data"</span>&gt;</span>{{item}}<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> {<span class="built_in">console</span>.log(config); <span class="keyword">return</span> config}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> err;</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">instance.intercepts.use(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">}) </span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -241,10 +318,42 @@
       </tags>
   </entry>
   <entry>
+    <title>slot的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/</url>
+    <content><![CDATA[<h2 id="slot预留标签"><a href="#slot预留标签" class="headerlink" title="slot预留标签"></a>slot预留标签</h2><ul>
+<li>使用在组件标签内使用被的标签,可以在内使用多个</li>
+<li>在slot标签内预留一个默认的值</li>
+</ul>
+<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>默认替换的没有属性的</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">""</span>&gt;</span>text&lt;\span&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译的作用域"><a href="#编译的作用域" class="headerlink" title="编译的作用域"></a>编译的作用域</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">spn</span> <span class="attr">v-show</span>=<span class="string">"isShow"</span>&gt;</span><span class="tag">&lt;/<span class="name">spn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一开始把子组件当作普通的元素,用的是父组件的模版</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span> = <span class="string">"item in xxx.data"</span>&gt;</span>{{item}}<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>webpack的使用</title>
     <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
     <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
-<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#x77;&#x65;&#98;&#112;&#97;&#x63;&#107;&#x40;&#x33;&#46;&#54;&#46;&#48;">webpack@3.6.0</a> -g全局安装</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#x65;&#98;&#112;&#97;&#x63;&#x6b;&#x40;&#51;&#46;&#x36;&#46;&#x30;">webpack@3.6.0</a> -g全局安装</p>
 <h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
 <li> webpack ./src/main.js ./dist/bundle.js</li>
 <li>index.html中引入/bundle.js文件</li>
@@ -261,7 +370,7 @@
 </li>
 <li><p>npm run “在package.json中script中的脚本”</p>
 </li>
-<li><p>在本地安装 npm install <a href="mailto:&#x77;&#101;&#98;&#x70;&#97;&#x63;&#107;&#x40;&#x33;&#46;&#x36;&#46;&#x30;">webpack@3.6.0</a> –save-dev,</p>
+<li><p>在本地安装 npm install <a href="mailto:&#119;&#x65;&#x62;&#112;&#97;&#99;&#x6b;&#64;&#x33;&#x2e;&#x36;&#x2e;&#x30;">webpack@3.6.0</a> –save-dev,</p>
 </li>
 <li><p>webpack是开发时依赖,在devDependencies</p>
 </li>
@@ -297,6 +406,72 @@
       </categories>
       <tags>
         <tag>实用工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tabbar</title>
+    <url>/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h2 id="给路径取别名"><a href="#给路径取别名" class="headerlink" title="给路径取别名"></a>给路径取别名</h2><ul>
+<li>@: 相当于src</li>
+<li>在src等不需要import的路径必须加在最前面~</li>
+</ul>
+<h2 id="Promies是一种异步编程机制"><a href="#Promies是一种异步编程机制" class="headerlink" title="Promies是一种异步编程机制"></a>Promies是一种异步编程机制</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {<span class="built_in">console</span>.log(<span class="string">"hello world"</span>)}, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">        resolve()</span><br><span class="line">    }, <span class="number">1000</span>)</span><br><span class="line">}).then(<span class="function">() =&gt;</span> {</span><br><span class="line">    <span class="comment">//处理代码</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">            resolve()</span><br><span class="line">        }, <span class="number">1000</span>)</span><br><span class="line">    })</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么时候使用Promise"><a href="#什么时候使用Promise" class="headerlink" title="什么时候使用Promise"></a>什么时候使用Promise</h2><ul>
+<li><p>一般情况下是有异步操作进行封装</p>
+</li>
+<li><p>调用resolve进then,调用reject进catch</p>
+</li>
+</ul>
+<p>Promise有三种状态</p>
+<ul>
+<li>Pending: 等待</li>
+<li>fulfiled: resolve</li>
+<li>reject: catch</li>
+</ul>
+<p>在then中传入两个函数可以省略catch,如果Promise中用不到reject,可以省略reject函数 </p>
+<p> Promise的简写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res + <span class="string">" "</span>)</span><br><span class="line"><span class="comment">//省略掉Promise.resolve</span></span><br><span class="line"><span class="keyword">return</span> res + <span class="string">" "</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err + <span class="string">" "</span>)</span><br><span class="line">thows <span class="string">'err'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Promise的ALL"><a href="#Promise的ALL" class="headerlink" title="Promise的ALL"></a>Promise的ALL</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {}), <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> )]).then(<span class="function"><span class="params">results</span> =&gt;</span>	{</span><br><span class="line">  <span class="comment">//results是数组</span></span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vuex的作用"><a href="#Vuex的作用" class="headerlink" title="Vuex的作用"></a>Vuex的作用</h2><ul>
+<li><p>Vuex是一个专为Vue.js应用程序开发的状态管理模式</p>
+</li>
+<li><p>可以使用Vue.prototype实现Vuex,但这种实现方法不是响应式的</p>
+</li>
+<li><p>action:进行的是异步操作(后端操作)</p>
+</li>
+<li><p>Mutations:可以进行同步操作</p>
+</li>
+</ul>
+<h2 id="Vuex核心概念"><a href="#Vuex核心概念" class="headerlink" title="Vuex核心概念"></a>Vuex核心概念</h2><ul>
+<li>State: 单一状态树,单例模式</li>
+<li>Getters: 类似于计算属性,使用$store.getters.powCounter,more20stu(state, getters ) {return getters.morestu.length}),powerCouter(state){};moreAgeStu(state){return function (age){return 功能}}</li>
+<li>Mutations: $store.commit(‘方法名’)<ul>
+<li>第一个参数就是state,第二参数是传过来的参数</li>
+<li>参数被称为mutationg的载荷payload</li>
+<li>commit的两种提交风格,commit({})</li>
+<li>mutation的响应规则,观察者模式,一开始定义的,当属性发生变化时,会通知所有利用该属性的界面发生变化,新增加的属性以info[addres],不会是响应式的,但set可以,Vue.set(state.info,键,值),也可以是数组,delete state.info.age可以删掉属性,该方式也不能做到响应式,Vue.delete(state.info, ‘age’),splice是操作数组的</li>
+<li>常量当作方法名: [导入的常量]</li>
+</ul>
+</li>
+<li>Action: 在这当中使用异步操作,可以让chrome中的插件正常进行跟踪,函数的第一参数不在是state了,是context,相当于store,调用context.commit<ul>
+<li>this.$store.dispatch(“方法名”, 参数).then(res =&gt; {console.log()})</li>
+</ul>
+</li>
+<li>Modules: </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">modules: {</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">}</span><br><span class="line"><span class="comment">//使用属性</span></span><br><span class="line"><span class="built_in">this</span>.$store.a.name</span><br><span class="line"><span class="comment">//mutations</span></span><br><span class="line"><span class="built_in">this</span>.$strore.commit()</span><br><span class="line"><span class="comment">//跨越式得到跟的root</span></span><br><span class="line"><span class="function"><span class="title">fullname3</span>(<span class="params">state, getters,rootState</span>)</span>{</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"><span class="comment">//action中的context,只会调用自己模块中的commit</span></span><br><span class="line"><span class="comment">//对象的结构</span></span><br><span class="line"><span class="keyword">const</span> {name, height, age} = obj</span><br></pre></td></tr></table></figure>
+
+<h2 id="store的结构"><a href="#store的结构" class="headerlink" title="store的结构"></a>store的结构</h2><p>state主文件中,getters,actions,mutations在各自在单独的js文件中</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>

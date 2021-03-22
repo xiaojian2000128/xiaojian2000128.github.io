@@ -24,19 +24,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.55555hub.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
+<meta name="description" content="一个Vue组件的实例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mustache">
-<meta property="og:url" content="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="tabbar">
+<meta property="og:url" content="http://www.55555hub.xyz/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="55555">
+<meta property="og:description" content="一个Vue组件的实例">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-14T05:27:46.000Z">
-<meta property="article:modified_time" content="2021-03-16T01:00:56.133Z">
+<meta property="article:published_time" content="2021-03-19T03:14:20.000Z">
+<meta property="article:modified_time" content="2021-03-20T05:42:09.940Z">
 <meta property="article:author" content="天 问">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="http://www.55555hub.xyz/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/">
 
 
 <script class="page-configurations">
@@ -48,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title>mustache | 55555</title>
+<title>tabbar | 55555</title>
   
 
 
@@ -303,7 +305,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mustache%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">Mustache语法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-once"><span class="nav-number">2.</span> <span class="nav-text">v-once</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-html"><span class="nav-number">3.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-text"><span class="nav-number">4.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-pre"><span class="nav-number">5.</span> <span class="nav-text">v-pre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-cloak"><span class="nav-number">6.</span> <span class="nav-text">v-cloak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-bind"><span class="nav-number">7.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">8.</span> <span class="nav-text">javascript高阶函数</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E8%B7%AF%E5%BE%84%E5%8F%96%E5%88%AB%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text">给路径取别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promies%E6%98%AF%E4%B8%80%E7%A7%8D%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">Promies是一种异步编程机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8Promise"><span class="nav-number">3.</span> <span class="nav-text">什么时候使用Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise%E7%9A%84ALL"><span class="nav-number">4.</span> <span class="nav-text">Promise的ALL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">Vuex的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">6.</span> <span class="nav-text">Vuex核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">7.</span> <span class="nav-text">store的结构</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -396,7 +398,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/leaf.gif">
@@ -409,7 +411,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          mustache
+          tabbar
         </h1>
 
         <div class="post-meta-container">
@@ -421,14 +423,14 @@ mjx-container[display="true"] + br {
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-03-14 13:27:46" itemprop="dateCreated datePublished" datetime="2021-03-14T13:27:46+08:00">2021-03-14</time>
+      <time title="创建时间：2021-03-19 11:14:20" itemprop="dateCreated datePublished" datetime="2021-03-19T11:14:20+08:00">2021-03-19</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-16 09:00:56" itemprop="dateModified" datetime="2021-03-16T09:00:56+08:00">2021-03-16</time>
+        <time title="修改时间：2021-03-20 13:42:09" itemprop="dateModified" datetime="2021-03-20T13:42:09+08:00">2021-03-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -452,7 +454,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -463,7 +465,7 @@ mjx-container[display="true"] + br {
     </span>
 </div>
 
-            <div class="post-description"> </div>
+            <div class="post-description">一个Vue组件的实例</div>
         </div>
       </header>
 
@@ -471,159 +473,60 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Mustache语法"><a href="#Mustache语法" class="headerlink" title="Mustache语法:"></a>Mustache语法:</h2><h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><h2 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h2><h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h2><ul>
-<li>可以和属性选择器配合display:none</li>
+        <h2 id="给路径取别名"><a href="#给路径取别名" class="headerlink" title="给路径取别名"></a>给路径取别名</h2><ul>
+<li>@: 相当于src</li>
+<li>在src等不需要import的路径必须加在最前面~</li>
 </ul>
-<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><ul>
-<li><p>属性里面的值变成了变量名</p>
-<ul>
-<li>如果属性是一个字符串,只能使用这一种方法,不能用{}语法和[]语法,但可以用函数名()返回单个值</li>
-<li>只有在vue中挂载了元素,element才能生效</li>
-<li>element的span有些奇怪,12应该是变量名,却把他当字符串来看</li>
-</ul>
-</li>
-<li><p>绑定class: </p>
-<ul>
-<li>{}代表是一个对象,key:value(这里面只能是boolean)</li>
-<li>[]里面既可以写’’,也可以写变量名</li>
-<li>函数名()可以调用函数</li>
-</ul>
-</li>
-<li><p>绑定style:</p>
-<ul>
-<li>{}代表是一个对象key(属性名):vlaue(属性值)<ul>
-<li>tip:     属性值必须要加单引号,否则当作变量名</li>
-<li>变量的值必须带’’,否则又会变成变量名</li>
-<li>key既可以用-,也可以用驼峰命名法</li>
-</ul>
-</li>
-<li>[]里面既可以写’’,也可以写变量名<ul>
-<li>数组里面只能写变量名,变量只能是对象,</li>
-</ul>
-</li>
-<li>函数名()可以调用函数</li>
-</ul>
-</li>
-<li><p>计算属性: </p>
-<ul>
-<li><p>函数也可以写在mustache语法中,要带()</p>
-</li>
-<li><p>computed: {}里定义的也是函数,由于是计算属性,尽量取名词</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.books);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mustache中计算属性函数不用带()</p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.books.length; i++)</span><br><span class="line">        result += <span class="built_in">this</span>.books[i].price;</span><br><span class="line">   <span class="keyword">return</span> result	</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获得的是每一个对象的索引</p>
-</li>
-<li>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> <span class="built_in">this</span>.books)</span><br></pre></td></tr></table></figure>
+<h2 id="Promies是一种异步编程机制"><a href="#Promies是一种异步编程机制" class="headerlink" title="Promies是一种异步编程机制"></a>Promies是一种异步编程机制</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {<span class="built_in">console</span>.log(<span class="string">"hello world"</span>)}, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">        resolve()</span><br><span class="line">    }, <span class="number">1000</span>)</span><br><span class="line">}).then(<span class="function">() =&gt;</span> {</span><br><span class="line">    <span class="comment">//处理代码</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">            resolve()</span><br><span class="line">        }, <span class="number">1000</span>)</span><br><span class="line">    })</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
 
-<p>获得是每一个对象 </p>
+<h2 id="什么时候使用Promise"><a href="#什么时候使用Promise" class="headerlink" title="什么时候使用Promise"></a>什么时候使用Promise</h2><ul>
+<li><p>一般情况下是有异步操作进行封装</p>
 </li>
-<li><pre><code class="javascript">    computed: {
-        fullName: {
-            get: function(){
+<li><p>调用resolve进then,调用reject进catch</p>
+</li>
+</ul>
+<p>Promise有三种状态</p>
+<ul>
+<li>Pending: 等待</li>
+<li>fulfiled: resolve</li>
+<li>reject: catch</li>
+</ul>
+<p>在then中传入两个函数可以省略catch,如果Promise中用不到reject,可以省略reject函数 </p>
+<p> Promise的简写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res + <span class="string">" "</span>)</span><br><span class="line"><span class="comment">//省略掉Promise.resolve</span></span><br><span class="line"><span class="keyword">return</span> res + <span class="string">" "</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err + <span class="string">" "</span>)</span><br><span class="line">thows <span class="string">'err'</span></span><br></pre></td></tr></table></figure>
 
-            },
-            set: function()
-            {
+<h2 id="Promise的ALL"><a href="#Promise的ALL" class="headerlink" title="Promise的ALL"></a>Promise的ALL</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {}), <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> )]).then(<span class="function"><span class="params">results</span> =&gt;</span>	{</span><br><span class="line">  <span class="comment">//results是数组</span></span><br><span class="line">})</span><br></pre></td></tr></table></figure>
 
-            }
-        }
-    }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    + 计算属性一般是没有属性的set方法的</span><br><span class="line">    </span><br><span class="line">    + 字符串实现.split(" ")</span><br><span class="line">    </span><br><span class="line">      + 计算属性,只调用了一次,对每次的第一次改变进行缓存,它的效率更高</span><br><span class="line">  </span><br><span class="line">+ let/var</span><br><span class="line"></span><br><span class="line">  + var的作用域为全局作用域,就算它在一个代码块之内,例如if和for循环之中,</span><br><span class="line">  + 闭包可以解决var变量为全局变量的情 况</span><br><span class="line"></span><br><span class="line">+ const</span><br><span class="line"></span><br><span class="line">  + 一旦给const赋值后,不能修改</span><br><span class="line">  + const定义表示标识符后,必须进行赋值</span><br><span class="line">  + const不能变换指向的对象,可以修改对象的内容</span><br><span class="line"></span><br><span class="line">+ SE6的对象增强写法</span><br><span class="line"></span><br><span class="line">  + ```javascript</span><br><span class="line">    	const obj = {</span><br><span class="line">            name: 'why',</span><br><span class="line">            age: 18</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
+<h2 id="Vuex的作用"><a href="#Vuex的作用" class="headerlink" title="Vuex的作用"></a>Vuex的作用</h2><ul>
+<li><p>Vuex是一个专为Vue.js应用程序开发的状态管理模式</p>
+</li>
+<li><p>可以使用Vue.prototype实现Vuex,但这种实现方法不是响应式的</p>
+</li>
+<li><p>action:进行的是异步操作(后端操作)</p>
+</li>
+<li><p>Mutations:可以进行同步操作</p>
 </li>
 </ul>
-</li>
-<li><p>属性的增强写法:如果对象的属性等于变量名可以</p>
-<ul>
-<li><pre><code class="java">    const obj = {
-        name,
-        age,
-    }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 方法的增强写法</span><br><span class="line"></span><br><span class="line">  + ```java</span><br><span class="line">    	const obj = {</span><br><span class="line">            getFullName(){</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure></code></pre>
-</li>
+<h2 id="Vuex核心概念"><a href="#Vuex核心概念" class="headerlink" title="Vuex核心概念"></a>Vuex核心概念</h2><ul>
+<li>State: 单一状态树,单例模式</li>
+<li>Getters: 类似于计算属性,使用$store.getters.powCounter,more20stu(state, getters ) {return getters.morestu.length}),powerCouter(state){};moreAgeStu(state){return function (age){return 功能}}</li>
+<li>Mutations: $store.commit(‘方法名’)<ul>
+<li>第一个参数就是state,第二参数是传过来的参数</li>
+<li>参数被称为mutationg的载荷payload</li>
+<li>commit的两种提交风格,commit({})</li>
+<li>mutation的响应规则,观察者模式,一开始定义的,当属性发生变化时,会通知所有利用该属性的界面发生变化,新增加的属性以info[addres],不会是响应式的,但set可以,Vue.set(state.info,键,值),也可以是数组,delete state.info.age可以删掉属性,该方式也不能做到响应式,Vue.delete(state.info, ‘age’),splice是操作数组的</li>
+<li>常量当作方法名: [导入的常量]</li>
 </ul>
 </li>
+<li>Action: 在这当中使用异步操作,可以让chrome中的插件正常进行跟踪,函数的第一参数不在是state了,是context,相当于store,调用context.commit<ul>
+<li>this.$store.dispatch(“方法名”, 参数).then(res =&gt; {console.log()})</li>
 </ul>
 </li>
-<li><p>v-on:时间监听</p>
-<ul>
-<li><p>如果方法没有参数,()小括号可省略</p>
-</li>
-<li><p>如果方法需要一个参数,但监听器确不写(),默认会将event对象传入</p>
-</li>
-<li><p>方法定义时,需要event对象,同时,又需要其它的参数@click=”aa(123,$event)”</p>
-</li>
-<li><p>数字是不会被解析成变量名</p>
-</li>
-<li><p>v-on的修饰符</p>
-<ul>
-<li>阻止冒泡:@click.stop</li>
-<li>阻止默认事件: @click.prevent</li>
-<li>特定的键监听: @keyup.enter</li>
-<li>自定义组件的监听: @ptn.native</li>
-<li>只执行一次: @click.once</li>
+<li>Modules: </li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>条件判断:</p>
-<ul>
-<li>v-if判断组件内的元素是否展示,写基本类型是不会当作变量,而是直接当作值</li>
-<li>v-else同级变量之间,兄弟节点</li>
-<li>v-else-if同样是同级变量之间</li>
-<li>解决复用的方法:在组件后面添加key=”属性值”</li>
-<li>v-show: <ul>
-<li>与v-if的区别:会v-show是通过display属性来控制的,而v-if根本不会存在dom中</li>
-<li>当在显示和隐藏切换很频繁时,使用v-show,如果只有一次切换,通过v-if</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>v-for:</p>
-<ul>
-<li>v-for=”item in names”;</li>
-<li>v-for=”(item, index) in names”数组:小括号意味着元组,</li>
-<li>v-for=”item in info”对象,item得到的是value,</li>
-<li>v-for=”(value, key) in 对象”,重要的东西放在前面</li>
-<li>v-for=”(value,key,index) in 对象”,最后一个是对象属性的索引</li>
-<li>官方推荐:使用v-for时推荐使用key,key的值为item</li>
-<li>js往数组中插入元素app.letters.splice(索引,要删除的元素的个数,’’元素)</li>
-<li>js往数组末尾插入app.letters.push</li>
-</ul>
-</li>
-<li><p>当vue得知vue内的数据发生变化后,会响应的渲染数据,并不是所有的方法能做到响应式,例如直接this.letters[0] = “sdf”,没有对其进行监听,但对this.letters[0].a++又有监听</p>
-<ul>
-<li>push()</li>
-<li>pop()</li>
-<li>shift():删除数组的第一个元素</li>
-<li>unshift:在数组最前面添加一个或多个元素</li>
-<li>splice:如果只有一个元素,删除到末尾,splice(1,2,’a’,’b’),把索引1,2索引的元素替换为”a’’,”b”</li>
-<li>sort</li>
-<li>reverse</li>
-<li>可变参数function sum(…num),num实参的数组的表示符</li>
-<li>Vue.set(this.letters,0,”bbbbbb’’)</li>
-<li>点击列表,列表变红,每一个li有自己的index</li>
-</ul>
-</li>
-<li><p>引入css&lt;link sytle=”sytle” ref</p>
-</li>
-<li><p>js文件中直接写代码,不用写&lt;script&gt;</p>
-</li>
-<li><p>保留两位小数.toFixed,过滤器,实例的filters: “{函数 showPrice(price)},{-{item | showPrice}-} “</p>
-</li>
-<li><p>js中小于等于&lt;=</p>
-</li>
-</ul>
-<h2 id="javascript高阶函数"><a href="#javascript高阶函数" class="headerlink" title="javascript高阶函数"></a>javascript高阶函数</h2><ul>
-<li>filter: 的回调函数,必须返回一个boolean值,当返回true时,会加入,当返回false时,不会加入数组let newNums = nums.filter(functiong (n){})</li>
-<li>map: 对每一数组中的元素使用该函数</li>
-<li>reduce: 对数组中所有的内容进行会总reduce(function(preValue, n), prev的初始初始化值),</li>
-<li>箭头函数</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">modules: {</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">}</span><br><span class="line"><span class="comment">//使用属性</span></span><br><span class="line"><span class="built_in">this</span>.$store.a.name</span><br><span class="line"><span class="comment">//mutations</span></span><br><span class="line"><span class="built_in">this</span>.$strore.commit()</span><br><span class="line"><span class="comment">//跨越式得到跟的root</span></span><br><span class="line"><span class="function"><span class="title">fullname3</span>(<span class="params">state, getters,rootState</span>)</span>{</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"><span class="comment">//action中的context,只会调用自己模块中的commit</span></span><br><span class="line"><span class="comment">//对象的结构</span></span><br><span class="line"><span class="keyword">const</span> {name, height, age} = obj</span><br></pre></td></tr></table></figure>
+
+<h2 id="store的结构"><a href="#store的结构" class="headerlink" title="store的结构"></a>store的结构</h2><p>state主文件中,getters,actions,mutations在各自在单独的js文件中</p>
 
 
     </div>
@@ -672,7 +575,7 @@ mjx-container[display="true"] + br {
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://www.55555hub.xyz/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/" title="mustache">http://www.55555hub.xyz/2021/03/14/前端/Vue/插值的操作/</a>
+      <a href="http://www.55555hub.xyz/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/" title="tabbar">http://www.55555hub.xyz/2021/03/19/前端/Vue/tabbar组件的实例/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -690,13 +593,13 @@ mjx-container[display="true"] + br {
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/" rel="prev" title="如何在html中使用vue">
-                  <i class="fa fa-chevron-left"></i> 如何在html中使用vue
+                <a href="/2021/03/18/%E5%89%8D%E7%AB%AF/Vue/Router/" rel="prev" title="Router的使用">
+                  <i class="fa fa-chevron-left"></i> Router的使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/" rel="next" title="v-model的使用">
-                  v-model的使用 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/03/20/%E5%89%8D%E7%AB%AF/Vue/axios/" rel="next" title="网络模块的封装">
+                  网络模块的封装 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
