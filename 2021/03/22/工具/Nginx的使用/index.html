@@ -24,30 +24,33 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.55555hub.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="逃离地球">
-<meta property="og:type" content="website">
-<meta property="og:title" content="55555">
-<meta property="og:url" content="http://www.55555hub.xyz/page/2/index.html">
+<meta name="description" content="Nginx的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx的使用">
+<meta property="og:url" content="http://www.55555hub.xyz/2021/03/22/%E5%B7%A5%E5%85%B7/Nginx%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="55555">
-<meta property="og:description" content="逃离地球">
+<meta property="og:description" content="Nginx的使用">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-22T01:06:40.000Z">
+<meta property="article:modified_time" content="2021-03-22T12:18:15.326Z">
 <meta property="article:author" content="天 问">
+<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.55555hub.xyz/page/2/">
+<link rel="canonical" href="http://www.55555hub.xyz/2021/03/22/%E5%B7%A5%E5%85%B7/Nginx%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>55555</title>
+<title>Nginx的使用 | 55555</title>
   
 
 
@@ -289,7 +292,7 @@ mjx-container[display="true"] + br {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -302,6 +305,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNginx"><span class="nav-number">1.</span> <span class="nav-text">什么是Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB"><span class="nav-number">1.3.</span> <span class="nav-text">动静分离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">Nginx的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">Nginx的常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">Nginx的配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-1"><span class="nav-number">5.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1-1"><span class="nav-number">6.</span> <span class="nav-text">负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx%E4%BD%BF%E7%94%A8%E7%9A%84%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5"><span class="nav-number">6.1.</span> <span class="nav-text">nginx使用的分配策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB-1"><span class="nav-number">7.</span> <span class="nav-text">动静分离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TIP"><span class="nav-number">7.1.</span> <span class="nav-text">TIP</span></a></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -383,9 +387,10 @@ mjx-container[display="true"] + br {
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
@@ -393,7 +398,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/18/%E5%89%8D%E7%AB%AF/Vue/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/">
+    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/22/%E5%B7%A5%E5%85%B7/Nginx%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/leaf.gif">
@@ -405,130 +410,9 @@ mjx-container[display="true"] + br {
       <meta itemprop="name" content="55555">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="置顶">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2021/03/18/%E5%89%8D%E7%AB%AF/Vue/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/" class="post-title-link" itemprop="url">Vue脚手架的使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-		
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-18 11:09:55" itemprop="dateCreated datePublished" datetime="2021-03-18T11:09:55+08:00">2021-03-18</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-19 11:06:05" itemprop="dateModified" datetime="2021-03-19T11:06:05+08:00">2021-03-19</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>427</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Vue脚手架的使用</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/18/%E5%89%8D%E7%AB%AF/Vue/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-
-    </div>
-	<div>
-  
-</div>
-
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/leaf.gif">
-      <meta itemprop="name" content="天 问">
-      <meta itemprop="description" content="逃离地球">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="55555">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="置顶">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/" class="post-title-link" itemprop="url">webpack的使用</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Nginx的使用
+        </h1>
 
         <div class="post-meta-container">
 		
@@ -540,7 +424,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-03-17 08:44:15 / 修改时间：17:14:25" itemprop="dateCreated datePublished" datetime="2021-03-17T08:44:15+08:00">2021-03-17</time>
+      <time title="创建时间：2021-03-22 09:06:40 / 修改时间：20:18:15" itemprop="dateCreated datePublished" datetime="2021-03-22T09:06:40+08:00">2021-03-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -548,11 +432,11 @@ mjx-container[display="true"] + br {
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+          <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a>
+          <a href="/categories/%E5%B7%A5%E5%85%B7/%E6%9C%8D%E5%8A%A1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">服务器</span></a>
         </span>
     </span>
 
@@ -564,7 +448,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -575,6 +459,7 @@ mjx-container[display="true"] + br {
     </span>
 </div>
 
+            <div class="post-description">Nginx的使用</div>
         </div>
       </header>
 
@@ -582,142 +467,148 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>webpack的使用</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <h2 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h2><p>Nginx是一个高性能的HTTP和反向代理服务器</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><ul>
+<li>正向代理: 在客户端需要配置代理服务器</li>
+<li>反向代理: 在客户端是无感知的,客户端访问的是访问反向代理服务器</li>
+</ul>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><pre><code>+ 将原先请求分发到多个服务器</code></pre>
+<h3 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h3><ul>
+<li>将静态和动态资源分开部署</li>
+</ul>
+<h2 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h2><ul>
+<li>官网 nginx.org</li>
+<li>安装依赖: yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</li>
+<li>安装nginx: <ol>
+<li>tar -zxvf nginx.xx.tar.gz</li>
+<li>进入解压缩目录,执行./configure</li>
+<li>make &amp;&amp; make install</li>
+<li>以上命令需要切换为root用户</li>
+<li>注意sudo passwd root,第一切换为超级用户时,需要执行</li>
+</ol>
+</li>
+<li>安装成功:/usr/local/sbin</li>
+<li>执行在/usr/local/sbin/nginx</li>
+<li>centos:开放防火墙<ul>
+<li>firewall-cmd –list-all</li>
+<li>firewall-cmd –add-service=http –permanent</li>
+<li>sudo firewall-cmd –add-port=80/tcp –permanent</li>
+<li>firewall-cmd –reload</li>
+</ul>
+</li>
+<li>没有设置防火墙也有可能可以访问</li>
+</ul>
+<h2 id="Nginx的常用命令"><a href="#Nginx的常用命令" class="headerlink" title="Nginx的常用命令"></a>Nginx的常用命令</h2><ul>
+<li>必须要进入sbin中,才能使用 命令</li>
+<li>查看Nginx的版本: ./nginx -v</li>
+<li>关闭Nginx: ./nginx -s stop</li>
+<li>启动Nginx: ./nginx</li>
+<li>重加载: 修改后 config后,./nginx -s reload</li>
+</ul>
+<h2 id="Nginx的配置文件"><a href="#Nginx的配置文件" class="headerlink" title="Nginx的配置文件"></a>Nginx的配置文件</h2><ul>
+<li>位置: /usr/local/conf/ngnix.config</li>
+<li>组成: <ul>
+<li>全局块: 从开始到events的之前的值<ul>
+<li>worker process值越大,可以支持的并发处理量也越大</li>
+</ul>
+</li>
+<li>events块<ul>
+<li> work_connections 1024: 支持的最大连接数</li>
+</ul>
+</li>
+<li>http块</li>
+</ul>
+</li>
+</ul>
+<h2 id="反向代理-1"><a href="#反向代理-1" class="headerlink" title="反向代理"></a>反向代理</h2><ul>
+<li>单个服务器:在serve中添加proxy_pass http://你的服务器地址:你的端口</li>
+<li>多个服务器: location ~ /edu/ {proxy_pass <a href="http://127.0.0.1:8081}">http://127.0.0.1:8081}</a> location ~ /vod/{proxy_pass <a href="http://127.0.0.1:8080}">http://127.0.0.1:8080}</a></li>
+</ul>
+<h2 id="负载均衡-1"><a href="#负载均衡-1" class="headerlink" title="负载均衡"></a>负载均衡</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">http {</span><br><span class="line">	upstream myserver{</span><br><span class="line">		server 192.168.22.134:8081;</span><br><span class="line">		server 192.168.22.134:8080;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">server {</span><br><span class="line">	location / {</span><br><span class="line">		proxy_pass http://myserver;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="nginx使用的分配策略"><a href="#nginx使用的分配策略" class="headerlink" title="nginx使用的分配策略"></a>nginx使用的分配策略</h3><ul>
+<li>轮询</li>
+<li>weight: server xxxx weight=xxx,权重默认为1</li>
+<li>ip_hash myserver{ip_hash;}:每个IP访问固定的服务器</li>
+<li>fair:根据相应的时间,写法与ip_hash一样</li>
+</ul>
+<h2 id="动静分离-1"><a href="#动静分离-1" class="headerlink" title="动静分离"></a>动静分离</h2><p>将动态请求发给后端服务器,例如要访问数据中的文件中</p>
+<p>将静态请求发给前端服务器,列如图片</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">local /www/ {</span><br><span class="line">	root //data/;</span><br><span class="line">	index index.html index;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">local /image/ {</span><br><span class="line">	root /data/;</span><br><span class="line"><span class="meta">	#</span><span class="bash">列出反目录,作用不大</span></span><br><span class="line">	autoindex on;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h3><ul>
+<li>要ping通虚拟机:<ul>
+<li>要防火墙开启相应的端口</li>
+<li>vm8要和虚拟机的ip地址在同一网段</li>
+<li>ifconfig可以查看虚拟机ip地址,ens33是ip地址</li>
+</ul>
+</li>
+<li>host:<ul>
+<li>可以在当中添加ip和域名的映射</li>
+</ul>
+</li>
+<li>多个服务器要注意:开启多个服务端口</li>
+</ul>
+
 
     </div>
 	<div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
 </div>
 
 
     
     
     
+      
+
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/leaf.gif">
-      <meta itemprop="name" content="天 问">
-      <meta itemprop="description" content="逃离地球">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="55555">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
           
-              <span class="post-sticky-flag" title="置顶">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">commonjs和SE6模块化开发</a>
-        </h2>
 
-        <div class="post-meta-container">
-		
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-17 08:13:37 / 修改时间：08:44:35" itemprop="dateCreated datePublished" datetime="2021-03-17T08:13:37+08:00">2021-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>426</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>天 问
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.55555hub.xyz/2021/03/22/%E5%B7%A5%E5%85%B7/Nginx%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Nginx的使用">http://www.55555hub.xyz/2021/03/22/工具/Nginx的使用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-        </div>
-      </header>
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"><i class="fa fa-tag"></i> 工具</a>
+          </div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>commonjs和SE6模块化开发</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+
+
         
-      
 
-    </div>
-	<div>
-  
-</div>
-
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/22/%E5%89%8D%E7%AB%AF/Node/%E8%AE%A4%E8%AF%86Nodejs/" rel="prev" title="认识Node">
+                  <i class="fa fa-chevron-left"></i> 认识Node
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/03/22/%E5%B7%A5%E5%85%B7/Docker%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="Docker的使用">
+                  Docker的使用 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -727,345 +618,7 @@ mjx-container[display="true"] + br {
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/leaf.gif">
-      <meta itemprop="name" content="天 问">
-      <meta itemprop="description" content="逃离地球">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="55555">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="置顶">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/" class="post-title-link" itemprop="url">slot的使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-		
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-16 19:38:48 / 修改时间：21:04:35" itemprop="dateCreated datePublished" datetime="2021-03-16T19:38:48+08:00">2021-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>332</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>slot的基本的使用</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-
-    </div>
-	<div>
-  
-</div>
-
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/leaf.gif">
-      <meta itemprop="name" content="天 问">
-      <meta itemprop="description" content="逃离地球">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="55555">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="置顶">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">组件的使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-		
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-16 09:53:25 / 修改时间：19:38:11" itemprop="dateCreated datePublished" datetime="2021-03-16T09:53:25+08:00">2021-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>992</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>组件的基本使用</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-
-    </div>
-	<div>
-  
-</div>
-
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/leaf.gif">
-      <meta itemprop="name" content="天 问">
-      <meta itemprop="description" content="逃离地球">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="55555">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-              <span class="post-sticky-flag" title="置顶">
-                <i class="fa fa-thumbtack"></i>
-              </span><a href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/" class="post-title-link" itemprop="url">v-model的使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-		
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-16 08:18:59 / 修改时间：10:03:58" itemprop="dateCreated datePublished" datetime="2021-03-16T08:18:59+08:00">2021-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>639</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>v-model的使用</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-
-    </div>
-	<div>
-  
-</div>
-
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 <script>
