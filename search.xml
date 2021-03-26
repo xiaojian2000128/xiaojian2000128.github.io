@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo文章发布</title>
+    <url>/2021/03/11/%E5%B7%A5%E5%85%B7/Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
+<li>cd 55555Blog</li>
+<li>hexo new [-p 路径] 文章的标题</li>
+<li>hexo c</li>
+<li>hexo g</li>
+<li>hexo d</li>
+</ol>
+<h2 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h2><ul>
+<li>文件头的描述信息的：的后面必须有空格</li>
+<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
+<li>第5,6步可联合写成 hexo g -d</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker的使用</title>
     <url>/2021/03/22/%E5%B7%A5%E5%85%B7/Docker%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="Docker的概述"><a href="#Docker的概述" class="headerlink" title="Docker的概述"></a>Docker的概述</h2><p>Docker:把应用和环境(镜像)一起打包,通过容器相互隔离</p>
@@ -216,29 +239,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo文章发布</title>
-    <url>/2021/03/11/%E5%B7%A5%E5%85%B7/Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
-<li>cd 55555Blog</li>
-<li>hexo new [-p 路径] 文章的标题</li>
-<li>hexo c</li>
-<li>hexo g</li>
-<li>hexo d</li>
-</ol>
-<h2 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h2><ul>
-<li>文件头的描述信息的：的后面必须有空格</li>
-<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
-<li>第5,6步可联合写成 hexo g -d</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具使用</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Redis的使用</title>
     <url>/2021/03/23/%E5%B7%A5%E5%85%B7/Redis%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="Redis运行"><a href="#Redis运行" class="headerlink" title="Redis运行"></a>Redis运行</h2><ol>
@@ -256,7 +256,7 @@
 <li>添加requiredpass 你的密码</li>
 <li>名字:任意,地址:你的服务器公网地址,密码required写的密码</li>
 </ol>
-<p><img src="https://pictrue-1304449289.cos.ap-nanjing.myqcloud.com/imgimage-20210324151802016.png" alt="image-20210324151802016"></p>
+<p><img src="https://pictrue-1304449289.cos.ap-nanjing.myqcloud.com/imgimage-20210324151802016.png"></p>
 <pre><code>4. 修改阿里云的安全组,把6379端口打开
  5. 在这里设置密码后,redis-cli 要-a 密码</code></pre>
 <h2 id="Redis的基本命令"><a href="#Redis的基本命令" class="headerlink" title="Redis的基本命令"></a>Redis的基本命令</h2><ul>
@@ -320,25 +320,49 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hset 键 域 值</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hget 键 域</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> hset和hmset也可以同时设置多个值</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hmset 键 域 值...</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hmget 键 域 域...</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取<span class="built_in">hash</span>中所有的值,会以键值对进行展示</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hgetall 键</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 会将键值对一起删除</span> </span><br><span class="line"><span class="meta">$</span><span class="bash"> hdel 键 域</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>增强操作</p>
-</li>
-</ul>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取<span class="built_in">hash</span>中的键值对的个数</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hlen 键</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 判断<span class="built_in">hash</span>中键的是否存在</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexists 键 域</span>  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 获得所有的键,值</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hkeys 键</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hvals 键</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hinreby 键 域 增减的值</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 不存在可以设置,存在不可以设置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hsetnx 键 域 值</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Zset类型"><a href="#Zset类型" class="headerlink" title="Zset类型"></a>Zset类型</h2><ul>
-<li>增删改查(不存在改)</li>
+</li>
 </ul>
+<h2 id="Zset类型"><a href="#Zset类型" class="headerlink" title="Zset类型"></a>Zset类型</h2><ul>
+<li><p>增删改查(不存在改)</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 优先级越小,越靠前</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zadd 键 优先级 值</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrem 键 值</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zpopmax 键</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zpopmin 键</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增强操作</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> zrange 键 开始 结束</span> </span><br><span class="line"><span class="meta">$</span><span class="bash"> zrevrange 键 开始 结束</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许进行排序的范围</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrangebyscore 键 值的最小值 值的最大值 [withscores]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrevrangebyscore 键 值的最大值 值的最小值 [withscores]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获得所有键的数量</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zcard 键</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获得范围内的键数量</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zcount 键 范围的开始 范围的结束</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Geospatial类型"><a href="#Geospatial类型" class="headerlink" title="Geospatial类型"></a>Geospatial类型</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> geoadd 键 经度,纬度 ,名称</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> geopos 键 名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 两个地点之间的距离</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> geodist 键 名称 名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在集合中找在该经度和纬度的距离之内的名称</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> georadius 键 经度 纬度 距离 单位 [...]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 位置用名称来指定</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> georadiusbymember 键 名称 [...]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看所有的元素</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrange 键</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 移除元素</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrem 键 值</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Hyperloglog类型"><a href="#Hyperloglog类型" class="headerlink" title="Hyperloglog类型"></a>Hyperloglog类型</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pfadd 键 值 值 值</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pfcount 键</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pfmerge 键 键</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>增强操作</li>
+<li>消耗的空间极小,但会有1%100的误差</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> zrange 键 开始 结束</span> </span><br><span class="line"><span class="meta">$</span><span class="bash"> zrevrange 键 开始 结束</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 允许进行排序的范围</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrangebyscore 键 值的最小值 值的最大值 [withscores]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zrevrangebyscore 键 值的最大值 值的最小值 [withscores]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获得所有键的数量</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zcard 键</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获得范围内的键数量</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zcount 键 范围的开始 范围的结束</span></span><br></pre></td></tr></table></figure>
+<h2 id="Bitmaps类型"><a href="#Bitmaps类型" class="headerlink" title="Bitmaps类型"></a>Bitmaps类型</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> setbit 键 索引 (0/1)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> getbit 键 索引</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> bitcount 键 [开始的索引, 结束的索引]</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Geospatial类型"><a href="#Geospatial类型" class="headerlink" title="Geospatial类型"></a>Geospatial类型</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> geoadd 键 经度,纬度 ,名称</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> geopos 键 名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 两个地点之间的距离</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> geodist 键 名称 名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在集合中找在该经度和纬度的距离之内的名称</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> georadius 键 经度 纬度 距离 单位 [...]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 位置用名称来指定</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> georadiusbymember 键 名称 [...]</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Redis-conf重要的配置"><a href="#Redis-conf重要的配置" class="headerlink" title="Redis.conf重要的配置"></a>Redis.conf重要的配置</h2><ul>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>redis单条命令是保存原子性的,但是事务不保证原子性,redis没有隔离级别的概念,发出执行事务才会执行</p>
+<ul>
+<li>开启命令: multi</li>
+<li>命令入队: (……)</li>
+<li>执行事务: exec</li>
+<li>放弃事务: discard</li>
+</ul>
+<p>编译错误: 队列中的命令全部被放弃 命令入队就会有错误提示</p>
+<p>运行错误: 队列中其它命令(无论前后)都会被执行</p>
+<h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><h3 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h3><p>认为什么时候都会出问题,无论做什么都会加锁</p>
+<h3 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁:"></a>乐观锁:</h3><p>认为什么时候都不会出问题,所以不上锁,更新数据的时候去判断一下,在此期间是否有别的人造成修改,比较version,决定是否更新</p>
+<p>一旦事务成功,监控就会取消,事务执行失败需要先unwatch,再重新watch</p>
+<h2 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h2><p>Jedis是官方推荐的java连接开发工具,使用java操作Redis中间件</p>
+<ol>
+<li>导入对应的依赖</li>
+</ol>
+<p><img src="https://pictrue-1304449289.cos.ap-nanjing.myqcloud.com/imgimgimgimage-20210326092825960.png"></p>
+<p>​    2.测试连接</p>
+<p><img src="https://pictrue-1304449289.cos.ap-nanjing.myqcloud.com/imgimgimage-20210326093729642.png"></p>
+<h2 id="Spring-boot整合"><a href="#Spring-boot整合" class="headerlink" title="Spring boot整合"></a>Spring boot整合</h2><p>在SpringBoot2.x之后,原来使用的jedis被替换为lettuce</p>
+<h2 id="Redis-conf比较重要的配置"><a href="#Redis-conf比较重要的配置" class="headerlink" title="Redis.conf比较重要的配置"></a>Redis.conf比较重要的配置</h2><ul>
 <li><p>deamonize: 默认是no,是否以守护进程开启</p>
 </li>
 <li><p>requirepass:是启动redis-service指定的密码,</p>
@@ -394,6 +418,43 @@
 </li>
 <li> 当文件过大是,可以自动进行重写AOF文件</li>
 </ul>
+<h2 id="Redis发布和订阅"><a href="#Redis发布和订阅" class="headerlink" title="Redis发布和订阅"></a>Redis发布和订阅</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> subscribe 频道</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> publish 频道 数据</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis集群环境搭建"><a href="#Redis集群环境搭建" class="headerlink" title="Redis集群环境搭建"></a>Redis集群环境搭建</h2><p>主从复制,读写分离.主机负责写,从机负责读,主机将数据中复制到从机的redies节点</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看当前库的信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> info relication</span></span><br></pre></td></tr></table></figure>
+
+<p>要修改的配置</p>
+<ul>
+<li>端口</li>
+<li>pid名字</li>
+<li>log文件名字</li>
+<li>dump.rdb名字</li>
+</ul>
+<p>只需要配置从机就行了</p>
+<ul>
+<li>手动配置的方式</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> SLAVEOF HOST PORT</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 当HOST RORT为no one时,会将slave变为master</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自动配置的方式: 在配置文件中设置relicaof </li>
+<li>tip<ul>
+<li>如果主机设置了密码,要在masterauth中填入主机密码</li>
+<li>主机可读,可写</li>
+<li>从机只能读</li>
+</ul>
+</li>
+</ul>
+<h3 id="复制原理"><a href="#复制原理" class="headerlink" title="复制原理"></a>复制原理</h3><p>salve启动成功连接到master后会发送给master一个sync同步命令,master接受到命令,启动后台的存盘进程,master会将全部的数据传送到slave,并完成一次同步</p>
+<ul>
+<li>全量复制: Master将一开始时将全部的数据传送给salve</li>
+<li>增量复制: Master将新的数据传送给slave</li>
+</ul>
+<h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><ol>
+<li>配置sentinel.conf文件,sentinel monitor 名字随意 ip post 需要哨兵认同的个数</li>
+<li>启动哨兵</li>
+<li>主从密码相同.不然无法访问,从密码其实是没有用的,只要退出了集群,再进入集群,会要求重新输入密码,主机挂了,重选主机,会要求所有的机器重新输密码</li>
+</ol>
 ]]></content>
       <categories>
         <category>工具</category>
@@ -401,6 +462,43 @@
       </categories>
       <tags>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认识Node</title>
+    <url>/2021/03/22/%E5%89%8D%E7%AB%AF/Node/%E8%AE%A4%E8%AF%86Nodejs/</url>
+    <content><![CDATA[<h2 id="什么是Node"><a href="#什么是Node" class="headerlink" title="什么是Node"></a>什么是Node</h2><ul>
+<li>是javaScript运行时环境,可以使js脱离浏览器执行</li>
+</ul>
+<p>浏览器中的javaScripte</p>
+<ul>
+<li>EcmaScript(js的语法)</li>
+<li>BOM</li>
+<li>DOM</li>
+</ul>
+<p>Node.js中的javaScript</p>
+<ul>
+<li>EcmaScript(js的语法)</li>
+<li>提供了一些服务器级别的操作API<ul>
+<li>文件读写</li>
+<li>服务网络的构建</li>
+<li>网络通信</li>
+<li>http服务器</li>
+</ul>
+</li>
+</ul>
+<p>npm是包管理工具</p>
+<h2 id="Node-js能做什么"><a href="#Node-js能做什么" class="headerlink" title="Node.js能做什么"></a>Node.js能做什么</h2><ul>
+<li>web服务器后台</li>
+<li>命令行工具(就像npm,git,hexo)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Node</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -432,47 +530,6 @@
       </categories>
       <tags>
         <tag>阿里云</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>环境配置</title>
-    <url>/2021/03/24/%E9%A1%B9%E7%9B%AE/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h2> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -p 3306:3306 -name mysql -v /mydata/mysql/<span class="built_in">log</span>:/var/<span class="built_in">log</span>/mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql/conf:/etc/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir -p /mydata/redis/conf</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch /mydata/redis/conf/redis.conf</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis redis-server /etc/redis/redis.conf</span></span><br></pre></td></tr></table></figure>
-
-<p>在配置文件中也就是redie.conf,写上appendonly yes</p>
-<h2 id="配置Maven"><a href="#配置Maven" class="headerlink" title="配置Maven"></a>配置Maven</h2><ul>
-<li><p>仓库</p>
-<pre><code>     &lt;id&gt;nexus-aliyun&lt;/id&gt;
-     &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; 
-     &lt;name&gt;Nexus aliyun&lt;/name&gt;
-     &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</code></pre>
-</li>
-<li><p>profiles:使启用java8编译</p>
-</li>
-</ul>
-<h2 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h2><ul>
-<li>安装Mybatisx</li>
-<li>lomo</li>
-</ul>
-<h2 id="VSCODE"><a href="#VSCODE" class="headerlink" title="VSCODE"></a>VSCODE</h2><ul>
-<li>开发前端需要用的插件</li>
-</ul>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><ul>
-<li>在git上创建一个项目</li>
-</ul>
-<h2 id="项目结构创建"><a href="#项目结构创建" class="headerlink" title="项目结构创建"></a>项目结构创建</h2><ul>
-<li>idea从版本控制新建项目,url使用github仓库的地址</li>
-<li>商品模块选spring web和OpenFeign</li>
-</ul>
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-      <categories>
-        <category>java</category>
-        <category>电商分布式项目</category>
-      </categories>
-      <tags>
-        <tag>java项目</tag>
       </tags>
   </entry>
   <entry>
@@ -632,40 +689,58 @@
       </tags>
   </entry>
   <entry>
-    <title>认识Node</title>
-    <url>/2021/03/22/%E5%89%8D%E7%AB%AF/Node/%E8%AE%A4%E8%AF%86Nodejs/</url>
-    <content><![CDATA[<h2 id="什么是Node"><a href="#什么是Node" class="headerlink" title="什么是Node"></a>什么是Node</h2><ul>
-<li>是javaScript运行时环境,可以使js脱离浏览器执行</li>
+    <title>slot的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/</url>
+    <content><![CDATA[<h2 id="slot预留标签"><a href="#slot预留标签" class="headerlink" title="slot预留标签"></a>slot预留标签</h2><ul>
+<li>使用在组件标签内使用被的标签,可以在内使用多个</li>
+<li>在slot标签内预留一个默认的值</li>
 </ul>
-<p>浏览器中的javaScripte</p>
+<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>EcmaScript(js的语法)</li>
-<li>BOM</li>
-<li>DOM</li>
+<li>默认替换的没有属性的</li>
 </ul>
-<p>Node.js中的javaScript</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">""</span>&gt;</span>text&lt;\span&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译的作用域"><a href="#编译的作用域" class="headerlink" title="编译的作用域"></a>编译的作用域</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">spn</span> <span class="attr">v-show</span>=<span class="string">"isShow"</span>&gt;</span><span class="tag">&lt;/<span class="name">spn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>EcmaScript(js的语法)</li>
-<li>提供了一些服务器级别的操作API<ul>
-<li>文件读写</li>
-<li>服务网络的构建</li>
-<li>网络通信</li>
-<li>http服务器</li>
+<li>一开始把子组件当作普通的元素,用的是父组件的模版</li>
 </ul>
-</li>
-</ul>
-<p>npm是包管理工具</p>
-<h2 id="Node-js能做什么"><a href="#Node-js能做什么" class="headerlink" title="Node.js能做什么"></a>Node.js能做什么</h2><ul>
-<li>web服务器后台</li>
-<li>命令行工具(就像npm,git,hexo)</li>
-</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span> = <span class="string">"item in xxx.data"</span>&gt;</span>{{item}}<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
         <category>前端</category>
-        <category>Node</category>
+        <category>Vue</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络模块的封装</title>
+    <url>/2021/03/20/%E5%89%8D%E7%AB%AF/Vue/axios/</url>
+    <content><![CDATA[<h2 id="axios的使用"><a href="#axios的使用" class="headerlink" title="axios的使用"></a>axios的使用</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//默认前况下是get请求</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">''</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">5</span> </span><br><span class="line">axios({</span><br><span class="line">    baseURL: <span class="string">''</span>,</span><br><span class="line">    timeout: </span><br><span class="line">    url: </span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    <span class="comment">//针对get请求的拼接</span></span><br><span class="line">    params: {</span><br><span class="line">    </span><br><span class="line">	},</span><br><span class="line">     data: {</span><br><span class="line">      </span><br><span class="line">      }</span><br><span class="line">}).then(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">//axios发送并发请求</span></span><br><span class="line">axios.all([axios(), axios()]).then(<span class="function"><span class="params">results</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(results)</span><br><span class="line">})</span><br><span class="line"><span class="comment">//数组的解构</span></span><br><span class="line">int [name1,name2,name3] = array</span><br></pre></td></tr></table></figure>
+
+<p>axio是支持Promise的</p>
+<h2 id="axios的配置"><a href="#axios的配置" class="headerlink" title="axios的配置"></a>axios的配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = axios.create(</span><br><span class="line">{</span><br><span class="line">    baseURL: <span class="string">''</span></span><br><span class="line">    timeout: <span class="number">5000</span> </span><br><span class="line">   </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="axios的拦截器"><a href="#axios的拦截器" class="headerlink" title="axios的拦截器"></a>axios的拦截器</h2><ul>
+<li>比如每次发送网络请求时,都希望在界面中显示请求图标</li>
+<li>某些网络请求(比如登陆(token)),必须携带一些特殊信息</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> {<span class="built_in">console</span>.log(config); <span class="keyword">return</span> config}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> err;</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">instance.intercepts.use(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">}) </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -690,29 +765,6 @@
 <li>箭头函数一般会在传函数的时候的使用</li>
 <li>箭头函数的this,引用的是最近,向外层作用查找</li>
 </ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网络模块的封装</title>
-    <url>/2021/03/20/%E5%89%8D%E7%AB%AF/Vue/axios/</url>
-    <content><![CDATA[<h2 id="axios的使用"><a href="#axios的使用" class="headerlink" title="axios的使用"></a>axios的使用</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//默认前况下是get请求</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">''</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">5</span> </span><br><span class="line">axios({</span><br><span class="line">    baseURL: <span class="string">''</span>,</span><br><span class="line">    timeout: </span><br><span class="line">    url: </span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    <span class="comment">//针对get请求的拼接</span></span><br><span class="line">    params: {</span><br><span class="line">    </span><br><span class="line">	},</span><br><span class="line">     data: {</span><br><span class="line">      </span><br><span class="line">      }</span><br><span class="line">}).then(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">//axios发送并发请求</span></span><br><span class="line">axios.all([axios(), axios()]).then(<span class="function"><span class="params">results</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(results)</span><br><span class="line">})</span><br><span class="line"><span class="comment">//数组的解构</span></span><br><span class="line">int [name1,name2,name3] = array</span><br></pre></td></tr></table></figure>
-
-<p>axio是支持Promise的</p>
-<h2 id="axios的配置"><a href="#axios的配置" class="headerlink" title="axios的配置"></a>axios的配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = axios.create(</span><br><span class="line">{</span><br><span class="line">    baseURL: <span class="string">''</span></span><br><span class="line">    timeout: <span class="number">5000</span> </span><br><span class="line">   </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
-
-<h2 id="axios的拦截器"><a href="#axios的拦截器" class="headerlink" title="axios的拦截器"></a>axios的拦截器</h2><ul>
-<li>比如每次发送网络请求时,都希望在界面中显示请求图标</li>
-<li>某些网络请求(比如登陆(token)),必须携带一些特殊信息</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> {<span class="built_in">console</span>.log(config); <span class="keyword">return</span> config}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> err;</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">instance.intercepts.use(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">}) </span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>前端</category>
@@ -789,97 +841,6 @@
       </tags>
   </entry>
   <entry>
-    <title>slot的使用</title>
-    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/slot/</url>
-    <content><![CDATA[<h2 id="slot预留标签"><a href="#slot预留标签" class="headerlink" title="slot预留标签"></a>slot预留标签</h2><ul>
-<li>使用在组件标签内使用被的标签,可以在内使用多个</li>
-<li>在slot标签内预留一个默认的值</li>
-</ul>
-<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>默认替换的没有属性的</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">""</span>&gt;</span>text&lt;\span&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="编译的作用域"><a href="#编译的作用域" class="headerlink" title="编译的作用域"></a>编译的作用域</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">spn</span> <span class="attr">v-show</span>=<span class="string">"isShow"</span>&gt;</span><span class="tag">&lt;/<span class="name">spn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>一开始把子组件当作普通的元素,用的是父组件的模版</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span> = <span class="string">"item in xxx.data"</span>&gt;</span>{{item}}<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>webpack的使用</title>
-    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
-    <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
-<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#101;&#x62;&#112;&#x61;&#99;&#107;&#x40;&#x33;&#x2e;&#54;&#x2e;&#x30;">webpack@3.6.0</a> -g全局安装</p>
-<h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
-<li> webpack ./src/main.js ./dist/bundle.js</li>
-<li>index.html中引入/bundle.js文件</li>
-</ul>
-<h2 id="web的配置"><a href="#web的配置" class="headerlink" title="web的配置"></a>web的配置</h2><ul>
-<li><p>创建webpack.config.js</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: {</span><br><span class="line">        <span class="comment">//错误写法path: './dist',</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">        filename:  <span class="string">'bundle.s'</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>path必须是一个绝对路径,动态获取路径</p>
-</li>
-<li><p>npm init 可以创建package.json</p>
-</li>
-<li><p>以下可以直接写 webpack</p>
-</li>
-<li><p>npm run “在package.json中script中的脚本”</p>
-</li>
-<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#x62;&#x70;&#x61;&#99;&#x6b;&#x40;&#51;&#x2e;&#x36;&#46;&#48;">webpack@3.6.0</a> –save-dev,</p>
-</li>
-<li><p>webpack是开发时依赖,在devDependencies</p>
-</li>
-<li><p>Dependendcies是运行时依赖</p>
-</li>
-<li><p>只要在terminal中敲webpack用的都是全局的</p>
-</li>
-<li><p>写了脚本,会优先用本地的</p>
-</li>
-</ul>
-<h2 id="模块化CSS"><a href="#模块化CSS" class="headerlink" title="模块化CSS"></a>模块化CSS</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./css/normal.css"</span>)</span><br></pre></td></tr></table></figure>
-
-<p>安装npm install –save-dev css-loader,只负责加载,但不负责,加载到DOM</p>
-<p>use: []是从有往左加载的</p>
-<p>加载大于限制的路径时,要在webpack.config.js文件中配置,publicPath: ‘dist/‘</p>
-<p>将图片防止特定位置</p>
-<ul>
-<li>在url-loader中配置option: name: ‘img/[name].[hash:8].[ext]’</li>
-</ul>
-<h2 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h2><p>npm install –save-dev babel-loader@7 label-core-preset-es2015</p>
-<h2 id="使用Vue"><a href="#使用Vue" class="headerlink" title="使用Vue"></a>使用Vue</h2><ul>
-<li>在js文件中import 命名 from “vue”,这时默认去node_modules</li>
-<li>安装: npm install vue –save</li>
-<li>runtime-only:代码中,不可以有任何的template</li>
-<li>runtime-compiler:代码中,可以包含compiler,compiler可以编译template</li>
-<li>在moduel的同级中配置resolve:{alias: {‘vue$’: ‘vue/dist/vue.esm.js’}}</li>
-</ul>
-<h2 id="template和el关系"><a href="#template和el关系" class="headerlink" title="template和el关系"></a>template和el关系</h2><p>一旦定义了template会将替换掉挂载的元素</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>webpack</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>v-model的使用</title>
     <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/</url>
     <content><![CDATA[<h2 id="v-model的基本使用"><a href="#v-model的基本使用" class="headerlink" title="v-model的基本使用"></a>v-model的基本使用</h2><ul>
@@ -924,6 +885,65 @@
       </categories>
       <tags>
         <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>webpack的使用</title>
+    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
+    <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#x77;&#x65;&#98;&#112;&#97;&#99;&#x6b;&#64;&#x33;&#46;&#54;&#46;&#48;">webpack@3.6.0</a> -g全局安装</p>
+<h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
+<li> webpack ./src/main.js ./dist/bundle.js</li>
+<li>index.html中引入/bundle.js文件</li>
+</ul>
+<h2 id="web的配置"><a href="#web的配置" class="headerlink" title="web的配置"></a>web的配置</h2><ul>
+<li><p>创建webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: {</span><br><span class="line">        <span class="comment">//错误写法path: './dist',</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">        filename:  <span class="string">'bundle.s'</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>path必须是一个绝对路径,动态获取路径</p>
+</li>
+<li><p>npm init 可以创建package.json</p>
+</li>
+<li><p>以下可以直接写 webpack</p>
+</li>
+<li><p>npm run “在package.json中script中的脚本”</p>
+</li>
+<li><p>在本地安装 npm install <a href="mailto:&#x77;&#101;&#x62;&#x70;&#97;&#99;&#107;&#64;&#x33;&#46;&#x36;&#x2e;&#x30;">webpack@3.6.0</a> –save-dev,</p>
+</li>
+<li><p>webpack是开发时依赖,在devDependencies</p>
+</li>
+<li><p>Dependendcies是运行时依赖</p>
+</li>
+<li><p>只要在terminal中敲webpack用的都是全局的</p>
+</li>
+<li><p>写了脚本,会优先用本地的</p>
+</li>
+</ul>
+<h2 id="模块化CSS"><a href="#模块化CSS" class="headerlink" title="模块化CSS"></a>模块化CSS</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./css/normal.css"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>安装npm install –save-dev css-loader,只负责加载,但不负责,加载到DOM</p>
+<p>use: []是从有往左加载的</p>
+<p>加载大于限制的路径时,要在webpack.config.js文件中配置,publicPath: ‘dist/‘</p>
+<p>将图片防止特定位置</p>
+<ul>
+<li>在url-loader中配置option: name: ‘img/[name].[hash:8].[ext]’</li>
+</ul>
+<h2 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h2><p>npm install –save-dev babel-loader@7 label-core-preset-es2015</p>
+<h2 id="使用Vue"><a href="#使用Vue" class="headerlink" title="使用Vue"></a>使用Vue</h2><ul>
+<li>在js文件中import 命名 from “vue”,这时默认去node_modules</li>
+<li>安装: npm install vue –save</li>
+<li>runtime-only:代码中,不可以有任何的template</li>
+<li>runtime-compiler:代码中,可以包含compiler,compiler可以编译template</li>
+<li>在moduel的同级中配置resolve:{alias: {‘vue$’: ‘vue/dist/vue.esm.js’}}</li>
+</ul>
+<h2 id="template和el关系"><a href="#template和el关系" class="headerlink" title="template和el关系"></a>template和el关系</h2><p>一旦定义了template会将替换掉挂载的元素</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
       </tags>
   </entry>
   <entry>
