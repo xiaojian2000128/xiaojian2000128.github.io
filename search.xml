@@ -895,7 +895,7 @@
     <title>webpack的使用</title>
     <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
     <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
-<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#101;&#x62;&#112;&#97;&#99;&#x6b;&#x40;&#x33;&#x2e;&#54;&#x2e;&#x30;">webpack@3.6.0</a> -g全局安装</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#x77;&#x65;&#98;&#112;&#x61;&#x63;&#x6b;&#64;&#x33;&#46;&#54;&#46;&#x30;">webpack@3.6.0</a> -g全局安装</p>
 <h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
 <li> webpack ./src/main.js ./dist/bundle.js</li>
 <li>index.html中引入/bundle.js文件</li>
@@ -912,7 +912,7 @@
 </li>
 <li><p>npm run “在package.json中script中的脚本”</p>
 </li>
-<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#98;&#112;&#x61;&#99;&#107;&#x40;&#x33;&#x2e;&#x36;&#46;&#48;">webpack@3.6.0</a> –save-dev,</p>
+<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#x62;&#x70;&#97;&#x63;&#x6b;&#64;&#x33;&#46;&#54;&#46;&#48;">webpack@3.6.0</a> –save-dev,</p>
 </li>
 <li><p>webpack是开发时依赖,在devDependencies</p>
 </li>
@@ -1392,7 +1392,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>java 基础</category>
+        <category>java基础</category>
       </categories>
       <tags>
         <tag>java</tag>
