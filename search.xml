@@ -779,6 +779,53 @@
       </tags>
   </entry>
   <entry>
+    <title>v-model的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/</url>
+    <content><![CDATA[<h2 id="v-model的基本使用"><a href="#v-model的基本使用" class="headerlink" title="v-model的基本使用"></a>v-model的基本使用</h2><ul>
+<li>input</li>
+<li>Textarea</li>
+</ul>
+<h2 id="v-model的原理"><a href="#v-model的原理" class="headerlink" title="v-model的原理"></a>v-model的原理</h2><ul>
+<li>可以通过v-bind和v-on实现双向绑定</li>
+<li>event在方法内不使用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="19.332ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 8544.7 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mo" transform="translate(444.7, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">在</text><text data-variant="normal" transform="translate(900, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">元</text><text data-variant="normal" transform="translate(1800, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">素</text><text data-variant="normal" transform="translate(2700, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">的</text><text data-variant="normal" transform="translate(3600, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">属</text><text data-variant="normal" transform="translate(4500, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">性</text><text data-variant="normal" transform="translate(5400, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">类</text><text data-variant="normal" transform="translate(6300, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">要</text><text data-variant="normal" transform="translate(7200, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">写</text></g></g></g></svg></mjx-container></li>
+</ul>
+<h2 id="v-model结合radio类型"><a href="#v-model结合radio类型" class="headerlink" title="v-model结合radio类型"></a>v-model结合radio类型</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">vlaue</span>=<span class="string">要发送的值</span> <span class="attr">v-model</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>name相同代表同一组值,如果v-model的变量名是系统的就代表同一组,这时可以省略name</li>
+</ul>
+<h2 id="v-model结合checkbox类型"><a href="#v-model结合checkbox类型" class="headerlink" title="v-model结合checkbox类型"></a>v-model结合checkbox类型</h2> <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"agree"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"agree"</span> <span class="attr">v-model</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>绑定到checkbox单选框</li>
+<li>绑定到checkbox多选框</li>
+<li>&lt;label&gt; 标签的 for 属性应当与相关元素的 id 属性相同,有可能也需要在前面加:</li>
+</ul>
+<h2 id="v-model结合select类型"><a href="#v-model结合select类型" class="headerlink" title="v-model结合select类型"></a>v-model结合select类型</h2><ul>
+<li>单选下拉框</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">"abc"</span> <span class="attr">v-modle</span>=<span class="string">"变量名"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>下拉多选框,在select 中添加multiple,v-model绑定的是数组变量</li>
+</ul>
+<h2 id="v-model的修饰符"><a href="#v-model的修饰符" class="headerlink" title="v-model的修饰符"></a>v-model的修饰符</h2><ul>
+<li>lazy,回车或失去焦点之后,才会改变data里面的变量</li>
+<li>number,把文本转化为number类型</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model.number</span>=&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>+ trim,去除前后的空格</code></pre>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>tabbar</title>
     <url>/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<h2 id="给路径取别名"><a href="#给路径取别名" class="headerlink" title="给路径取别名"></a>给路径取别名</h2><ul>
@@ -845,57 +892,10 @@
       </tags>
   </entry>
   <entry>
-    <title>v-model的使用</title>
-    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/v-model/</url>
-    <content><![CDATA[<h2 id="v-model的基本使用"><a href="#v-model的基本使用" class="headerlink" title="v-model的基本使用"></a>v-model的基本使用</h2><ul>
-<li>input</li>
-<li>Textarea</li>
-</ul>
-<h2 id="v-model的原理"><a href="#v-model的原理" class="headerlink" title="v-model的原理"></a>v-model的原理</h2><ul>
-<li>可以通过v-bind和v-on实现双向绑定</li>
-<li>event在方法内不使用<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="19.332ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 8544.7 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mo" transform="translate(444.7, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">在</text><text data-variant="normal" transform="translate(900, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">元</text><text data-variant="normal" transform="translate(1800, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">素</text><text data-variant="normal" transform="translate(2700, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">的</text><text data-variant="normal" transform="translate(3600, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">属</text><text data-variant="normal" transform="translate(4500, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">性</text><text data-variant="normal" transform="translate(5400, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">类</text><text data-variant="normal" transform="translate(6300, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">要</text><text data-variant="normal" transform="translate(7200, 0) matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">写</text></g></g></g></svg></mjx-container></li>
-</ul>
-<h2 id="v-model结合radio类型"><a href="#v-model结合radio类型" class="headerlink" title="v-model结合radio类型"></a>v-model结合radio类型</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">vlaue</span>=<span class="string">要发送的值</span> <span class="attr">v-model</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>name相同代表同一组值,如果v-model的变量名是系统的就代表同一组,这时可以省略name</li>
-</ul>
-<h2 id="v-model结合checkbox类型"><a href="#v-model结合checkbox类型" class="headerlink" title="v-model结合checkbox类型"></a>v-model结合checkbox类型</h2> <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"agree"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"agree"</span> <span class="attr">v-model</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>绑定到checkbox单选框</li>
-<li>绑定到checkbox多选框</li>
-<li>&lt;label&gt; 标签的 for 属性应当与相关元素的 id 属性相同,有可能也需要在前面加:</li>
-</ul>
-<h2 id="v-model结合select类型"><a href="#v-model结合select类型" class="headerlink" title="v-model结合select类型"></a>v-model结合select类型</h2><ul>
-<li>单选下拉框</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span> = <span class="string">"abc"</span> <span class="attr">v-modle</span>=<span class="string">"变量名"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>下拉多选框,在select 中添加multiple,v-model绑定的是数组变量</li>
-</ul>
-<h2 id="v-model的修饰符"><a href="#v-model的修饰符" class="headerlink" title="v-model的修饰符"></a>v-model的修饰符</h2><ul>
-<li>lazy,回车或失去焦点之后,才会改变data里面的变量</li>
-<li>number,把文本转化为number类型</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model.number</span>=&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>+ trim,去除前后的空格</code></pre>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>webpack的使用</title>
     <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
     <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
-<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#x77;&#x65;&#98;&#112;&#x61;&#x63;&#x6b;&#64;&#x33;&#46;&#54;&#46;&#x30;">webpack@3.6.0</a> -g全局安装</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#x65;&#x62;&#112;&#97;&#99;&#107;&#x40;&#x33;&#x2e;&#54;&#46;&#x30;">webpack@3.6.0</a> -g全局安装</p>
 <h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
 <li> webpack ./src/main.js ./dist/bundle.js</li>
 <li>index.html中引入/bundle.js文件</li>
@@ -912,7 +912,7 @@
 </li>
 <li><p>npm run “在package.json中script中的脚本”</p>
 </li>
-<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#x62;&#x70;&#97;&#x63;&#x6b;&#64;&#x33;&#46;&#54;&#46;&#48;">webpack@3.6.0</a> –save-dev,</p>
+<li><p>在本地安装 npm install <a href="mailto:&#119;&#x65;&#x62;&#112;&#97;&#x63;&#107;&#64;&#x33;&#x2e;&#54;&#x2e;&#48;">webpack@3.6.0</a> –save-dev,</p>
 </li>
 <li><p>webpack是开发时依赖,在devDependencies</p>
 </li>
@@ -1315,81 +1315,69 @@
 </ul>
 </li>
 </ul>
-<h2 id="Collection的方法"><a href="#Collection的方法" class="headerlink" title="Collection的方法"></a>Collection的方法</h2><ul>
-<li><p>增加: add, addAll</p>
-</li>
-<li><p>删除: remove, removeAll, retainAll, clear</p>
-</li>
-<li><p>包含: contains, containsAll</p>
-</li>
-<li><p>大小: size</p>
-</li>
-<li><p>是否为空: isEmpty</p>
-</li>
-<li><p>转数组: toArray</p>
-<ul>
-<li><p>不传参数,默认是Object数组</p>
-</li>
-<li><p>传对象数组,则转为对象数组</p>
-</li>
-<li><p>转数组的方法无法转成基本类型数组</p>
-</li>
-</ul>
-</li>
-<li><p>迭代: iterator</p>
-<ul>
+<h2 id="Collection的方法"><a href="#Collection的方法" class="headerlink" title="Collection的方法"></a>Collection的方法</h2><p>增加: add, addAll</p>
+<p>删除: remove, removeAll, retainAll, clear</p>
+<p>包含: contains, containsAll</p>
+<p>大小: size</p>
+<p>是否为空: isEmpty</p>
+<p>转数组: toArray</p>
+<ol>
+<li>不传参数,默认是Object数组</li>
+<li>传对象数组,则转为对象数组</li>
+<li>转数组的方法无法转成基本类型数组</li>
+</ol>
+<p>迭代: iterator</p>
+<ol>
 <li>实现了iterable接口,必须要实现iterator方法</li>
 <li>实现iterable接口,是增强for/in的充分不必要条件,数组 没有实现iterable接口仍可以使用增减for/in</li>
-</ul>
-</li>
-<li><p>重写Object: equals, toString, hashCode</p>
-<ul>
+</ol>
+<p>重写Object: equals, toString, hashCode</p>
+<ol>
 <li>equals:List要求元素顺序相同, Set不要求元素顺序相同</li>
-</ul>
-</li>
-</ul>
+</ol>
 <h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>为容器提供一种统一的遍历方式,同时又不暴露容器内部实现细节</p>
 <h3 id="拥有的方法"><a href="#拥有的方法" class="headerlink" title="拥有的方法"></a>拥有的方法</h3><p>hasNext, next, remove</p>
-<ul>
+<ol>
 <li><p>remove已经被默认实现了,不用再被实现</p>
 </li>
 <li><p>IllegalException:</p>
-<ul>
+<ol>
 <li>如果不掉用next方法就使用remove</li>
 <li>如果已经调用了remove,接着再调用remove</li>
-</ul>
+</ol>
 </li>
-</ul>
+</ol>
 <h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>特点: 有序,可重复</p>
 <p>实现类: ArrayList,LinkedList,Vector</p>
-<h3 id="三者的异同"><a href="#三者的异同" class="headerlink" title="三者的异同"></a>三者的异同</h3><ul>
-<li>三者的相同: 存储特点都是有序,可重复,都实现了List接口</li>
-<li>ArrayList和Vector的异同: <ul>
+<h3 id="三者的异同"><a href="#三者的异同" class="headerlink" title="三者的异同"></a>三者的异同</h3><p>三者的相同: 存储特点都是有序,可重复,都实现了List接口</p>
+<p>ArrayList和Vector的异同: </p>
+<ul>
 <li>相同: 底层都是用数组实现的,</li>
 <li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用默认构造器,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
 <li>tip: StringBuffer中的数组是变为原来的2倍+2</li>
 </ul>
-</li>
-<li>ArrayList和LinkedList的异同:<ul>
+<p>ArrayList和LinkedList的异同:</p>
+<ul>
 <li>相同: 都是从jdk1.2才开始出现</li>
 <li>不同: ArrayList底层使用数组实现的,对于查找效率,比较高,但对于删除和插入效率比较低,每次删除和插入元素,都会导致数组内其它元素的前移和后移,导致性能消耗,LinkedList底层使用的是双向链表,拥有一个静态内部类Node,和两个Node的成员变量作为头指针和尾指针,对于查找效率较低,但对于插入和删除效率较高,只需要修改前后节点的指针</li>
 </ul>
-</li>
-</ul>
 <h3 id="List接口的方法"><a href="#List接口的方法" class="headerlink" title="List接口的方法"></a>List接口的方法</h3><p>因为List接口是有序的,所以List在Collection接口基础上增加了一些关于索引的方法</p>
-<ul>
-<li>增加: add(int index, Object ele), addAll(int index, Collection coll)</li>
-<li>删除: remove(int index)<ul>
+<p>增加: add(int index, Object ele), addAll(int index, Collection coll)</p>
+<p>删除: remove(int index)</p>
+<ol>
 <li>这个方法必须传基本数据类型</li>
-</ul>
-</li>
-<li>修改: set(int index, Object o)</li>
-<li>查找: get(int index), IndexOf(Object o), lastIndexOf(Object o)</li>
-<li>切分: subList(int fromIndex, int toIndex)<ul>
+</ol>
+<p>修改: set(int index, Object o)</p>
+<p>查找: get(int index), IndexOf(Object o), lastIndexOf(Object o)</p>
+<p>切分: subList(int fromIndex, int toIndex)</p>
+<ol>
 <li>左边右开, 返回一个新的List, 不会对原本的List进行修改</li>
-</ul>
-</li>
-</ul>
+</ol>
+<h2 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h2><p>特点: 无序, 不可重复</p>
+<p>实现类: HashSet, LinkedHashSet, TreeSet</p>
+<p>HashSet: 可以存储null值</p>
+<p>LinkedHashSet: 是HashSet的子类, 可以按插入顺序,遍历集合内的元素</p>
+<p>TreeSet: 可以按照插入元素指定的属性进行排序</p>
 ]]></content>
       <categories>
         <category>java基础</category>

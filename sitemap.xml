@@ -307,13 +307,6 @@
   </url>
   
   <url>
-    <loc>http://www.55555hub.xyz/categories/%E5%89%8D%E7%AB%AF/Vue/</loc>
-    <lastmod>2021-05-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.55555hub.xyz/categories/%E5%89%8D%E7%AB%AF/Node/</loc>
     <lastmod>2021-05-26</lastmod>
     <changefreq>daily</changefreq>
@@ -321,7 +314,7 @@
   </url>
   
   <url>
-    <loc>http://www.55555hub.xyz/categories/java/</loc>
+    <loc>http://www.55555hub.xyz/categories/%E5%89%8D%E7%AB%AF/Vue/</loc>
     <lastmod>2021-05-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -335,7 +328,7 @@
   </url>
   
   <url>
-    <loc>http://www.55555hub.xyz/categories/java/%E5%88%B7%E9%A2%98/</loc>
+    <loc>http://www.55555hub.xyz/categories/java/</loc>
     <lastmod>2021-05-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -343,6 +336,13 @@
   
   <url>
     <loc>http://www.55555hub.xyz/categories/java%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-05-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.55555hub.xyz/categories/java/%E5%88%B7%E9%A2%98/</loc>
     <lastmod>2021-05-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
