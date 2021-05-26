@@ -500,64 +500,6 @@
       </tags>
   </entry>
   <entry>
-    <title>java刷题的知识</title>
-    <url>/2021/04/06/%E5%8D%A1%E7%89%87/%E7%BC%96%E7%A8%8B/java%E5%88%B7%E9%A2%98%E7%9A%84%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ol>
-<li>从标准流输入: Scanner scanner = new Scanner(System.in);</li>
-<li>next[Int/Float…]: 会忽略前面的空格和换行符,从一个数字读取,<strong>会将空格和换行符留在输入的缓冲区内</strong></li>
-<li>nextLine: 会读入一整行,包括其中的空格和换行符,开始读入新的一行时,<strong>注意用提前用nextLine读取上一行的换行符</strong></li>
-<li>hasNext: 如果输入没有明确指明数量,要靠hasNext来检测EOF符号,来中断输入</li>
-<li>读取单个字符: 只有通过nextLine读入一行或next读入一个字符串,后用**charAt()**方法读入</li>
-<li>读入单个数字: 读入的字符后**- ‘0’**</li>
-</ol>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
-<li>java中static变量默认是<strong>零值</strong>,用不着再将其初始化为0,</li>
-</ol>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
-<li>对于基本类型的数组,使用Arrays.toList时**,List中的类型是基本类型数组**,对与引用类型的数组,List中才是引用类型</li>
-<li>查找: Arrays.binarySearch()<ol>
-<li>找得到: 索引</li>
-<li>找不到:<ol>
-<li>比任何一个值都小: -1</li>
-<li>比任何一个值都大: -数组长度 + 1</li>
-<li>中间: - 要插入的位置,(从左往右数第几个,从1开始)</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>二维数组初始化<ol>
-<li>在定义的时候,可以直接**{-{-}-}**初始化</li>
-<li>在new时必须<strong>new int[][]{new int[]{}-}</strong></li>
-</ol>
-</li>
-<li>从List<integer>转为int[]: 只能重新new int[] 在填入</integer></li>
-</ol>
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><ol>
-<li>Comparable接口: 如果实现了,可以利用Collections.sort()或Arrays.sort()直接进行排序,<strong>从小到大进行排序</strong></li>
-<li>Comparator接口: 配合匿名内部类,使用Collections.sort()或Arrays.sort()时可以让不具备比较能力的对象,<strong>具备比较能力</strong>,同样是从小到大进行排序</li>
-</ol>
-<h2 id="容器填充"><a href="#容器填充" class="headerlink" title="容器填充"></a>容器填充</h2><ol>
-<li>使用构造器创建一个容器时,传入一个容器</li>
-<li>容器实例.addAll(另外一容器)</li>
-<li>Collections.addAll(容器,[数组/或多个用逗号分隔的值])</li>
-</ol>
-<h2 id="容器查找"><a href="#容器查找" class="headerlink" title="容器查找"></a>容器查找</h2><ol>
-<li>Collecttions.min或max:可以查找一个无序容器内的最小值或最大值,使用时还可以传比较器,自定义大小</li>
-</ol>
-<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><ol>
-<li>append(): 如果是char类型添加<strong>字符</strong>,如果是int类型添加<strong>int的字面量</strong></li>
-<li>equals(): StringBuilder没有<strong>重写</strong>equals方法</li>
-</ol>
-]]></content>
-      <categories>
-        <category>java</category>
-        <category>刷题</category>
-      </categories>
-      <tags>
-        <tag>解决方法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>认识Node</title>
     <url>/2021/03/22/%E5%89%8D%E7%AB%AF/Node/%E8%AE%A4%E8%AF%86Nodejs/</url>
     <content><![CDATA[<h2 id="什么是Node"><a href="#什么是Node" class="headerlink" title="什么是Node"></a>什么是Node</h2><ul>
@@ -950,6 +892,65 @@
       </tags>
   </entry>
   <entry>
+    <title>webpack的使用</title>
+    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
+    <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#101;&#x62;&#112;&#97;&#99;&#x6b;&#x40;&#x33;&#x2e;&#54;&#x2e;&#x30;">webpack@3.6.0</a> -g全局安装</p>
+<h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
+<li> webpack ./src/main.js ./dist/bundle.js</li>
+<li>index.html中引入/bundle.js文件</li>
+</ul>
+<h2 id="web的配置"><a href="#web的配置" class="headerlink" title="web的配置"></a>web的配置</h2><ul>
+<li><p>创建webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: {</span><br><span class="line">        <span class="comment">//错误写法path: './dist',</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">        filename:  <span class="string">'bundle.s'</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>path必须是一个绝对路径,动态获取路径</p>
+</li>
+<li><p>npm init 可以创建package.json</p>
+</li>
+<li><p>以下可以直接写 webpack</p>
+</li>
+<li><p>npm run “在package.json中script中的脚本”</p>
+</li>
+<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#98;&#112;&#x61;&#99;&#107;&#x40;&#x33;&#x2e;&#x36;&#46;&#48;">webpack@3.6.0</a> –save-dev,</p>
+</li>
+<li><p>webpack是开发时依赖,在devDependencies</p>
+</li>
+<li><p>Dependendcies是运行时依赖</p>
+</li>
+<li><p>只要在terminal中敲webpack用的都是全局的</p>
+</li>
+<li><p>写了脚本,会优先用本地的</p>
+</li>
+</ul>
+<h2 id="模块化CSS"><a href="#模块化CSS" class="headerlink" title="模块化CSS"></a>模块化CSS</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./css/normal.css"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>安装npm install –save-dev css-loader,只负责加载,但不负责,加载到DOM</p>
+<p>use: []是从有往左加载的</p>
+<p>加载大于限制的路径时,要在webpack.config.js文件中配置,publicPath: ‘dist/‘</p>
+<p>将图片防止特定位置</p>
+<ul>
+<li>在url-loader中配置option: name: ‘img/[name].[hash:8].[ext]’</li>
+</ul>
+<h2 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h2><p>npm install –save-dev babel-loader@7 label-core-preset-es2015</p>
+<h2 id="使用Vue"><a href="#使用Vue" class="headerlink" title="使用Vue"></a>使用Vue</h2><ul>
+<li>在js文件中import 命名 from “vue”,这时默认去node_modules</li>
+<li>安装: npm install vue –save</li>
+<li>runtime-only:代码中,不可以有任何的template</li>
+<li>runtime-compiler:代码中,可以包含compiler,compiler可以编译template</li>
+<li>在moduel的同级中配置resolve:{alias: {‘vue$’: ‘vue/dist/vue.esm.js’}}</li>
+</ul>
+<h2 id="template和el关系"><a href="#template和el关系" class="headerlink" title="template和el关系"></a>template和el关系</h2><p>一旦定义了template会将替换掉挂载的元素</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mustache</title>
     <url>/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/%E6%8F%92%E5%80%BC%E7%9A%84%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Mustache语法"><a href="#Mustache语法" class="headerlink" title="Mustache语法:"></a>Mustache语法:</h2><h2 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h2><h2 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h2><h2 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h2><h2 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h2><h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h2><ul>
@@ -1115,65 +1116,6 @@
       </tags>
   </entry>
   <entry>
-    <title>webpack的使用</title>
-    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
-    <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
-<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#x65;&#x62;&#112;&#97;&#99;&#x6b;&#64;&#x33;&#x2e;&#54;&#x2e;&#48;">webpack@3.6.0</a> -g全局安装</p>
-<h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
-<li> webpack ./src/main.js ./dist/bundle.js</li>
-<li>index.html中引入/bundle.js文件</li>
-</ul>
-<h2 id="web的配置"><a href="#web的配置" class="headerlink" title="web的配置"></a>web的配置</h2><ul>
-<li><p>创建webpack.config.js</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: {</span><br><span class="line">        <span class="comment">//错误写法path: './dist',</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">        filename:  <span class="string">'bundle.s'</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>path必须是一个绝对路径,动态获取路径</p>
-</li>
-<li><p>npm init 可以创建package.json</p>
-</li>
-<li><p>以下可以直接写 webpack</p>
-</li>
-<li><p>npm run “在package.json中script中的脚本”</p>
-</li>
-<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#x62;&#112;&#97;&#x63;&#x6b;&#64;&#x33;&#x2e;&#x36;&#46;&#x30;">webpack@3.6.0</a> –save-dev,</p>
-</li>
-<li><p>webpack是开发时依赖,在devDependencies</p>
-</li>
-<li><p>Dependendcies是运行时依赖</p>
-</li>
-<li><p>只要在terminal中敲webpack用的都是全局的</p>
-</li>
-<li><p>写了脚本,会优先用本地的</p>
-</li>
-</ul>
-<h2 id="模块化CSS"><a href="#模块化CSS" class="headerlink" title="模块化CSS"></a>模块化CSS</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./css/normal.css"</span>)</span><br></pre></td></tr></table></figure>
-
-<p>安装npm install –save-dev css-loader,只负责加载,但不负责,加载到DOM</p>
-<p>use: []是从有往左加载的</p>
-<p>加载大于限制的路径时,要在webpack.config.js文件中配置,publicPath: ‘dist/‘</p>
-<p>将图片防止特定位置</p>
-<ul>
-<li>在url-loader中配置option: name: ‘img/[name].[hash:8].[ext]’</li>
-</ul>
-<h2 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h2><p>npm install –save-dev babel-loader@7 label-core-preset-es2015</p>
-<h2 id="使用Vue"><a href="#使用Vue" class="headerlink" title="使用Vue"></a>使用Vue</h2><ul>
-<li>在js文件中import 命名 from “vue”,这时默认去node_modules</li>
-<li>安装: npm install vue –save</li>
-<li>runtime-only:代码中,不可以有任何的template</li>
-<li>runtime-compiler:代码中,可以包含compiler,compiler可以编译template</li>
-<li>在moduel的同级中配置resolve:{alias: {‘vue$’: ‘vue/dist/vue.esm.js’}}</li>
-</ul>
-<h2 id="template和el关系"><a href="#template和el关系" class="headerlink" title="template和el关系"></a>template和el关系</h2><p>一旦定义了template会将替换掉挂载的元素</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>webpack</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>commonjs和SE6模块化开发</title>
     <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/</url>
     <content><![CDATA[<h2 id="SE6模块"><a href="#SE6模块" class="headerlink" title="SE6模块"></a>SE6模块</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"你的模块"</span> <span class="attr">type</span>=<span class="string">module</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1255,6 +1197,64 @@
       </categories>
       <tags>
         <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java刷题的知识</title>
+    <url>/2021/04/06/%E5%8D%A1%E7%89%87/%E7%BC%96%E7%A8%8B/java%E5%88%B7%E9%A2%98%E7%9A%84%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ol>
+<li>从标准流输入: Scanner scanner = new Scanner(System.in);</li>
+<li>next[Int/Float…]: 会忽略前面的空格和换行符,从一个数字读取,<strong>会将空格和换行符留在输入的缓冲区内</strong></li>
+<li>nextLine: 会读入一整行,包括其中的空格和换行符,开始读入新的一行时,<strong>注意用提前用nextLine读取上一行的换行符</strong></li>
+<li>hasNext: 如果输入没有明确指明数量,要靠hasNext来检测EOF符号,来中断输入</li>
+<li>读取单个字符: 只有通过nextLine读入一行或next读入一个字符串,后用**charAt()**方法读入</li>
+<li>读入单个数字: 读入的字符后**- ‘0’**</li>
+</ol>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
+<li>java中static变量默认是<strong>零值</strong>,用不着再将其初始化为0,</li>
+</ol>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
+<li>对于基本类型的数组,使用Arrays.toList时**,List中的类型是基本类型数组**,对与引用类型的数组,List中才是引用类型</li>
+<li>查找: Arrays.binarySearch()<ol>
+<li>找得到: 索引</li>
+<li>找不到:<ol>
+<li>比任何一个值都小: -1</li>
+<li>比任何一个值都大: -数组长度 + 1</li>
+<li>中间: - 要插入的位置,(从左往右数第几个,从1开始)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>二维数组初始化<ol>
+<li>在定义的时候,可以直接**{-{-}-}**初始化</li>
+<li>在new时必须<strong>new int[][]{new int[]{}-}</strong></li>
+</ol>
+</li>
+<li>从List<integer>转为int[]: 只能重新new int[] 在填入</integer></li>
+</ol>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><ol>
+<li>Comparable接口: 如果实现了,可以利用Collections.sort()或Arrays.sort()直接进行排序,<strong>从小到大进行排序</strong></li>
+<li>Comparator接口: 配合匿名内部类,使用Collections.sort()或Arrays.sort()时可以让不具备比较能力的对象,<strong>具备比较能力</strong>,同样是从小到大进行排序</li>
+</ol>
+<h2 id="容器填充"><a href="#容器填充" class="headerlink" title="容器填充"></a>容器填充</h2><ol>
+<li>使用构造器创建一个容器时,传入一个容器</li>
+<li>容器实例.addAll(另外一容器)</li>
+<li>Collections.addAll(容器,[数组/或多个用逗号分隔的值])</li>
+</ol>
+<h2 id="容器查找"><a href="#容器查找" class="headerlink" title="容器查找"></a>容器查找</h2><ol>
+<li>Collecttions.min或max:可以查找一个无序容器内的最小值或最大值,使用时还可以传比较器,自定义大小</li>
+</ol>
+<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><ol>
+<li>append(): 如果是char类型添加<strong>字符</strong>,如果是int类型添加<strong>int的字面量</strong></li>
+<li>equals(): StringBuilder没有<strong>重写</strong>equals方法</li>
+</ol>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>刷题</category>
+      </categories>
+      <tags>
+        <tag>解决方法</tag>
       </tags>
   </entry>
   <entry>
