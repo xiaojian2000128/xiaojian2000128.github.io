@@ -1,337 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>java容器</title>
-    <url>/2021/05/26/%E8%AF%AD%E8%A8%80/java/java%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h3><ol>
-<li>一旦初始化了,容量不可以改变</li>
-<li>一旦定义好后,数组里面元素的类型,就确定了(支持多态)</li>
-</ol>
-<h3 id="数组的弊端"><a href="#数组的弊端" class="headerlink" title="数组的弊端"></a>数组的弊端</h3><ol>
-<li>容量固定</li>
-<li>只能获取数组的容量,不能直接获取数组中元素的个数</li>
-<li>对于插入和删除的效率不高</li>
-</ol>
-<h3 id="数组转Collection"><a href="#数组转Collection" class="headerlink" title="数组转Collection"></a>数组转Collection</h3><p>Arrays.asList: </p>
-<ol>
-<li>如果参数是基本类型的数组,只会被看成一个数组,</li>
-<li>如果是引用数组则可以看成多个元素,通常用于,已经声明的数组转Collection</li>
-<li>这个函数的参数是不定长参数,可以直接写多个引用对象,通常用于创建一个Collection,用于去填充另外一个Collection</li>
-<li>这个方法创建的Collecion不能进行能修改其长度的操作,因为这个list本质还是一个数组</li>
-</ol>
-<h2 id="java集合框架"><a href="#java集合框架" class="headerlink" title="java集合框架"></a>java集合框架</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><ul>
-<li><p>List</p>
+    <title>Docker的使用</title>
+    <url>/2021/03/22/%E5%B7%A5%E5%85%B7/Docker%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="Docker的概述"><a href="#Docker的概述" class="headerlink" title="Docker的概述"></a>Docker的概述</h2><p>Docker:把应用和环境(镜像)一起打包,通过容器相互隔离</p>
+<p>虚拟化技术:容器和虚拟机</p>
+<p>Docker相比vm,是非常的轻巧,只有最核心的环境,不适一个完整的操作系统,直接运行在宿主机的内核,也没有虚拟硬件,Docker是go语言写的</p>
+<p>docker进行就好比是一个模版,可以通过镜像创建多个容器</p>
+<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><ul>
+<li>卸载旧版本的Docker</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum remove docker \</span></span><br><span class="line"><span class="bash">                 docker-client \</span></span><br><span class="line"><span class="bash">                 docker-client-latest \</span></span><br><span class="line"><span class="bash">                 docker-common \</span></span><br><span class="line"><span class="bash">                 docker-latest \</span></span><br><span class="line"><span class="bash">                 docker-latest-logrotate \</span></span><br><span class="line"><span class="bash">                 docker-logrotate \</span></span><br><span class="line"><span class="bash">                 docker-engine</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>ArrayList</li>
-<li>LinkedList</li>
-<li>Vector</li>
+<li>安装依赖和配置仓库</li>
 </ul>
-</li>
-<li><p>Set</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install -y yum-utils</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo yum-config-manager \</span></span><br><span class="line"><span class="bash">    --add-repo \</span></span><br><span class="line"><span class="bash">    <span class="comment">#可以将仓库地址换为阿里云的仓库地址</span></span></span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>HashSet</p>
+<li>安装Docker引擎</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install docker-ce docker-ce-cli containerd.io</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>LinkedHashSet</li>
+<li>启动Docker</li>
 </ul>
-</li>
-<li><p>TreeSet</p>
-</li>
-</ul>
-</li>
-<li><p>Queue</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl start docker</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>Deque</li>
+<li>运行案例</li>
 </ul>
-</li>
-</ul>
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
-<li><p>HashMap</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo docker run 镜像名</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>LinkedHashMap</li>
+<li>阿里云镜像加速</li>
 </ul>
-</li>
-<li><p>TreeMap</p>
-</li>
-<li><p>Hashtable</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo mkdir -p /etc/docker</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span></span><br><span class="line">{</span><br><span class="line">  "registry-mirrors": ["https://x6q6y7t0.mirror.aliyuncs.com"]</span><br><span class="line">}</span><br><span class="line">EOF</span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl daemon-reload</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl restart docker</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker的位置"><a href="#Docker的位置" class="headerlink" title="Docker的位置"></a>Docker的位置</h3><p>/var/lib/docker</p>
+<h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">显示docker的版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker version</span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看docker的镜像信息,和docker的详细信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker info</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看所有本地的主机上的镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker images</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">搜索镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker search 镜像名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">下载镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker pull 镜像名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">删除镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker rmi -f  镜像ID</span>  </span><br></pre></td></tr></table></figure>
+
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><ul>
+<li>新建容器并运行</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run [可选参数] image</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可选参数</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --name <span class="string">'Name'</span>	 	 容器名字</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -d				后台方式运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -it				使用交互方式运行,进入容器查看内容</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p				指定容器的端口</span> </span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>Properties</li>
+<li>查看运行的容器</li>
 </ul>
-</li>
-</ul>
-<h2 id="Collection的方法"><a href="#Collection的方法" class="headerlink" title="Collection的方法"></a>Collection的方法</h2><ul>
-<li><p>增加: add, addAll</p>
-</li>
-<li><p>删除: remove, removeAll, retainAll, clear</p>
-</li>
-<li><p>包含: contains, containsAll</p>
-</li>
-<li><p>大小: size</p>
-</li>
-<li><p>是否为空: isEmpty</p>
-</li>
-<li><p>转数组: toArray</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps</span> </span><br><span class="line"><span class="meta">#</span><span class="bash">可选参数</span></span><br><span class="line">-a 				列出运行过的+正在运行的</span><br><span class="line">-q				只显示容器的编号</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>不传参数,默认是Object数组</p>
-</li>
-<li><p>传对象数组,则转为对象数组</p>
-</li>
-<li><p>转数组的方法无法转成基本类型数组</p>
-</li>
+<li>从容器中退出</li>
 </ul>
-</li>
-<li><p>迭代: iterator</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 从容器中停止并退出</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">exit</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 从容器中不停止退出</span></span><br><span class="line">Ctrl + P + Q</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>实现了iterable接口,必须要实现iterator方法</li>
-<li>实现iterable接口,是增强for/in的充分不必要条件,数组 没有实现iterable接口仍可以使用增减for/in</li>
+<li>删除容器</li>
 </ul>
-</li>
-<li><p>重写Object: equals, toString, hashCode</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker rm -f $(docker ps -aq)(也可以写文件名)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可选参数</span></span><br><span class="line"><span class="meta">#</span><span class="bash">-f				强制删除</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>equals:List要求元素顺序相同, Set不要求元素顺序相同</li>
+<li>#启动和停止容器</li>
 </ul>
-</li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker start 容器id</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker restart 容器id</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker stop 容器id(自己去的容器名)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">kill</span> 容器id</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="操作命令"><a href="#操作命令" class="headerlink" title="操作命令"></a>操作命令</h3><ul>
+<li>后台启动服务</li>
 </ul>
-<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>为容器提供一种统一的遍历方式,同时又不暴露容器内部实现细节</p>
-<h3 id="拥有的方法"><a href="#拥有的方法" class="headerlink" title="拥有的方法"></a>拥有的方法</h3><p>hasNext, next, remove</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -d 镜像名</span></span><br></pre></td></tr></table></figure>
+
+<p>如果运行的容器没有前台应用,容器会自动停止</p>
 <ul>
-<li><p>remove已经被默认实现了,不用再被实现</p>
-</li>
-<li><p>IllegalException:</p>
+<li>查看容器中的进程信息</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker top 容器id</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>如果不掉用next方法就使用remove</li>
-<li>如果已经调用了remove,接着再调用remove</li>
+<li>查看容器的元数据</li>
 </ul>
-</li>
-</ul>
-<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>特点: 有序,可重复</p>
-<p>实现类: ArrayList,LinkedList,Vector</p>
-<h3 id="三者的异同"><a href="#三者的异同" class="headerlink" title="三者的异同"></a>三者的异同</h3><ul>
-<li>三者的相同: 存储特点都是有序,可重复,都实现了List接口</li>
-<li>ArrayList和Vector的异同: <ul>
-<li>相同: 底层都是用数组实现的,</li>
-<li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用默认构造器,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
-<li>tip: StringBuffer中的数组是变为原来的2倍+2</li>
-</ul>
-</li>
-<li>ArrayList和LinkedList的异同:<ul>
-<li>相同: 都是从jdk1.2才开始出现</li>
-<li>不同: ArrayList底层使用数组实现的,对于查找效率,比较高,但对于删除和插入效率比较低,每次删除和插入元素,都会导致数组内其它元素的前移和后移,导致性能消耗,LinkedList底层使用的是双向链表,拥有一个静态内部类Node,和两个Node的成员变量作为头指针和尾指针,对于查找效率较低,但对于插入和删除效率较高,只需要修改前后节点的指针</li>
-</ul>
-</li>
-</ul>
-<h3 id="List接口的方法"><a href="#List接口的方法" class="headerlink" title="List接口的方法"></a>List接口的方法</h3><p>因为List接口是有序的,所以List在Collection接口基础上增加了一些关于索引的方法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker inspect 容器id</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>增加: add(int index, Object ele), addAll(int index, Collection coll)</li>
-<li>删除: remove(int index)<ul>
-<li>这个方法必须传基本数据类型</li>
+<li>进入正在运行的容器</li>
 </ul>
-</li>
-<li>修改: set(int index, Object o)</li>
-<li>查找: get(int index), IndexOf(Object o), lastIndexOf(Object o)</li>
-<li>切分: subList(int fromIndex, int toIndex)<ul>
-<li>左边右开, 返回一个新的List, 不会对原本的List进行修改</li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入容器后进入一个新的终端</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it 容器id(自己取的容器名) /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器正在运行的终端</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker attach 容器id</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从容器内拷贝文件到主机</li>
 </ul>
-</li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker cp 容器id:目录/文件 主机的目录</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看docker的运行状态</li>
 </ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker stats</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h2><p>创建自己的镜像</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cocker commit -a=<span class="string">"xiaojian"</span> -m=<span class="string">"描述"</span> 容器id 自己取的镜像名:标签</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h2><p>容器的持久化和同步操作,容器间的数据共享</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -v 主机的目录:容器的目录[:ro/rw] 容器id(容器名)</span></span><br></pre></td></tr></table></figure>
+
+<p>主机上和容器中会各占一份空间,双倍的空间</p>
+<p>默认是rw是容器对该文件可读可写的,ro是容器对该文件可读的</p>
+<h3 id="匿名挂载"><a href="#匿名挂载" class="headerlink" title="匿名挂载"></a>匿名挂载</h3><p>不写容器外的地址</p>
+<h3 id="具名挂载"><a href="#具名挂载" class="headerlink" title="具名挂载"></a>具名挂载</h3><p>把容器外的地址写成一个名字</p>
+<h3 id="挂载的位置"><a href="#挂载的位置" class="headerlink" title="挂载的位置"></a>挂载的位置</h3><p>/var/lib/docker/vomumes</p>
+<h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><p>dockerfile用来构建镜像的文件</p>
+<h2 id="Docker网络服务"><a href="#Docker网络服务" class="headerlink" title="Docker网络服务"></a>Docker网络服务</h2><h2 id="IDEA整合Docker"><a href="#IDEA整合Docker" class="headerlink" title="IDEA整合Docker"></a>IDEA整合Docker</h2><h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><h2 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="Docker Swarm"></a>Docker Swarm</h2><h2 id="CI-CD-Jenkins"><a href="#CI-CD-Jenkins" class="headerlink" title="CI\CD Jenkins"></a>CI\CD Jenkins</h2><h2 id="Docker错误解决"><a href="#Docker错误解决" class="headerlink" title="Docker错误解决"></a>Docker错误解决</h2><p>服务器宕机后,docker服务被关闭,需要重新开启</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</span><br></pre></td></tr></table></figure>
+
+<p>解决方法:systemctl start docker</p>
 ]]></content>
       <categories>
-        <category>java 基础</category>
+        <category>工具</category>
+        <category>Docker</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/05/26/java/java%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h3><ol>
-<li>一旦初始化了,容量不可以改变</li>
-<li>一旦定义好后,数组里面元素的类型,就确定了(支持多态)</li>
+    <title>hexo文章发布</title>
+    <url>/2021/03/11/%E5%B7%A5%E5%85%B7/Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
+<li>cd 55555Blog</li>
+<li>hexo new [-p 路径] 文章的标题</li>
+<li>hexo clean</li>
+<li>hexo g</li>
+<li>hexo d</li>
 </ol>
-<h3 id="数组的弊端"><a href="#数组的弊端" class="headerlink" title="数组的弊端"></a>数组的弊端</h3><ol>
-<li>容量固定</li>
-<li>只能获取数组的容量,不能直接获取数组中元素的个数</li>
-<li>对于插入和删除的效率不高</li>
-</ol>
-<h3 id="数组转Collection"><a href="#数组转Collection" class="headerlink" title="数组转Collection"></a>数组转Collection</h3><p>Arrays.asList: </p>
-<ol>
-<li>如果参数是基本类型的数组,只会被看成一个数组,</li>
-<li>如果是引用数组则可以看成多个元素,通常用于,已经声明的数组转Collection</li>
-<li>这个函数的参数是不定长参数,可以直接写多个引用对象,通常用于创建一个Collection,用于去填充另外一个Collection</li>
-<li>这个方法创建的Collecion不能进行能修改其长度的操作,因为这个list本质还是一个数组</li>
-</ol>
-<h2 id="java集合框架"><a href="#java集合框架" class="headerlink" title="java集合框架"></a>java集合框架</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><ul>
-<li><p>List</p>
-<ul>
-<li>ArrayList</li>
-<li>LinkedList</li>
-<li>Vector</li>
+<h2 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h2><ul>
+<li>文件头的描述信息的：的后面必须有空格</li>
+<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
+<li>第5,6步可联合写成 hexo g -d</li>
 </ul>
-</li>
-<li><p>Set</p>
-<ul>
-<li><p>HashSet</p>
-<ul>
-<li>LinkedHashSet</li>
-</ul>
-</li>
-<li><p>TreeSet</p>
-</li>
-</ul>
-</li>
-<li><p>Queue</p>
-<ul>
-<li>Deque</li>
-</ul>
-</li>
-</ul>
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
-<li><p>HashMap</p>
-<ul>
-<li>LinkedHashMap</li>
-</ul>
-</li>
-<li><p>TreeMap</p>
-</li>
-<li><p>Hashtable</p>
-<ul>
-<li>Properties</li>
-</ul>
-</li>
-</ul>
-<h2 id="Collection的方法"><a href="#Collection的方法" class="headerlink" title="Collection的方法"></a>Collection的方法</h2><ul>
-<li><p>增加: add, addAll</p>
-</li>
-<li><p>删除: remove, removeAll, retainAll, clear</p>
-</li>
-<li><p>包含: contains, containsAll</p>
-</li>
-<li><p>大小: size</p>
-</li>
-<li><p>是否为空: isEmpty</p>
-</li>
-<li><p>转数组: toArray</p>
-<ul>
-<li><p>不传参数,默认是Object数组</p>
-</li>
-<li><p>传对象数组,则转为对象数组</p>
-</li>
-<li><p>转数组的方法无法转成基本类型数组</p>
-</li>
-</ul>
-</li>
-<li><p>迭代: iterator</p>
-<ul>
-<li>实现了iterable接口,必须要实现iterator方法</li>
-<li>实现iterable接口,是增强for/in的充分不必要条件,数组 没有实现iterable接口仍可以使用增减for/in</li>
-</ul>
-</li>
-<li><p>重写Object: equals, toString, hashCode</p>
-<ul>
-<li>equals:List要求元素顺序相同, Set不要求元素顺序相同</li>
-</ul>
-</li>
-</ul>
-<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>为容器提供一种统一的遍历方式,同时又不暴露容器内部实现细节</p>
-<h3 id="拥有的方法"><a href="#拥有的方法" class="headerlink" title="拥有的方法"></a>拥有的方法</h3><p>hasNext, next, remove</p>
-<ul>
-<li><p>remove已经被默认实现了,不用再被实现</p>
-</li>
-<li><p>IllegalException:</p>
-<ul>
-<li>如果不掉用next方法就使用remove</li>
-<li>如果已经调用了remove,接着再调用remove</li>
-</ul>
-</li>
-</ul>
-<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>特点: 有序,可重复</p>
-<p>实现类: ArrayList,LinkedList,Vector</p>
-<h3 id="三者的异同"><a href="#三者的异同" class="headerlink" title="三者的异同"></a>三者的异同</h3><ul>
-<li>三者的相同: 存储特点都是有序,可重复,都实现了List接口</li>
-<li>ArrayList和Vector的异同: <ul>
-<li>相同: 底层都是用数组实现的,</li>
-<li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用默认构造器,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
-<li>tip: StringBuffer中的数组是变为原来的2倍+2</li>
-</ul>
-</li>
-<li>ArrayList和LinkedList的异同:<ul>
-<li>相同: 都是从jdk1.2才开始出现</li>
-<li>不同: ArrayList底层使用数组实现的,对于查找效率,比较高,但对于删除和插入效率比较低,每次删除和插入元素,都会导致数组内其它元素的前移和后移,导致性能消耗,LinkedList底层使用的是双向链表,拥有一个静态内部类Node,和两个Node的成员变量作为头指针和尾指针,对于查找效率较低,但对于插入和删除效率较高,只需要修改前后节点的指针</li>
-</ul>
-</li>
-</ul>
-<h3 id="List接口的方法"><a href="#List接口的方法" class="headerlink" title="List接口的方法"></a>List接口的方法</h3><p>因为List接口是有序的,所以List在Collection接口基础上增加了一些关于索引的方法</p>
-<ul>
-<li>增加: add(int index, Object ele), addAll(int index, Collection coll)</li>
-<li>删除: remove(int index)<ul>
-<li>这个方法必须传基本数据类型</li>
-</ul>
-</li>
-<li>修改: set(int index, Object o)</li>
-<li>查找: get(int index), IndexOf(Object o), lastIndexOf(Object o)</li>
-<li>切分: subList(int fromIndex, int toIndex)<ul>
-<li>左边右开, 返回一个新的List, 不会对原本的List进行修改</li>
-</ul>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>java刷题的知识</title>
-    <url>/2021/04/06/%E5%8D%A1%E7%89%87/%E7%BC%96%E7%A8%8B/java%E5%88%B7%E9%A2%98%E7%9A%84%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ol>
-<li>从标准流输入: Scanner scanner = new Scanner(System.in);</li>
-<li>next[Int/Float…]: 会忽略前面的空格和换行符,从一个数字读取,<strong>会将空格和换行符留在输入的缓冲区内</strong></li>
-<li>nextLine: 会读入一整行,包括其中的空格和换行符,开始读入新的一行时,<strong>注意用提前用nextLine读取上一行的换行符</strong></li>
-<li>hasNext: 如果输入没有明确指明数量,要靠hasNext来检测EOF符号,来中断输入</li>
-<li>读取单个字符: 只有通过nextLine读入一行或next读入一个字符串,后用**charAt()**方法读入</li>
-<li>读入单个数字: 读入的字符后**- ‘0’**</li>
-</ol>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
-<li>java中static变量默认是<strong>零值</strong>,用不着再将其初始化为0,</li>
-</ol>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
-<li>对于基本类型的数组,使用Arrays.toList时**,List中的类型是基本类型数组**,对与引用类型的数组,List中才是引用类型</li>
-<li>查找: Arrays.binarySearch()<ol>
-<li>找得到: 索引</li>
-<li>找不到:<ol>
-<li>比任何一个值都小: -1</li>
-<li>比任何一个值都大: -数组长度 + 1</li>
-<li>中间: - 要插入的位置,(从左往右数第几个,从1开始)</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>二维数组初始化<ol>
-<li>在定义的时候,可以直接**{-{-}-}**初始化</li>
-<li>在new时必须<strong>new int[][]{new int[]{}-}</strong></li>
-</ol>
-</li>
-<li>从List<integer>转为int[]: 只能重新new int[] 在填入</integer></li>
-</ol>
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><ol>
-<li>Comparable接口: 如果实现了,可以利用Collections.sort()或Arrays.sort()直接进行排序,<strong>从小到大进行排序</strong></li>
-<li>Comparator接口: 配合匿名内部类,使用Collections.sort()或Arrays.sort()时可以让不具备比较能力的对象,<strong>具备比较能力</strong>,同样是从小到大进行排序</li>
-</ol>
-<h2 id="容器填充"><a href="#容器填充" class="headerlink" title="容器填充"></a>容器填充</h2><ol>
-<li>使用构造器创建一个容器时,传入一个容器</li>
-<li>容器实例.addAll(另外一容器)</li>
-<li>Collections.addAll(容器,[数组/或多个用逗号分隔的值])</li>
-</ol>
-<h2 id="容器查找"><a href="#容器查找" class="headerlink" title="容器查找"></a>容器查找</h2><ol>
-<li>Collecttions.min或max:可以查找一个无序容器内的最小值或最大值,使用时还可以传比较器,自定义大小</li>
-</ol>
-<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><ol>
-<li>append(): 如果是char类型添加<strong>字符</strong>,如果是int类型添加<strong>int的字面量</strong></li>
-<li>equals(): StringBuilder没有<strong>重写</strong>equals方法</li>
-</ol>
 ]]></content>
       <categories>
-        <category>java</category>
-        <category>刷题</category>
+        <category>工具使用</category>
       </categories>
       <tags>
-        <tag>解决方法</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx的使用</title>
+    <url>/2021/03/22/%E5%B7%A5%E5%85%B7/Nginx%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h2><p>Nginx是一个高性能的HTTP和反向代理服务器</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><ul>
+<li>正向代理: 在客户端需要配置代理服务器</li>
+<li>反向代理: 在客户端是无感知的,客户端访问的是访问反向代理服务器</li>
+</ul>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><pre><code>+ 将原先请求分发到多个服务器</code></pre>
+<h3 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h3><ul>
+<li>将静态和动态资源分开部署</li>
+</ul>
+<h2 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h2><ul>
+<li>官网 nginx.org</li>
+<li>安装依赖: yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</li>
+<li>安装nginx: <ol>
+<li>tar -zxvf nginx.xx.tar.gz</li>
+<li>进入解压缩目录,执行./configure</li>
+<li>make &amp;&amp; make install</li>
+<li>以上命令需要切换为root用户</li>
+<li>注意sudo passwd root,第一切换为超级用户时,需要执行</li>
+</ol>
+</li>
+<li>安装成功:/usr/local/sbin</li>
+<li>执行在/usr/local/sbin/nginx</li>
+<li>centos:开放防火墙<ul>
+<li>firewall-cmd –list-all</li>
+<li>firewall-cmd –add-service=http –permanent</li>
+<li>sudo firewall-cmd –add-port=80/tcp –permanent</li>
+<li>firewall-cmd –reload</li>
+</ul>
+</li>
+<li>没有设置防火墙也有可能可以访问</li>
+</ul>
+<h2 id="Nginx的常用命令"><a href="#Nginx的常用命令" class="headerlink" title="Nginx的常用命令"></a>Nginx的常用命令</h2><ul>
+<li>必须要进入sbin中,才能使用 命令</li>
+<li>查看Nginx的版本: ./nginx -v</li>
+<li>关闭Nginx: ./nginx -s stop</li>
+<li>启动Nginx: ./nginx</li>
+<li>重加载: 修改后 config后,./nginx -s reload</li>
+</ul>
+<h2 id="Nginx的配置文件"><a href="#Nginx的配置文件" class="headerlink" title="Nginx的配置文件"></a>Nginx的配置文件</h2><ul>
+<li>位置: /usr/local/conf/ngnix.config</li>
+<li>组成: <ul>
+<li>全局块: 从开始到events的之前的值<ul>
+<li>worker process值越大,可以支持的并发处理量也越大</li>
+</ul>
+</li>
+<li>events块<ul>
+<li> work_connections 1024: 支持的最大连接数</li>
+</ul>
+</li>
+<li>http块</li>
+</ul>
+</li>
+</ul>
+<h2 id="反向代理-1"><a href="#反向代理-1" class="headerlink" title="反向代理"></a>反向代理</h2><ul>
+<li>单个服务器:在serve中添加proxy_pass http://你的服务器地址:你的端口</li>
+<li>多个服务器: location ~ /edu/ {proxy_pass <a href="http://127.0.0.1:8081}">http://127.0.0.1:8081}</a> location ~ /vod/{proxy_pass <a href="http://127.0.0.1:8080}">http://127.0.0.1:8080}</a></li>
+</ul>
+<h2 id="负载均衡-1"><a href="#负载均衡-1" class="headerlink" title="负载均衡"></a>负载均衡</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http {</span><br><span class="line">	upstream myserver{</span><br><span class="line">		server 192.168.22.134:8081;</span><br><span class="line">		server 192.168.22.134:8080;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">server {</span><br><span class="line">	location / {</span><br><span class="line">		proxy_pass http://myserver;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="nginx使用的分配策略"><a href="#nginx使用的分配策略" class="headerlink" title="nginx使用的分配策略"></a>nginx使用的分配策略</h3><ul>
+<li>轮询</li>
+<li>weight: server xxxx weight=xxx,权重默认为1</li>
+<li>ip_hash myserver{ip_hash;}:每个IP访问固定的服务器</li>
+<li>fair:根据相应的时间,写法与ip_hash一样</li>
+</ul>
+<h2 id="动静分离-1"><a href="#动静分离-1" class="headerlink" title="动静分离"></a>动静分离</h2><p>将动态请求发给后端服务器,例如要访问数据中的文件中</p>
+<p>将静态请求发给前端服务器,列如图片</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">local /www/ {</span><br><span class="line">	root //data/;</span><br><span class="line">	index index.html index;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">local /image/ {</span><br><span class="line">	root /data/;</span><br><span class="line"><span class="meta">	#</span><span class="bash">列出反目录,作用不大</span></span><br><span class="line">	autoindex on;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h3><ul>
+<li>要ping通虚拟机:<ul>
+<li>要防火墙开启相应的端口</li>
+<li>vm8要和虚拟机的ip地址在同一网段</li>
+<li>ifconfig可以查看虚拟机ip地址,ens33是ip地址</li>
+</ul>
+</li>
+<li>host:<ul>
+<li>可以在当中添加ip和域名的映射</li>
+</ul>
+</li>
+<li>多个服务器要注意:开启多个服务端口</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -592,222 +500,61 @@
       </tags>
   </entry>
   <entry>
-    <title>Docker的使用</title>
-    <url>/2021/03/22/%E5%B7%A5%E5%85%B7/Docker%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="Docker的概述"><a href="#Docker的概述" class="headerlink" title="Docker的概述"></a>Docker的概述</h2><p>Docker:把应用和环境(镜像)一起打包,通过容器相互隔离</p>
-<p>虚拟化技术:容器和虚拟机</p>
-<p>Docker相比vm,是非常的轻巧,只有最核心的环境,不适一个完整的操作系统,直接运行在宿主机的内核,也没有虚拟硬件,Docker是go语言写的</p>
-<p>docker进行就好比是一个模版,可以通过镜像创建多个容器</p>
-<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><ul>
-<li>卸载旧版本的Docker</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum remove docker \</span></span><br><span class="line"><span class="bash">                 docker-client \</span></span><br><span class="line"><span class="bash">                 docker-client-latest \</span></span><br><span class="line"><span class="bash">                 docker-common \</span></span><br><span class="line"><span class="bash">                 docker-latest \</span></span><br><span class="line"><span class="bash">                 docker-latest-logrotate \</span></span><br><span class="line"><span class="bash">                 docker-logrotate \</span></span><br><span class="line"><span class="bash">                 docker-engine</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装依赖和配置仓库</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install -y yum-utils</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo yum-config-manager \</span></span><br><span class="line"><span class="bash">    --add-repo \</span></span><br><span class="line"><span class="bash">    <span class="comment">#可以将仓库地址换为阿里云的仓库地址</span></span></span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装Docker引擎</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install docker-ce docker-ce-cli containerd.io</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动Docker</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl start docker</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>运行案例</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo docker run 镜像名</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>阿里云镜像加速</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo mkdir -p /etc/docker</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span></span><br><span class="line">{</span><br><span class="line">  "registry-mirrors": ["https://x6q6y7t0.mirror.aliyuncs.com"]</span><br><span class="line">}</span><br><span class="line">EOF</span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl daemon-reload</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl restart docker</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Docker的位置"><a href="#Docker的位置" class="headerlink" title="Docker的位置"></a>Docker的位置</h3><p>/var/lib/docker</p>
-<h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">显示docker的版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker version</span></span><br><span class="line"><span class="meta">#</span><span class="bash">查看docker的镜像信息,和docker的详细信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker info</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看所有本地的主机上的镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker images</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">搜索镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker search 镜像名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">下载镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker pull 镜像名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">删除镜像</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker rmi -f  镜像ID</span>  </span><br></pre></td></tr></table></figure>
-
-<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><ul>
-<li>新建容器并运行</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run [可选参数] image</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可选参数</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --name <span class="string">'Name'</span>	 	 容器名字</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -d				后台方式运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -it				使用交互方式运行,进入容器查看内容</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p				指定容器的端口</span> </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看运行的容器</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker ps</span> </span><br><span class="line"><span class="meta">#</span><span class="bash">可选参数</span></span><br><span class="line">-a 				列出运行过的+正在运行的</span><br><span class="line">-q				只显示容器的编号</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从容器中退出</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 从容器中停止并退出</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">exit</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 从容器中不停止退出</span></span><br><span class="line">Ctrl + P + Q</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除容器</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker rm -f $(docker ps -aq)(也可以写文件名)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可选参数</span></span><br><span class="line"><span class="meta">#</span><span class="bash">-f				强制删除</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>#启动和停止容器</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker start 容器id</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker restart 容器id</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker stop 容器id(自己去的容器名)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">kill</span> 容器id</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="操作命令"><a href="#操作命令" class="headerlink" title="操作命令"></a>操作命令</h3><ul>
-<li>后台启动服务</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -d 镜像名</span></span><br></pre></td></tr></table></figure>
-
-<p>如果运行的容器没有前台应用,容器会自动停止</p>
-<ul>
-<li>查看容器中的进程信息</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker top 容器id</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看容器的元数据</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker inspect 容器id</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>进入正在运行的容器</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入容器后进入一个新的终端</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it 容器id(自己取的容器名) /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器正在运行的终端</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker attach 容器id</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从容器内拷贝文件到主机</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker cp 容器id:目录/文件 主机的目录</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看docker的运行状态</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker stats</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h2><p>创建自己的镜像</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cocker commit -a=<span class="string">"xiaojian"</span> -m=<span class="string">"描述"</span> 容器id 自己取的镜像名:标签</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h2><p>容器的持久化和同步操作,容器间的数据共享</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -v 主机的目录:容器的目录[:ro/rw] 容器id(容器名)</span></span><br></pre></td></tr></table></figure>
-
-<p>主机上和容器中会各占一份空间,双倍的空间</p>
-<p>默认是rw是容器对该文件可读可写的,ro是容器对该文件可读的</p>
-<h3 id="匿名挂载"><a href="#匿名挂载" class="headerlink" title="匿名挂载"></a>匿名挂载</h3><p>不写容器外的地址</p>
-<h3 id="具名挂载"><a href="#具名挂载" class="headerlink" title="具名挂载"></a>具名挂载</h3><p>把容器外的地址写成一个名字</p>
-<h3 id="挂载的位置"><a href="#挂载的位置" class="headerlink" title="挂载的位置"></a>挂载的位置</h3><p>/var/lib/docker/vomumes</p>
-<h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><p>dockerfile用来构建镜像的文件</p>
-<h2 id="Docker网络服务"><a href="#Docker网络服务" class="headerlink" title="Docker网络服务"></a>Docker网络服务</h2><h2 id="IDEA整合Docker"><a href="#IDEA整合Docker" class="headerlink" title="IDEA整合Docker"></a>IDEA整合Docker</h2><h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><h2 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="Docker Swarm"></a>Docker Swarm</h2><h2 id="CI-CD-Jenkins"><a href="#CI-CD-Jenkins" class="headerlink" title="CI\CD Jenkins"></a>CI\CD Jenkins</h2><h2 id="Docker错误解决"><a href="#Docker错误解决" class="headerlink" title="Docker错误解决"></a>Docker错误解决</h2><p>服务器宕机后,docker服务被关闭,需要重新开启</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</span><br></pre></td></tr></table></figure>
-
-<p>解决方法:systemctl start docker</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx的使用</title>
-    <url>/2021/03/22/%E5%B7%A5%E5%85%B7/Nginx%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h2><p>Nginx是一个高性能的HTTP和反向代理服务器</p>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><ul>
-<li>正向代理: 在客户端需要配置代理服务器</li>
-<li>反向代理: 在客户端是无感知的,客户端访问的是访问反向代理服务器</li>
-</ul>
-<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><pre><code>+ 将原先请求分发到多个服务器</code></pre>
-<h3 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h3><ul>
-<li>将静态和动态资源分开部署</li>
-</ul>
-<h2 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h2><ul>
-<li>官网 nginx.org</li>
-<li>安装依赖: yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</li>
-<li>安装nginx: <ol>
-<li>tar -zxvf nginx.xx.tar.gz</li>
-<li>进入解压缩目录,执行./configure</li>
-<li>make &amp;&amp; make install</li>
-<li>以上命令需要切换为root用户</li>
-<li>注意sudo passwd root,第一切换为超级用户时,需要执行</li>
+    <title>java刷题的知识</title>
+    <url>/2021/04/06/%E5%8D%A1%E7%89%87/%E7%BC%96%E7%A8%8B/java%E5%88%B7%E9%A2%98%E7%9A%84%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ol>
+<li>从标准流输入: Scanner scanner = new Scanner(System.in);</li>
+<li>next[Int/Float…]: 会忽略前面的空格和换行符,从一个数字读取,<strong>会将空格和换行符留在输入的缓冲区内</strong></li>
+<li>nextLine: 会读入一整行,包括其中的空格和换行符,开始读入新的一行时,<strong>注意用提前用nextLine读取上一行的换行符</strong></li>
+<li>hasNext: 如果输入没有明确指明数量,要靠hasNext来检测EOF符号,来中断输入</li>
+<li>读取单个字符: 只有通过nextLine读入一行或next读入一个字符串,后用**charAt()**方法读入</li>
+<li>读入单个数字: 读入的字符后**- ‘0’**</li>
+</ol>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
+<li>java中static变量默认是<strong>零值</strong>,用不着再将其初始化为0,</li>
+</ol>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
+<li>对于基本类型的数组,使用Arrays.toList时**,List中的类型是基本类型数组**,对与引用类型的数组,List中才是引用类型</li>
+<li>查找: Arrays.binarySearch()<ol>
+<li>找得到: 索引</li>
+<li>找不到:<ol>
+<li>比任何一个值都小: -1</li>
+<li>比任何一个值都大: -数组长度 + 1</li>
+<li>中间: - 要插入的位置,(从左往右数第几个,从1开始)</li>
 </ol>
 </li>
-<li>安装成功:/usr/local/sbin</li>
-<li>执行在/usr/local/sbin/nginx</li>
-<li>centos:开放防火墙<ul>
-<li>firewall-cmd –list-all</li>
-<li>firewall-cmd –add-service=http –permanent</li>
-<li>sudo firewall-cmd –add-port=80/tcp –permanent</li>
-<li>firewall-cmd –reload</li>
-</ul>
+</ol>
 </li>
-<li>没有设置防火墙也有可能可以访问</li>
-</ul>
-<h2 id="Nginx的常用命令"><a href="#Nginx的常用命令" class="headerlink" title="Nginx的常用命令"></a>Nginx的常用命令</h2><ul>
-<li>必须要进入sbin中,才能使用 命令</li>
-<li>查看Nginx的版本: ./nginx -v</li>
-<li>关闭Nginx: ./nginx -s stop</li>
-<li>启动Nginx: ./nginx</li>
-<li>重加载: 修改后 config后,./nginx -s reload</li>
-</ul>
-<h2 id="Nginx的配置文件"><a href="#Nginx的配置文件" class="headerlink" title="Nginx的配置文件"></a>Nginx的配置文件</h2><ul>
-<li>位置: /usr/local/conf/ngnix.config</li>
-<li>组成: <ul>
-<li>全局块: 从开始到events的之前的值<ul>
-<li>worker process值越大,可以支持的并发处理量也越大</li>
-</ul>
+<li>二维数组初始化<ol>
+<li>在定义的时候,可以直接**{-{-}-}**初始化</li>
+<li>在new时必须<strong>new int[][]{new int[]{}-}</strong></li>
+</ol>
 </li>
-<li>events块<ul>
-<li> work_connections 1024: 支持的最大连接数</li>
-</ul>
-</li>
-<li>http块</li>
-</ul>
-</li>
-</ul>
-<h2 id="反向代理-1"><a href="#反向代理-1" class="headerlink" title="反向代理"></a>反向代理</h2><ul>
-<li>单个服务器:在serve中添加proxy_pass http://你的服务器地址:你的端口</li>
-<li>多个服务器: location ~ /edu/ {proxy_pass <a href="http://127.0.0.1:8081}">http://127.0.0.1:8081}</a> location ~ /vod/{proxy_pass <a href="http://127.0.0.1:8080}">http://127.0.0.1:8080}</a></li>
-</ul>
-<h2 id="负载均衡-1"><a href="#负载均衡-1" class="headerlink" title="负载均衡"></a>负载均衡</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http {</span><br><span class="line">	upstream myserver{</span><br><span class="line">		server 192.168.22.134:8081;</span><br><span class="line">		server 192.168.22.134:8080;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">server {</span><br><span class="line">	location / {</span><br><span class="line">		proxy_pass http://myserver;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<h3 id="nginx使用的分配策略"><a href="#nginx使用的分配策略" class="headerlink" title="nginx使用的分配策略"></a>nginx使用的分配策略</h3><ul>
-<li>轮询</li>
-<li>weight: server xxxx weight=xxx,权重默认为1</li>
-<li>ip_hash myserver{ip_hash;}:每个IP访问固定的服务器</li>
-<li>fair:根据相应的时间,写法与ip_hash一样</li>
-</ul>
-<h2 id="动静分离-1"><a href="#动静分离-1" class="headerlink" title="动静分离"></a>动静分离</h2><p>将动态请求发给后端服务器,例如要访问数据中的文件中</p>
-<p>将静态请求发给前端服务器,列如图片</p>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">local /www/ {</span><br><span class="line">	root //data/;</span><br><span class="line">	index index.html index;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">local /image/ {</span><br><span class="line">	root /data/;</span><br><span class="line"><span class="meta">	#</span><span class="bash">列出反目录,作用不大</span></span><br><span class="line">	autoindex on;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h3><ul>
-<li>要ping通虚拟机:<ul>
-<li>要防火墙开启相应的端口</li>
-<li>vm8要和虚拟机的ip地址在同一网段</li>
-<li>ifconfig可以查看虚拟机ip地址,ens33是ip地址</li>
-</ul>
-</li>
-<li>host:<ul>
-<li>可以在当中添加ip和域名的映射</li>
-</ul>
-</li>
-<li>多个服务器要注意:开启多个服务端口</li>
-</ul>
+<li>从List<integer>转为int[]: 只能重新new int[] 在填入</integer></li>
+</ol>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><ol>
+<li>Comparable接口: 如果实现了,可以利用Collections.sort()或Arrays.sort()直接进行排序,<strong>从小到大进行排序</strong></li>
+<li>Comparator接口: 配合匿名内部类,使用Collections.sort()或Arrays.sort()时可以让不具备比较能力的对象,<strong>具备比较能力</strong>,同样是从小到大进行排序</li>
+</ol>
+<h2 id="容器填充"><a href="#容器填充" class="headerlink" title="容器填充"></a>容器填充</h2><ol>
+<li>使用构造器创建一个容器时,传入一个容器</li>
+<li>容器实例.addAll(另外一容器)</li>
+<li>Collections.addAll(容器,[数组/或多个用逗号分隔的值])</li>
+</ol>
+<h2 id="容器查找"><a href="#容器查找" class="headerlink" title="容器查找"></a>容器查找</h2><ol>
+<li>Collecttions.min或max:可以查找一个无序容器内的最小值或最大值,使用时还可以传比较器,自定义大小</li>
+</ol>
+<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><ol>
+<li>append(): 如果是char类型添加<strong>字符</strong>,如果是int类型添加<strong>int的字面量</strong></li>
+<li>equals(): StringBuilder没有<strong>重写</strong>equals方法</li>
+</ol>
 ]]></content>
       <categories>
-        <category>工具</category>
-        <category>服务器</category>
+        <category>java</category>
+        <category>刷题</category>
       </categories>
       <tags>
-        <tag>工具</tag>
+        <tag>解决方法</tag>
       </tags>
   </entry>
   <entry>
@@ -848,85 +595,32 @@
       </tags>
   </entry>
   <entry>
-    <title>网络模块的封装</title>
-    <url>/2021/03/20/%E5%89%8D%E7%AB%AF/Vue/axios/</url>
-    <content><![CDATA[<h2 id="axios的使用"><a href="#axios的使用" class="headerlink" title="axios的使用"></a>axios的使用</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//默认前况下是get请求</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">''</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">5</span> </span><br><span class="line">axios({</span><br><span class="line">    baseURL: <span class="string">''</span>,</span><br><span class="line">    timeout: </span><br><span class="line">    url: </span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    <span class="comment">//针对get请求的拼接</span></span><br><span class="line">    params: {</span><br><span class="line">    </span><br><span class="line">	},</span><br><span class="line">     data: {</span><br><span class="line">      </span><br><span class="line">      }</span><br><span class="line">}).then(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">//axios发送并发请求</span></span><br><span class="line">axios.all([axios(), axios()]).then(<span class="function"><span class="params">results</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(results)</span><br><span class="line">})</span><br><span class="line"><span class="comment">//数组的解构</span></span><br><span class="line">int [name1,name2,name3] = array</span><br></pre></td></tr></table></figure>
+    <title>如何在html中使用vue</title>
+    <url>/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="Vue-js的导入"><a href="#Vue-js的导入" class="headerlink" title="Vue.js的导入"></a>Vue.js的导入</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--通过js导入vue.js的包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	   	<span class="comment">//在SE6语法中定义变量用const(常量)和let(变量)关键字代替var</span></span></span><br><span class="line"><span class="javascript">       	<span class="comment">//将把id为app的元素挂载到app对象,对div元素中的message进行替换</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: {</span><br><span class="line"><span class="javascript">            	message: <span class="string">"hello world"</span></span></span><br><span class="line">        }</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>axio是支持Promise的</p>
-<h2 id="axios的配置"><a href="#axios的配置" class="headerlink" title="axios的配置"></a>axios的配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = axios.create(</span><br><span class="line">{</span><br><span class="line">    baseURL: <span class="string">''</span></span><br><span class="line">    timeout: <span class="number">5000</span> </span><br><span class="line">   </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
-
-<h2 id="axios的拦截器"><a href="#axios的拦截器" class="headerlink" title="axios的拦截器"></a>axios的拦截器</h2><ul>
-<li>比如每次发送网络请求时,都希望在界面中显示请求图标</li>
-<li>某些网络请求(比如登陆(token)),必须携带一些特殊信息</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> {<span class="built_in">console</span>.log(config); <span class="keyword">return</span> config}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> err;</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">instance.intercepts.use(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">}) </span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tabbar</title>
-    <url>/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<h2 id="给路径取别名"><a href="#给路径取别名" class="headerlink" title="给路径取别名"></a>给路径取别名</h2><ul>
-<li>@: 相当于src</li>
-<li>在src等不需要import的路径必须加在最前面~</li>
-</ul>
-<h2 id="Promies是一种异步编程机制"><a href="#Promies是一种异步编程机制" class="headerlink" title="Promies是一种异步编程机制"></a>Promies是一种异步编程机制</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {<span class="built_in">console</span>.log(<span class="string">"hello world"</span>)}, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">        resolve()</span><br><span class="line">    }, <span class="number">1000</span>)</span><br><span class="line">}).then(<span class="function">() =&gt;</span> {</span><br><span class="line">    <span class="comment">//处理代码</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">            resolve()</span><br><span class="line">        }, <span class="number">1000</span>)</span><br><span class="line">    })</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
-
-<h2 id="什么时候使用Promise"><a href="#什么时候使用Promise" class="headerlink" title="什么时候使用Promise"></a>什么时候使用Promise</h2><ul>
-<li><p>一般情况下是有异步操作进行封装</p>
-</li>
-<li><p>调用resolve进then,调用reject进catch</p>
-</li>
-</ul>
-<p>Promise有三种状态</p>
+<p>注解:</p>
 <ul>
-<li>Pending: 等待</li>
-<li>fulfiled: resolve</li>
-<li>reject: catch</li>
+<li>html注释:&lt;!– –&gt;</li>
+<li>javascript注释://</li>
 </ul>
-<p>在then中传入两个函数可以省略catch,如果Promise中用不到reject,可以省略reject函数 </p>
-<p> Promise的简写</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res + <span class="string">" "</span>)</span><br><span class="line"><span class="comment">//省略掉Promise.resolve</span></span><br><span class="line"><span class="keyword">return</span> res + <span class="string">" "</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err + <span class="string">" "</span>)</span><br><span class="line">thows <span class="string">'err'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Vue列表的展示"><a href="#Vue列表的展示" class="headerlink" title="Vue列表的展示"></a>Vue列表的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'app'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in movies"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">scr</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Aue({</span></span><br><span class="line"><span class="javascript">        	el: <span class="string">"#id"</span>,</span></span><br><span class="line">        	data: {</span><br><span class="line"><span class="javascript">       			movies: [<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="string">"D"</span>]</span></span><br><span class="line">        	}</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Promise的ALL"><a href="#Promise的ALL" class="headerlink" title="Promise的ALL"></a>Promise的ALL</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {}), <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> )]).then(<span class="function"><span class="params">results</span> =&gt;</span>	{</span><br><span class="line">  <span class="comment">//results是数组</span></span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+<h2 id="Vue计数器的展示"><a href="#Vue计数器的展示" class="headerlink" title="Vue计数器的展示"></a>Vue计数器的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>当前计数: {{counter}}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter++"&gt;+&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter&amp;#45;&amp;#45;"&gt;-&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"add"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"sub"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>, <span class="comment">//用于挂载要管理的元素</span></span></span><br><span class="line">        data: {</span><br><span class="line">            counter: 0</span><br><span class="line">        },</span><br><span class="line">        methods: {</span><br><span class="line"><span class="javascript">            add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter++;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"add被执行"</span>)</span></span><br><span class="line">            },</span><br><span class="line"><span class="javascript">            sub: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter--;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"sub被执行"</span>)</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    })</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Vuex的作用"><a href="#Vuex的作用" class="headerlink" title="Vuex的作用"></a>Vuex的作用</h2><ul>
-<li><p>Vuex是一个专为Vue.js应用程序开发的状态管理模式</p>
-</li>
-<li><p>可以使用Vue.prototype实现Vuex,但这种实现方法不是响应式的</p>
-</li>
-<li><p>action:进行的是异步操作(后端操作)</p>
-</li>
-<li><p>Mutations:可以进行同步操作</p>
-</li>
-</ul>
-<h2 id="Vuex核心概念"><a href="#Vuex核心概念" class="headerlink" title="Vuex核心概念"></a>Vuex核心概念</h2><ul>
-<li>State: 单一状态树,单例模式</li>
-<li>Getters: 类似于计算属性,使用$store.getters.powCounter,more20stu(state, getters ) {return getters.morestu.length}),powerCouter(state){};moreAgeStu(state){return function (age){return 功能}}</li>
-<li>Mutations: $store.commit(‘方法名’)<ul>
-<li>第一个参数就是state,第二参数是传过来的参数</li>
-<li>参数被称为mutationg的载荷payload</li>
-<li>commit的两种提交风格,commit({})</li>
-<li>mutation的响应规则,观察者模式,一开始定义的,当属性发生变化时,会通知所有利用该属性的界面发生变化,新增加的属性以info[addres],不会是响应式的,但set可以,Vue.set(state.info,键,值),也可以是数组,delete state.info.age可以删掉属性,该方式也不能做到响应式,Vue.delete(state.info, ‘age’),splice是操作数组的</li>
-<li>常量当作方法名: [导入的常量]</li>
+<p>@是v-on:的语法糖,也就是简写,</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><ol>
+<li><ul>
+<li>Q: 什么时候使用{--{}–},什么时候不使用</li>
+<li>在标签的内容中使用,属性里面不能写</li>
 </ul>
 </li>
-<li>Action: 在这当中使用异步操作,可以让chrome中的插件正常进行跟踪,函数的第一参数不在是state了,是context,相当于store,调用context.commit<ul>
-<li>this.$store.dispatch(“方法名”, 参数).then(res =&gt; {console.log()})</li>
+<li><ul>
+<li>Q: this到底指向的是哪个对象,为什么要使用this </li>
+<li>A: this指向的app的对象,使用this还没有创建app对象,需要指定??</li>
 </ul>
 </li>
-<li>Modules: </li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">modules: {</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">}</span><br><span class="line"><span class="comment">//使用属性</span></span><br><span class="line"><span class="built_in">this</span>.$store.a.name</span><br><span class="line"><span class="comment">//mutations</span></span><br><span class="line"><span class="built_in">this</span>.$strore.commit()</span><br><span class="line"><span class="comment">//跨越式得到跟的root</span></span><br><span class="line"><span class="function"><span class="title">fullname3</span>(<span class="params">state, getters,rootState</span>)</span>{</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"><span class="comment">//action中的context,只会调用自己模块中的commit</span></span><br><span class="line"><span class="comment">//对象的结构</span></span><br><span class="line"><span class="keyword">const</span> {name, height, age} = obj</span><br></pre></td></tr></table></figure>
-
-<h2 id="store的结构"><a href="#store的结构" class="headerlink" title="store的结构"></a>store的结构</h2><p>state主文件中,getters,actions,mutations在各自在单独的js文件中</p>
+</ol>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -1088,75 +782,19 @@
       </tags>
   </entry>
   <entry>
-    <title>webpack的使用</title>
-    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
-    <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
-<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#x65;&#x62;&#112;&#97;&#99;&#x6b;&#64;&#x33;&#x2e;&#54;&#x2e;&#48;">webpack@3.6.0</a> -g全局安装</p>
-<h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
-<li> webpack ./src/main.js ./dist/bundle.js</li>
-<li>index.html中引入/bundle.js文件</li>
-</ul>
-<h2 id="web的配置"><a href="#web的配置" class="headerlink" title="web的配置"></a>web的配置</h2><ul>
-<li><p>创建webpack.config.js</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: {</span><br><span class="line">        <span class="comment">//错误写法path: './dist',</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">        filename:  <span class="string">'bundle.s'</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>path必须是一个绝对路径,动态获取路径</p>
-</li>
-<li><p>npm init 可以创建package.json</p>
-</li>
-<li><p>以下可以直接写 webpack</p>
-</li>
-<li><p>npm run “在package.json中script中的脚本”</p>
-</li>
-<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#x62;&#112;&#97;&#x63;&#x6b;&#64;&#x33;&#x2e;&#x36;&#46;&#x30;">webpack@3.6.0</a> –save-dev,</p>
-</li>
-<li><p>webpack是开发时依赖,在devDependencies</p>
-</li>
-<li><p>Dependendcies是运行时依赖</p>
-</li>
-<li><p>只要在terminal中敲webpack用的都是全局的</p>
-</li>
-<li><p>写了脚本,会优先用本地的</p>
-</li>
-</ul>
-<h2 id="模块化CSS"><a href="#模块化CSS" class="headerlink" title="模块化CSS"></a>模块化CSS</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./css/normal.css"</span>)</span><br></pre></td></tr></table></figure>
+    <title>网络模块的封装</title>
+    <url>/2021/03/20/%E5%89%8D%E7%AB%AF/Vue/axios/</url>
+    <content><![CDATA[<h2 id="axios的使用"><a href="#axios的使用" class="headerlink" title="axios的使用"></a>axios的使用</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//默认前况下是get请求</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">''</span>;</span><br><span class="line">axios.defaults.timeout = <span class="number">5</span> </span><br><span class="line">axios({</span><br><span class="line">    baseURL: <span class="string">''</span>,</span><br><span class="line">    timeout: </span><br><span class="line">    url: </span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    <span class="comment">//针对get请求的拼接</span></span><br><span class="line">    params: {</span><br><span class="line">    </span><br><span class="line">	},</span><br><span class="line">     data: {</span><br><span class="line">      </span><br><span class="line">      }</span><br><span class="line">}).then(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="comment">//axios发送并发请求</span></span><br><span class="line">axios.all([axios(), axios()]).then(<span class="function"><span class="params">results</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(results)</span><br><span class="line">})</span><br><span class="line"><span class="comment">//数组的解构</span></span><br><span class="line">int [name1,name2,name3] = array</span><br></pre></td></tr></table></figure>
 
-<p>安装npm install –save-dev css-loader,只负责加载,但不负责,加载到DOM</p>
-<p>use: []是从有往左加载的</p>
-<p>加载大于限制的路径时,要在webpack.config.js文件中配置,publicPath: ‘dist/‘</p>
-<p>将图片防止特定位置</p>
-<ul>
-<li>在url-loader中配置option: name: ‘img/[name].[hash:8].[ext]’</li>
+<p>axio是支持Promise的</p>
+<h2 id="axios的配置"><a href="#axios的配置" class="headerlink" title="axios的配置"></a>axios的配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = axios.create(</span><br><span class="line">{</span><br><span class="line">    baseURL: <span class="string">''</span></span><br><span class="line">    timeout: <span class="number">5000</span> </span><br><span class="line">   </span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="axios的拦截器"><a href="#axios的拦截器" class="headerlink" title="axios的拦截器"></a>axios的拦截器</h2><ul>
+<li>比如每次发送网络请求时,都希望在界面中显示请求图标</li>
+<li>某些网络请求(比如登陆(token)),必须携带一些特殊信息</li>
 </ul>
-<h2 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h2><p>npm install –save-dev babel-loader@7 label-core-preset-es2015</p>
-<h2 id="使用Vue"><a href="#使用Vue" class="headerlink" title="使用Vue"></a>使用Vue</h2><ul>
-<li>在js文件中import 命名 from “vue”,这时默认去node_modules</li>
-<li>安装: npm install vue –save</li>
-<li>runtime-only:代码中,不可以有任何的template</li>
-<li>runtime-compiler:代码中,可以包含compiler,compiler可以编译template</li>
-<li>在moduel的同级中配置resolve:{alias: {‘vue$’: ‘vue/dist/vue.esm.js’}}</li>
-</ul>
-<h2 id="template和el关系"><a href="#template和el关系" class="headerlink" title="template和el关系"></a>template和el关系</h2><p>一旦定义了template会将替换掉挂载的元素</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>webpack</category>
-      </categories>
-      <tags>
-        <tag>实用工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>commonjs和SE6模块化开发</title>
-    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="SE6模块"><a href="#SE6模块" class="headerlink" title="SE6模块"></a>SE6模块</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"你的模块"</span> <span class="attr">type</span>=<span class="string">module</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> {<span class="built_in">console</span>.log(config); <span class="keyword">return</span> config}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> err;</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">instance.intercepts.use(<span class="function"><span class="params">res</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}, <span class="function"><span class="params">err</span> =&gt;</span> {</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">}) </span><br></pre></td></tr></table></figure>
 
-<p>在模块导出和导入</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> {</span><br><span class="line">	flag, sum</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出变量</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> num1 = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">num1, num2</span>)</span>{</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>{</span><br><span class="line">    <span class="function"><span class="title">run</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'+++++'</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认导出,自己不命名,让别人命名,默认导出只能有一个</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> aaa</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>)</span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'方法'</span>)</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> {flag, sum} <span class="keyword">from</span> <span class="string">"路径"</span></span><br><span class="line"><span class="keyword">import</span> 自己的命名 <span class="keyword">from</span> <span class="string">"路径"</span></span><br><span class="line"><span class="comment">//统一全部导入,aa作为标识</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> aa <span class="keyword">from</span> <span class="string">"路径"</span></span><br></pre></td></tr></table></figure>
-
-<p>sum是键</p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -1199,60 +837,62 @@
       </tags>
   </entry>
   <entry>
-    <title>组件的使用</title>
-    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h2 id="创建组件构造器"><a href="#创建组件构造器" class="headerlink" title="创建组件构造器"></a>创建组件构造器</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpnC = Vue.extend({	</span><br><span class="line">    template: <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">				&lt;h2&gt;</span></span><br><span class="line"><span class="string">				&lt;/h2&gt;</span></span><br><span class="line"><span class="string">			&lt;div&gt;`</span></span><br><span class="line">});</span><br></pre></td></tr></table></figure>
-
-<p>`:用在SE6中可以更方便的使用换行,更加直观</p>
-<h2 id="注册组件"><a href="#注册组件" class="headerlink" title="注册组件"></a>注册组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">"组件名"</span>, 组件的变量名)</span><br></pre></td></tr></table></figure>
-
-<p>Vue组件必须放在Vue已经挂载的元素或子元素中</p>
-<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><ul>
-<li>在&lt;script&gt;中注册,为全局组件</li>
-<li>在vue中components: {组件名: 组件构造器}</li>
+    <title>tabbar</title>
+    <url>/2021/03/19/%E5%89%8D%E7%AB%AF/Vue/tabbar%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h2 id="给路径取别名"><a href="#给路径取别名" class="headerlink" title="给路径取别名"></a>给路径取别名</h2><ul>
+<li>@: 相当于src</li>
+<li>在src等不需要import的路径必须加在最前面~</li>
 </ul>
-<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpnc2 = Vue.extend({</span><br><span class="line">    template: <span class="string">``</span>,</span><br><span class="line">    components: {</span><br><span class="line">        组件名: 组件构造器</span><br><span class="line">    }</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+<h2 id="Promies是一种异步编程机制"><a href="#Promies是一种异步编程机制" class="headerlink" title="Promies是一种异步编程机制"></a>Promies是一种异步编程机制</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {<span class="built_in">console</span>.log(<span class="string">"hello world"</span>)}, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">        resolve()</span><br><span class="line">    }, <span class="number">1000</span>)</span><br><span class="line">}).then(<span class="function">() =&gt;</span> {</span><br><span class="line">    <span class="comment">//处理代码</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> {</span><br><span class="line">            resolve()</span><br><span class="line">        }, <span class="number">1000</span>)</span><br><span class="line">    })</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
 
-<p>el和template是替换关系</p>
-<h2 id="注册组件的语法糖"><a href="#注册组件的语法糖" class="headerlink" title="注册组件的语法糖"></a>注册组件的语法糖</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.component(</span><br><span class="line">	组件名: {</span><br><span class="line">    	template: <span class="string">""</span></span><br><span class="line">    	component: {</span><br><span class="line">    		</span><br><span class="line">    }</span><br><span class="line">    }</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="组件模版抽离的方法"><a href="#组件模版抽离的方法" class="headerlink" title="组件模版抽离的方法"></a>组件模版抽离的方法</h2><ul>
-<li>&lt;script type=”type/x-template” id=”cpn”&gt;</li>
-<li>&lt;template id=”cpn”&gt;</li>
+<h2 id="什么时候使用Promise"><a href="#什么时候使用Promise" class="headerlink" title="什么时候使用Promise"></a>什么时候使用Promise</h2><ul>
+<li><p>一般情况下是有异步操作进行封装</p>
+</li>
+<li><p>调用resolve进then,调用reject进catch</p>
+</li>
 </ul>
-<h2 id="组件中的data"><a href="#组件中的data" class="headerlink" title="组件中的data()"></a>组件中的data()</h2><ul>
-<li>组件不能访问Vue实例数据,就算被注册了</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">data()</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">return</span> {<span class="attr">title</span>:<span class="string">"aaa"</span>}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
+<p>Promise有三种状态</p>
 <ul>
-<li>组件也有methods</li>
-<li>为什么data必须是函数,实例化多个组件时,是分离的</li>
-<li>如果必须要所有的对象都使用同一个值,返回一个在外部的对象,</li>
+<li>Pending: 等待</li>
+<li>fulfiled: resolve</li>
+<li>reject: catch</li>
 </ul>
-<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><ul>
-<li>父组件-&gt;子组件:pass props<ul>
-<li>子组件:props:  [‘属性名1’,’属性名2’]</li>
-<li>父组件,v-bind:属性名=”父组件中的变量”</li>
-<li>props: {属性名: 类型}</li>
-<li>props: {属性名:{type: String, default: “aaaa”,requird: true}}</li>
-<li>如若类型时Array和Object,必须把default改为函数,返回相应的类型</li>
+<p>在then中传入两个函数可以省略catch,如果Promise中用不到reject,可以省略reject函数 </p>
+<p> Promise的简写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res + <span class="string">" "</span>)</span><br><span class="line"><span class="comment">//省略掉Promise.resolve</span></span><br><span class="line"><span class="keyword">return</span> res + <span class="string">" "</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err + <span class="string">" "</span>)</span><br><span class="line">thows <span class="string">'err'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Promise的ALL"><a href="#Promise的ALL" class="headerlink" title="Promise的ALL"></a>Promise的ALL</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {}), <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> )]).then(<span class="function"><span class="params">results</span> =&gt;</span>	{</span><br><span class="line">  <span class="comment">//results是数组</span></span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vuex的作用"><a href="#Vuex的作用" class="headerlink" title="Vuex的作用"></a>Vuex的作用</h2><ul>
+<li><p>Vuex是一个专为Vue.js应用程序开发的状态管理模式</p>
+</li>
+<li><p>可以使用Vue.prototype实现Vuex,但这种实现方法不是响应式的</p>
+</li>
+<li><p>action:进行的是异步操作(后端操作)</p>
+</li>
+<li><p>Mutations:可以进行同步操作</p>
+</li>
+</ul>
+<h2 id="Vuex核心概念"><a href="#Vuex核心概念" class="headerlink" title="Vuex核心概念"></a>Vuex核心概念</h2><ul>
+<li>State: 单一状态树,单例模式</li>
+<li>Getters: 类似于计算属性,使用$store.getters.powCounter,more20stu(state, getters ) {return getters.morestu.length}),powerCouter(state){};moreAgeStu(state){return function (age){return 功能}}</li>
+<li>Mutations: $store.commit(‘方法名’)<ul>
+<li>第一个参数就是state,第二参数是传过来的参数</li>
+<li>参数被称为mutationg的载荷payload</li>
+<li>commit的两种提交风格,commit({})</li>
+<li>mutation的响应规则,观察者模式,一开始定义的,当属性发生变化时,会通知所有利用该属性的界面发生变化,新增加的属性以info[addres],不会是响应式的,但set可以,Vue.set(state.info,键,值),也可以是数组,delete state.info.age可以删掉属性,该方式也不能做到响应式,Vue.delete(state.info, ‘age’),splice是操作数组的</li>
+<li>常量当作方法名: [导入的常量]</li>
 </ul>
 </li>
-<li>props中的驼峰标识,通过:不能写驼峰,可以让-和驼峰配合</li>
-<li>&lt;template&gt;必须包含一个根</li>
+<li>Action: 在这当中使用异步操作,可以让chrome中的插件正常进行跟踪,函数的第一参数不在是state了,是context,相当于store,调用context.commit<ul>
+<li>this.$store.dispatch(“方法名”, 参数).then(res =&gt; {console.log()})</li>
 </ul>
-<h2 id="子组件-gt-父组件-emit-event"><a href="#子组件-gt-父组件-emit-event" class="headerlink" title="子组件->父组件:$emit event"></a>子组件-&gt;父组件:$emit event</h2><ul>
-<li>子组件:this.$emit(“自定义事件名”,对象)</li>
-<li>父组件:@自定义时间名 ,最好别用驼峰</li>
-<li>父组件:中的第一个参数默认为现在不是event</li>
-<li>将string转化为int,*1和parseInt</li>
-<li>watch:监听{属性名(新值,旧值)}</li>
+</li>
+<li>Modules: </li>
 </ul>
-<h2 id="父子组件的访问方式"><a href="#父子组件的访问方式" class="headerlink" title="父子组件的访问方式:"></a>父子组件的访问方式:</h2><ul>
-<li>父组件访问子组件:<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="11.011ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 4866.8 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/></g><g data-mml-node="mi" transform="translate(433, 0)"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"/></g><g data-mml-node="mi" transform="translate(1009, 0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1354, 0)"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mi" transform="translate(1652, 0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g><g data-mml-node="mi" transform="translate(2172, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(2623, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(3089, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(3966.8, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">或</text></g></g></g></svg></mjx-container>refs</li>
-<li>子组件访问父组件:<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="9.248ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 4087.8 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"/></g><g data-mml-node="mi" transform="translate(503, 0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mi" transform="translate(1032, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1483, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(1949, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(2549, 0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mo" transform="translate(3187.8, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">或</text></g></g></g></svg></mjx-container>root</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">modules: {</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">}</span><br><span class="line"><span class="comment">//使用属性</span></span><br><span class="line"><span class="built_in">this</span>.$store.a.name</span><br><span class="line"><span class="comment">//mutations</span></span><br><span class="line"><span class="built_in">this</span>.$strore.commit()</span><br><span class="line"><span class="comment">//跨越式得到跟的root</span></span><br><span class="line"><span class="function"><span class="title">fullname3</span>(<span class="params">state, getters,rootState</span>)</span>{</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"><span class="comment">//action中的context,只会调用自己模块中的commit</span></span><br><span class="line"><span class="comment">//对象的结构</span></span><br><span class="line"><span class="keyword">const</span> {name, height, age} = obj</span><br></pre></td></tr></table></figure>
+
+<h2 id="store的结构"><a href="#store的结构" class="headerlink" title="store的结构"></a>store的结构</h2><p>state主文件中,getters,actions,mutations在各自在单独的js文件中</p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -1475,32 +1115,75 @@
       </tags>
   </entry>
   <entry>
-    <title>如何在html中使用vue</title>
-    <url>/2021/03/14/%E5%89%8D%E7%AB%AF/Vue/HelloVuejs%E7%9A%84%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h2 id="Vue-js的导入"><a href="#Vue-js的导入" class="headerlink" title="Vue.js的导入"></a>Vue.js的导入</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--通过js导入vue.js的包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	   	<span class="comment">//在SE6语法中定义变量用const(常量)和let(变量)关键字代替var</span></span></span><br><span class="line"><span class="javascript">       	<span class="comment">//将把id为app的元素挂载到app对象,对div元素中的message进行替换</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: {</span><br><span class="line"><span class="javascript">            	message: <span class="string">"hello world"</span></span></span><br><span class="line">        }</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>webpack的使用</title>
+    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/webpack/</url>
+    <content><![CDATA[<h2 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h2><p>webpack是现代的javaScript应用的静态模块打包工具,webpack,nodejs,npm之间的关系</p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>npm insall <a href="mailto:&#119;&#x65;&#x62;&#112;&#97;&#99;&#x6b;&#64;&#x33;&#x2e;&#54;&#x2e;&#48;">webpack@3.6.0</a> -g全局安装</p>
+<h2 id="使用Webpack"><a href="#使用Webpack" class="headerlink" title="使用Webpack"></a>使用Webpack</h2><ul>
+<li> webpack ./src/main.js ./dist/bundle.js</li>
+<li>index.html中引入/bundle.js文件</li>
+</ul>
+<h2 id="web的配置"><a href="#web的配置" class="headerlink" title="web的配置"></a>web的配置</h2><ul>
+<li><p>创建webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = {</span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: {</span><br><span class="line">        <span class="comment">//错误写法path: './dist',</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">        filename:  <span class="string">'bundle.s'</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>path必须是一个绝对路径,动态获取路径</p>
+</li>
+<li><p>npm init 可以创建package.json</p>
+</li>
+<li><p>以下可以直接写 webpack</p>
+</li>
+<li><p>npm run “在package.json中script中的脚本”</p>
+</li>
+<li><p>在本地安装 npm install <a href="mailto:&#x77;&#x65;&#x62;&#112;&#97;&#x63;&#x6b;&#64;&#x33;&#x2e;&#x36;&#46;&#x30;">webpack@3.6.0</a> –save-dev,</p>
+</li>
+<li><p>webpack是开发时依赖,在devDependencies</p>
+</li>
+<li><p>Dependendcies是运行时依赖</p>
+</li>
+<li><p>只要在terminal中敲webpack用的都是全局的</p>
+</li>
+<li><p>写了脚本,会优先用本地的</p>
+</li>
+</ul>
+<h2 id="模块化CSS"><a href="#模块化CSS" class="headerlink" title="模块化CSS"></a>模块化CSS</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./css/normal.css"</span>)</span><br></pre></td></tr></table></figure>
 
-<p>注解:</p>
+<p>安装npm install –save-dev css-loader,只负责加载,但不负责,加载到DOM</p>
+<p>use: []是从有往左加载的</p>
+<p>加载大于限制的路径时,要在webpack.config.js文件中配置,publicPath: ‘dist/‘</p>
+<p>将图片防止特定位置</p>
 <ul>
-<li>html注释:&lt;!– –&gt;</li>
-<li>javascript注释://</li>
+<li>在url-loader中配置option: name: ‘img/[name].[hash:8].[ext]’</li>
 </ul>
-<h2 id="Vue列表的展示"><a href="#Vue列表的展示" class="headerlink" title="Vue列表的展示"></a>Vue列表的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'app'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in movies"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">scr</span>=<span class="string">"相对该文件的vue.js位置"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> app = <span class="keyword">new</span> Aue({</span></span><br><span class="line"><span class="javascript">        	el: <span class="string">"#id"</span>,</span></span><br><span class="line">        	data: {</span><br><span class="line"><span class="javascript">       			movies: [<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="string">"D"</span>]</span></span><br><span class="line">        	}</span><br><span class="line">        })</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h2><p>npm install –save-dev babel-loader@7 label-core-preset-es2015</p>
+<h2 id="使用Vue"><a href="#使用Vue" class="headerlink" title="使用Vue"></a>使用Vue</h2><ul>
+<li>在js文件中import 命名 from “vue”,这时默认去node_modules</li>
+<li>安装: npm install vue –save</li>
+<li>runtime-only:代码中,不可以有任何的template</li>
+<li>runtime-compiler:代码中,可以包含compiler,compiler可以编译template</li>
+<li>在moduel的同级中配置resolve:{alias: {‘vue$’: ‘vue/dist/vue.esm.js’}}</li>
+</ul>
+<h2 id="template和el关系"><a href="#template和el关系" class="headerlink" title="template和el关系"></a>template和el关系</h2><p>一旦定义了template会将替换掉挂载的元素</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>实用工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>commonjs和SE6模块化开发</title>
+    <url>/2021/03/17/%E5%89%8D%E7%AB%AF/Vue/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="SE6模块"><a href="#SE6模块" class="headerlink" title="SE6模块"></a>SE6模块</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"你的模块"</span> <span class="attr">type</span>=<span class="string">module</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Vue计数器的展示"><a href="#Vue计数器的展示" class="headerlink" title="Vue计数器的展示"></a>Vue计数器的展示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>当前计数: {{counter}}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter++"&gt;+&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;button v-on:click="counter&amp;#45;&amp;#45;"&gt;-&lt;/button&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"add"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"sub"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = <span class="keyword">new</span> Vue({</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>, <span class="comment">//用于挂载要管理的元素</span></span></span><br><span class="line">        data: {</span><br><span class="line">            counter: 0</span><br><span class="line">        },</span><br><span class="line">        methods: {</span><br><span class="line"><span class="javascript">            add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter++;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"add被执行"</span>)</span></span><br><span class="line">            },</span><br><span class="line"><span class="javascript">            sub: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.counter--;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"sub被执行"</span>)</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    })</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在模块导出和导入</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> {</span><br><span class="line">	flag, sum</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出变量</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> num1 = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">num1, num2</span>)</span>{</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>{</span><br><span class="line">    <span class="function"><span class="title">run</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'+++++'</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认导出,自己不命名,让别人命名,默认导出只能有一个</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> aaa</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>)</span>{</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'方法'</span>)</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
-<p>@是v-on:的语法糖,也就是简写,</p>
-<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><ol>
-<li><ul>
-<li>Q: 什么时候使用{--{}–},什么时候不使用</li>
-<li>在标签的内容中使用,属性里面不能写</li>
-</ul>
-</li>
-<li><ul>
-<li>Q: this到底指向的是哪个对象,为什么要使用this </li>
-<li>A: this指向的app的对象,使用this还没有创建app对象,需要指定??</li>
-</ul>
-</li>
-</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> {flag, sum} <span class="keyword">from</span> <span class="string">"路径"</span></span><br><span class="line"><span class="keyword">import</span> 自己的命名 <span class="keyword">from</span> <span class="string">"路径"</span></span><br><span class="line"><span class="comment">//统一全部导入,aa作为标识</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> aa <span class="keyword">from</span> <span class="string">"路径"</span></span><br></pre></td></tr></table></figure>
+
+<p>sum是键</p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -1511,26 +1194,208 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo文章发布</title>
-    <url>/2021/03/11/%E5%B7%A5%E5%85%B7/Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><ol>
-<li>cd 55555Blog</li>
-<li>hexo new [-p 路径] 文章的标题</li>
-<li>hexo clean</li>
-<li>hexo g</li>
-<li>hexo d</li>
-</ol>
-<h2 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h2><ul>
-<li>文件头的描述信息的：的后面必须有空格</li>
-<li>路径的相对位置是source/_post，路径中没有的文件夹将自动创建，最后一个为文件名，会被自动加上.md</li>
-<li>第5,6步可联合写成 hexo g -d</li>
+    <title>组件的使用</title>
+    <url>/2021/03/16/%E5%89%8D%E7%AB%AF/Vue/%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h2 id="创建组件构造器"><a href="#创建组件构造器" class="headerlink" title="创建组件构造器"></a>创建组件构造器</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpnC = Vue.extend({	</span><br><span class="line">    template: <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">				&lt;h2&gt;</span></span><br><span class="line"><span class="string">				&lt;/h2&gt;</span></span><br><span class="line"><span class="string">			&lt;div&gt;`</span></span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+
+<p>`:用在SE6中可以更方便的使用换行,更加直观</p>
+<h2 id="注册组件"><a href="#注册组件" class="headerlink" title="注册组件"></a>注册组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">"组件名"</span>, 组件的变量名)</span><br></pre></td></tr></table></figure>
+
+<p>Vue组件必须放在Vue已经挂载的元素或子元素中</p>
+<h2 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="headerlink" title="全局组件和局部组件"></a>全局组件和局部组件</h2><ul>
+<li>在&lt;script&gt;中注册,为全局组件</li>
+<li>在vue中components: {组件名: 组件构造器}</li>
+</ul>
+<h2 id="父组件和子组件"><a href="#父组件和子组件" class="headerlink" title="父组件和子组件"></a>父组件和子组件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cpnc2 = Vue.extend({</span><br><span class="line">    template: <span class="string">``</span>,</span><br><span class="line">    components: {</span><br><span class="line">        组件名: 组件构造器</span><br><span class="line">    }</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<p>el和template是替换关系</p>
+<h2 id="注册组件的语法糖"><a href="#注册组件的语法糖" class="headerlink" title="注册组件的语法糖"></a>注册组件的语法糖</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.component(</span><br><span class="line">	组件名: {</span><br><span class="line">    	template: <span class="string">""</span></span><br><span class="line">    	component: {</span><br><span class="line">    		</span><br><span class="line">    }</span><br><span class="line">    }</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件模版抽离的方法"><a href="#组件模版抽离的方法" class="headerlink" title="组件模版抽离的方法"></a>组件模版抽离的方法</h2><ul>
+<li>&lt;script type=”type/x-template” id=”cpn”&gt;</li>
+<li>&lt;template id=”cpn”&gt;</li>
+</ul>
+<h2 id="组件中的data"><a href="#组件中的data" class="headerlink" title="组件中的data()"></a>组件中的data()</h2><ul>
+<li>组件不能访问Vue实例数据,就算被注册了</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">data()</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">return</span> {<span class="attr">title</span>:<span class="string">"aaa"</span>}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>组件也有methods</li>
+<li>为什么data必须是函数,实例化多个组件时,是分离的</li>
+<li>如果必须要所有的对象都使用同一个值,返回一个在外部的对象,</li>
+</ul>
+<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><ul>
+<li>父组件-&gt;子组件:pass props<ul>
+<li>子组件:props:  [‘属性名1’,’属性名2’]</li>
+<li>父组件,v-bind:属性名=”父组件中的变量”</li>
+<li>props: {属性名: 类型}</li>
+<li>props: {属性名:{type: String, default: “aaaa”,requird: true}}</li>
+<li>如若类型时Array和Object,必须把default改为函数,返回相应的类型</li>
+</ul>
+</li>
+<li>props中的驼峰标识,通过:不能写驼峰,可以让-和驼峰配合</li>
+<li>&lt;template&gt;必须包含一个根</li>
+</ul>
+<h2 id="子组件-gt-父组件-emit-event"><a href="#子组件-gt-父组件-emit-event" class="headerlink" title="子组件->父组件:$emit event"></a>子组件-&gt;父组件:$emit event</h2><ul>
+<li>子组件:this.$emit(“自定义事件名”,对象)</li>
+<li>父组件:@自定义时间名 ,最好别用驼峰</li>
+<li>父组件:中的第一个参数默认为现在不是event</li>
+<li>将string转化为int,*1和parseInt</li>
+<li>watch:监听{属性名(新值,旧值)}</li>
+</ul>
+<h2 id="父子组件的访问方式"><a href="#父子组件的访问方式" class="headerlink" title="父子组件的访问方式:"></a>父子组件的访问方式:</h2><ul>
+<li>父组件访问子组件:<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="11.011ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 4866.8 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"/></g><g data-mml-node="mi" transform="translate(433, 0)"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"/></g><g data-mml-node="mi" transform="translate(1009, 0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1354, 0)"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"/></g><g data-mml-node="mi" transform="translate(1652, 0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g><g data-mml-node="mi" transform="translate(2172, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(2623, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(3089, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(3966.8, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">或</text></g></g></g></svg></mjx-container>refs</li>
+<li>子组件访问父组件:<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.452ex" xmlns="http://www.w3.org/2000/svg" width="9.248ex" height="2.149ex" role="img" focusable="false" viewbox="0 -750 4087.8 950"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"/></g><g data-mml-node="mi" transform="translate(503, 0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mi" transform="translate(1032, 0)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1483, 0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"/></g><g data-mml-node="mi" transform="translate(1949, 0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(2549, 0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/></g><g data-mml-node="mo" transform="translate(3187.8, 0)"><text data-variant="normal" transform="matrix(1 0 0 -1 0 0)" font-size="884px" font-family="serif">或</text></g></g></g></svg></mjx-container>root</li>
 </ul>
 ]]></content>
       <categories>
-        <category>工具使用</category>
+        <category>前端</category>
+        <category>Vue</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java容器</title>
+    <url>/2021/05/26/%E8%AF%AD%E8%A8%80/java/java%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h3><ol>
+<li>一旦初始化了,容量不可以改变</li>
+<li>一旦定义好后,数组里面元素的类型,就确定了(支持多态)</li>
+</ol>
+<h3 id="数组的弊端"><a href="#数组的弊端" class="headerlink" title="数组的弊端"></a>数组的弊端</h3><ol>
+<li>容量固定</li>
+<li>只能获取数组的容量,不能直接获取数组中元素的个数</li>
+<li>对于插入和删除的效率不高</li>
+</ol>
+<h3 id="数组转Collection"><a href="#数组转Collection" class="headerlink" title="数组转Collection"></a>数组转Collection</h3><p>Arrays.asList: </p>
+<ol>
+<li>如果参数是基本类型的数组,只会被看成一个数组,</li>
+<li>如果是引用数组则可以看成多个元素,通常用于,已经声明的数组转Collection</li>
+<li>这个函数的参数是不定长参数,可以直接写多个引用对象,通常用于创建一个Collection,用于去填充另外一个Collection</li>
+<li>这个方法创建的Collecion不能进行能修改其长度的操作,因为这个list本质还是一个数组</li>
+</ol>
+<h2 id="java集合框架"><a href="#java集合框架" class="headerlink" title="java集合框架"></a>java集合框架</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><ul>
+<li><p>List</p>
+<ul>
+<li>ArrayList</li>
+<li>LinkedList</li>
+<li>Vector</li>
+</ul>
+</li>
+<li><p>Set</p>
+<ul>
+<li><p>HashSet</p>
+<ul>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+<li><p>TreeSet</p>
+</li>
+</ul>
+</li>
+<li><p>Queue</p>
+<ul>
+<li>Deque</li>
+</ul>
+</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
+<li><p>HashMap</p>
+<ul>
+<li>LinkedHashMap</li>
+</ul>
+</li>
+<li><p>TreeMap</p>
+</li>
+<li><p>Hashtable</p>
+<ul>
+<li>Properties</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection的方法"><a href="#Collection的方法" class="headerlink" title="Collection的方法"></a>Collection的方法</h2><ul>
+<li><p>增加: add, addAll</p>
+</li>
+<li><p>删除: remove, removeAll, retainAll, clear</p>
+</li>
+<li><p>包含: contains, containsAll</p>
+</li>
+<li><p>大小: size</p>
+</li>
+<li><p>是否为空: isEmpty</p>
+</li>
+<li><p>转数组: toArray</p>
+<ul>
+<li><p>不传参数,默认是Object数组</p>
+</li>
+<li><p>传对象数组,则转为对象数组</p>
+</li>
+<li><p>转数组的方法无法转成基本类型数组</p>
+</li>
+</ul>
+</li>
+<li><p>迭代: iterator</p>
+<ul>
+<li>实现了iterable接口,必须要实现iterator方法</li>
+<li>实现iterable接口,是增强for/in的充分不必要条件,数组 没有实现iterable接口仍可以使用增减for/in</li>
+</ul>
+</li>
+<li><p>重写Object: equals, toString, hashCode</p>
+<ul>
+<li>equals:List要求元素顺序相同, Set不要求元素顺序相同</li>
+</ul>
+</li>
+</ul>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>为容器提供一种统一的遍历方式,同时又不暴露容器内部实现细节</p>
+<h3 id="拥有的方法"><a href="#拥有的方法" class="headerlink" title="拥有的方法"></a>拥有的方法</h3><p>hasNext, next, remove</p>
+<ul>
+<li><p>remove已经被默认实现了,不用再被实现</p>
+</li>
+<li><p>IllegalException:</p>
+<ul>
+<li>如果不掉用next方法就使用remove</li>
+<li>如果已经调用了remove,接着再调用remove</li>
+</ul>
+</li>
+</ul>
+<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>特点: 有序,可重复</p>
+<p>实现类: ArrayList,LinkedList,Vector</p>
+<h3 id="三者的异同"><a href="#三者的异同" class="headerlink" title="三者的异同"></a>三者的异同</h3><ul>
+<li>三者的相同: 存储特点都是有序,可重复,都实现了List接口</li>
+<li>ArrayList和Vector的异同: <ul>
+<li>相同: 底层都是用数组实现的,</li>
+<li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用默认构造器,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
+<li>tip: StringBuffer中的数组是变为原来的2倍+2</li>
+</ul>
+</li>
+<li>ArrayList和LinkedList的异同:<ul>
+<li>相同: 都是从jdk1.2才开始出现</li>
+<li>不同: ArrayList底层使用数组实现的,对于查找效率,比较高,但对于删除和插入效率比较低,每次删除和插入元素,都会导致数组内其它元素的前移和后移,导致性能消耗,LinkedList底层使用的是双向链表,拥有一个静态内部类Node,和两个Node的成员变量作为头指针和尾指针,对于查找效率较低,但对于插入和删除效率较高,只需要修改前后节点的指针</li>
+</ul>
+</li>
+</ul>
+<h3 id="List接口的方法"><a href="#List接口的方法" class="headerlink" title="List接口的方法"></a>List接口的方法</h3><p>因为List接口是有序的,所以List在Collection接口基础上增加了一些关于索引的方法</p>
+<ul>
+<li>增加: add(int index, Object ele), addAll(int index, Collection coll)</li>
+<li>删除: remove(int index)<ul>
+<li>这个方法必须传基本数据类型</li>
+</ul>
+</li>
+<li>修改: set(int index, Object o)</li>
+<li>查找: get(int index), IndexOf(Object o), lastIndexOf(Object o)</li>
+<li>切分: subList(int fromIndex, int toIndex)<ul>
+<li>左边右开, 返回一个新的List, 不会对原本的List进行修改</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java 基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>
