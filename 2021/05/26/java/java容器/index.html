@@ -24,18 +24,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.55555hub.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="逃离地球">
-<meta property="og:type" content="website">
+<meta name="description" content="java容器数组数组的特点 一旦初始化了,容量不可以改变 一旦定义好后,数组里面元素的类型,就确定了(支持多态)  数组的弊端 容量固定 只能获取数组的容量,不能直接获取数组中元素的个数 对于插入和删除的效率不高  数组转CollectionArrays.asList:   如果参数是基本类型的数组,只会被看成一个数组, 如果是引用数组则可以看成多个元素,通常用于,已经声明的数组转Collecti">
+<meta property="og:type" content="article">
 <meta property="og:title" content="55555">
-<meta property="og:url" content="http://www.55555hub.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:url" content="http://www.55555hub.xyz/2021/05/26/java/java%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="55555">
-<meta property="og:description" content="逃离地球">
+<meta property="og:description" content="java容器数组数组的特点 一旦初始化了,容量不可以改变 一旦定义好后,数组里面元素的类型,就确定了(支持多态)  数组的弊端 容量固定 只能获取数组的容量,不能直接获取数组中元素的个数 对于插入和删除的效率不高  数组转CollectionArrays.asList:   如果参数是基本类型的数组,只会被看成一个数组, 如果是引用数组则可以看成多个元素,通常用于,已经声明的数组转Collecti">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-26T09:27:47.648Z">
+<meta property="article:modified_time" content="2021-05-26T11:54:31.559Z">
 <meta property="article:author" content="天 问">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://www.55555hub.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+<link rel="canonical" href="http://www.55555hub.xyz/2021/05/26/java/java%E5%AE%B9%E5%99%A8/">
 
 
 <script class="page-configurations">
@@ -43,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>标签: 解决方法 | 55555</title>
+<title> | 55555</title>
   
 
 
@@ -289,7 +291,7 @@ mjx-container[display="true"] + br {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -302,6 +304,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">java容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">数组的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%BC%8A%E7%AB%AF"><span class="nav-number">1.1.2.</span> <span class="nav-text">数组的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%BD%ACCollection"><span class="nav-number">1.1.3.</span> <span class="nav-text">数组转Collection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6"><span class="nav-number">1.2.</span> <span class="nav-text">java集合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">1.2.1.</span> <span class="nav-text">Collection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.2.2.</span> <span class="nav-text">Map</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">Collection的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">1.4.</span> <span class="nav-text">迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%A5%E6%9C%89%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">拥有的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.5.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%80%85%E7%9A%84%E5%BC%82%E5%90%8C"><span class="nav-number">1.5.1.</span> <span class="nav-text">三者的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.2.</span> <span class="nav-text">List接口的方法</span></a></li></ol></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -383,50 +386,264 @@ mjx-container[display="true"] + br {
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">解决方法
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.55555hub.xyz/2021/05/26/java/java%E5%AE%B9%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/leaf.gif">
+      <meta itemprop="name" content="天 问">
+      <meta itemprop="description" content="逃离地球">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="55555">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+		
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="创建时间：2021-05-26 17:27:47 / 修改时间：19:54:31" itemprop="dateCreated datePublished" datetime="2021-05-26T17:27:47+08:00">2021-05-26</time>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h3><ol>
+<li>一旦初始化了,容量不可以改变</li>
+<li>一旦定义好后,数组里面元素的类型,就确定了(支持多态)</li>
+</ol>
+<h3 id="数组的弊端"><a href="#数组的弊端" class="headerlink" title="数组的弊端"></a>数组的弊端</h3><ol>
+<li>容量固定</li>
+<li>只能获取数组的容量,不能直接获取数组中元素的个数</li>
+<li>对于插入和删除的效率不高</li>
+</ol>
+<h3 id="数组转Collection"><a href="#数组转Collection" class="headerlink" title="数组转Collection"></a>数组转Collection</h3><p>Arrays.asList: </p>
+<ol>
+<li>如果参数是基本类型的数组,只会被看成一个数组,</li>
+<li>如果是引用数组则可以看成多个元素,通常用于,已经声明的数组转Collection</li>
+<li>这个函数的参数是不定长参数,可以直接写多个引用对象,通常用于创建一个Collection,用于去填充另外一个Collection</li>
+<li>这个方法创建的Collecion不能进行能修改其长度的操作,因为这个list本质还是一个数组</li>
+</ol>
+<h2 id="java集合框架"><a href="#java集合框架" class="headerlink" title="java集合框架"></a>java集合框架</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><ul>
+<li><p>List</p>
+<ul>
+<li>ArrayList</li>
+<li>LinkedList</li>
+<li>Vector</li>
+</ul>
+</li>
+<li><p>Set</p>
+<ul>
+<li><p>HashSet</p>
+<ul>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+<li><p>TreeSet</p>
+</li>
+</ul>
+</li>
+<li><p>Queue</p>
+<ul>
+<li>Deque</li>
+</ul>
+</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
+<li><p>HashMap</p>
+<ul>
+<li>LinkedHashMap</li>
+</ul>
+</li>
+<li><p>TreeMap</p>
+</li>
+<li><p>Hashtable</p>
+<ul>
+<li>Properties</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection的方法"><a href="#Collection的方法" class="headerlink" title="Collection的方法"></a>Collection的方法</h2><ul>
+<li><p>增加: add, addAll</p>
+</li>
+<li><p>删除: remove, removeAll, retainAll, clear</p>
+</li>
+<li><p>包含: contains, containsAll</p>
+</li>
+<li><p>大小: size</p>
+</li>
+<li><p>是否为空: isEmpty</p>
+</li>
+<li><p>转数组: toArray</p>
+<ul>
+<li><p>不传参数,默认是Object数组</p>
+</li>
+<li><p>传对象数组,则转为对象数组</p>
+</li>
+<li><p>转数组的方法无法转成基本类型数组</p>
+</li>
+</ul>
+</li>
+<li><p>迭代: iterator</p>
+<ul>
+<li>实现了iterable接口,必须要实现iterator方法</li>
+<li>实现iterable接口,是增强for/in的充分不必要条件,数组 没有实现iterable接口仍可以使用增减for/in</li>
+</ul>
+</li>
+<li><p>重写Object: equals, toString, hashCode</p>
+<ul>
+<li>equals:List要求元素顺序相同, Set不要求元素顺序相同</li>
+</ul>
+</li>
+</ul>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>为容器提供一种统一的遍历方式,同时又不暴露容器内部实现细节</p>
+<h3 id="拥有的方法"><a href="#拥有的方法" class="headerlink" title="拥有的方法"></a>拥有的方法</h3><p>hasNext, next, remove</p>
+<ul>
+<li><p>remove已经被默认实现了,不用再被实现</p>
+</li>
+<li><p>IllegalException:</p>
+<ul>
+<li>如果不掉用next方法就使用remove</li>
+<li>如果已经调用了remove,接着再调用remove</li>
+</ul>
+</li>
+</ul>
+<h2 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h2><p>特点: 有序,可重复</p>
+<p>实现类: ArrayList,LinkedList,Vector</p>
+<h3 id="三者的异同"><a href="#三者的异同" class="headerlink" title="三者的异同"></a>三者的异同</h3><ul>
+<li>三者的相同: 存储特点都是有序,可重复,都实现了List接口</li>
+<li>ArrayList和Vector的异同: <ul>
+<li>相同: 底层都是用数组实现的,</li>
+<li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用默认构造器,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
+<li>tip: StringBuffer中的数组是变为原来的2倍+2</li>
+</ul>
+</li>
+<li>ArrayList和LinkedList的异同:<ul>
+<li>相同: 都是从jdk1.2才开始出现</li>
+<li>不同: ArrayList底层使用数组实现的,对于查找效率,比较高,但对于删除和插入效率比较低,每次删除和插入元素,都会导致数组内其它元素的前移和后移,导致性能消耗,LinkedList底层使用的是双向链表,拥有一个静态内部类Node,和两个Node的成员变量作为头指针和尾指针,对于查找效率较低,但对于插入和删除效率较高,只需要修改前后节点的指针</li>
+</ul>
+</li>
+</ul>
+<h3 id="List接口的方法"><a href="#List接口的方法" class="headerlink" title="List接口的方法"></a>List接口的方法</h3><p>因为List接口是有序的,所以List在Collection接口基础上增加了一些关于索引的方法</p>
+<ul>
+<li>增加: add(int index, Object ele), addAll(int index, Collection coll)</li>
+<li>删除: remove(int index)<ul>
+<li>这个方法必须传基本数据类型</li>
+</ul>
+</li>
+<li>修改: set(int index, Object o)</li>
+<li>查找: get(int index), IndexOf(Object o), lastIndexOf(Object o)</li>
+<li>切分: subList(int fromIndex, int toIndex)<ul>
+<li>左边右开, 返回一个新的List, 不会对原本的List进行修改</li>
+</ul>
+</li>
+</ul>
+
+
     </div>
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-06T21:25:50+08:00"
-              content="2021-04-06">
-          04-06
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/06/%E5%8D%A1%E7%89%87/%E7%BC%96%E7%A8%8B/java%E5%88%B7%E9%A2%98%E7%9A%84%E7%9F%A5%E8%AF%86/" itemprop="url">
-            <span itemprop="name">java刷题的知识</span>
-          </a>
-      </div>
-
+    
+    
+    
       
-    </header>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>天 问
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.55555hub.xyz/2021/05/26/java/java%E5%AE%B9%E5%99%A8/" title="">http://www.55555hub.xyz/2021/05/26/java/java容器/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/06/%E5%8D%A1%E7%89%87/%E7%BC%96%E7%A8%8B/java%E5%88%B7%E9%A2%98%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="prev" title="java刷题的知识">
+                  <i class="fa fa-chevron-left"></i> java刷题的知识
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
+
+
 
 
 <script>
