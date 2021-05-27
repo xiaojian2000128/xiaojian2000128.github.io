@@ -1353,7 +1353,7 @@
 <p>ArrayList和Vector的异同: </p>
 <ul>
 <li>相同: 底层都是用数组实现的,</li>
-<li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用默认构造器,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
+<li>不同: ArrayList是从jdk1.2开始才有的,Vector从1.0就有了,ArrayList是线程不安全的,效率高,Vector是线程安全的,效率低,在jdk1.7版本中,使用时,都会直接创建一个10大小的数组,但在1.8中,ArrayList数组的创建被推迟到放入第一个元素时.在扩容时,ArrayList的大小变为原来的1.5倍,如果容量扩容后还是不够,则容量直接变为能容下元素的大小,Vector的大小在不使用增长量的时候,大小变为原来的2倍,如果容量扩容后还是不够,则容量同样是直接变为能容下元素的大小.为了避免他们两者的扩容带来的性能损耗,可以在构造时指定大小</li>
 <li>tip: StringBuffer中的数组是变为原来的2倍+2</li>
 </ul>
 <p>ArrayList和LinkedList的异同:</p>
@@ -1375,7 +1375,7 @@
 </ol>
 <h2 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h2><p>特点: 无序, 不可重复</p>
 <p>实现类: HashSet, LinkedHashSet, TreeSet</p>
-<h3 id="三种实现类的特点"><a href="#三种实现类的特点" class="headerlink" title="三种实现类的特点"></a>三种实现类的特点</h3><p>HashSet: 可以存储null值,底层用的是HashMap,在1.7中使用默认构造器时,会直接创建一个16大小的数组,在1.8中,放入第一个元素的时候在会创建</p>
+<h3 id="三种实现类的特点"><a href="#三种实现类的特点" class="headerlink" title="三种实现类的特点"></a>三种实现类的特点</h3><p>HashSet: 可以存储null值,底层用的是HashMap,放入元素时,只放入键, 值是一个静态的Object变量.在1.7中,底层使用的是数组加链表, 当发生冲突时, 新添加的元素会在原本元素的前边,使用时,会直接创建一个16大小的数组,在1.8中,底层使用的是数组加链表加红黑树,在使用链表时,新添加的元素在原本元素的后面, 当链表的长度大于8且数组的大小64时, 链表会自动转为红黑树, 如果不大于64, 则只会进行扩容操作,使用时数组在放入第一个元素的时候创建.使用HashSet需要重写hashCode和equals方法.</p>
 <p>LinkedHashSet: 是HashSet的子类, 可以按插入顺序,遍历集合内的元素,因为有指向前一个和后一个元素的指针</p>
 <p>TreeSet: 可以按照插入元素指定的属性进行排序,底层用的是TreeMap,用的是红黑树,插入的元素必须要实现自然排序Comparable或定制排序Comparator,在TreeSet中判断两个元素是否相等,只与Comparable或Comparator的比较结果有关,不与equals和hashCode有关</p>
 <h3 id="HashSet添加对象的过程"><a href="#HashSet添加对象的过程" class="headerlink" title="HashSet添加对象的过程"></a>HashSet添加对象的过程</h3><p>先通过对象的hashCode方法获得对象的hash值,通过hash值算出对象在数组中位置</p>
@@ -1392,6 +1392,28 @@
 </li>
 </ol>
 <p>在1.7中, 添加的元素,会占据数组中的位置,用一个引用指向原来的元素.在1.8中,添加的元素,会链接在原本元素的后面.同时因为判断两个元素是否相等要用到hashCode和equals两个方法,要保证这两个方法的一致性,在equals中用的方法在hashCode中也要尽量使用</p>
+<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p>特点: 映射, 存储的是键值堆</p>
+<p>实现类: HashMap, LinkedHashMap, TreeMap, Hashtable, Properties</p>
+<p>HashMap和Hashtable的区别</p>
+<p>HashMap是线程不安全的,效率高,可以存储null-null的键值对,Hashtable是线程安全的,效率低,不能存储为null的键和值</p>
+<h3 id="五种实现类"><a href="#五种实现类" class="headerlink" title="五种实现类"></a>五种实现类</h3><p>HashMap: 线程不安全,可以存储null的键和值, 在1.7中, 底层用的是数组加链表, 使用时会直接创建一个16大小的Entry数组.在1.8中, 底层使用的是数组加链表加红黑树. 使用时Node数组在第一次放入键值对的时候创建, 链表的长度大于8且数组的长度大于64时, 链表会转为红黑树.如果链表的长度只是大于8但是数组的长度小于64, 只会对数组进行扩容, 扩容为原来的2被</p>
+<p>LinkedHashMap: 是HashMap的子类, 但是节点对象,多了一个指向前一个对象的成员变量before和一个指向后一个对象的成员变量after, 可以按照添加的顺序进行遍历, 遍历的效率也比HashMap高</p>
+<p>TreeMap: 可以按元素指定的属性进行排序, 底层用的红黑树, 考虑对象是否相等时, 使用的是定制排序Comparator或自然排序Comparable的方法, 不会用到元素的equals方法</p>
+<p>Hashtable: 线程安全, 效率低, 不能存放null的键和null的值</p>
+<p>Properties: 是Hashtable的子类, 键值都是String对象, 主要用于处理配置文件</p>
+<p>tip: 对于HashMap和Hashtable来说, 元素要重写hashCode和equals方法, 而且尽量保持他们一致;对于TreeMap, 元素要实现自然排序或定制排序. Map中键的集合用的Set, 值的集合用的Collection, 键值对的集合用的是Set</p>
+<h3 id="Map接口的方法"><a href="#Map接口的方法" class="headerlink" title="Map接口的方法:"></a>Map接口的方法:</h3><p>增加/修改: put, putAll</p>
+<p>查找: get, getOrDefault</p>
+<p>删除: remove, clear</p>
+<p>是否为空: isEmpty</p>
+<p>大小: size</p>
+<p>包含: containsKey, containsValue</p>
+<p>相等: equals</p>
+<ul>
+<li>对于HashMap顺序可以不想等, 对于TreeMap顺序必须相等</li>
+</ul>
+<h2 id="Collecitons"><a href="#Collecitons" class="headerlink" title="Collecitons"></a>Collecitons</h2><h3 id="Collction和Collections的区别"><a href="#Collction和Collections的区别" class="headerlink" title="Collction和Collections的区别"></a>Collction和Collections的区别</h3><p>Collection是java集合的一个接口, 而Collections是一个工具类,包含对java集合类的一些方法</p>
+<h3 id="Collecions的常用方法"><a href="#Collecions的常用方法" class="headerlink" title="Collecions的常用方法"></a>Collecions的常用方法</h3><p>reverse, sort, sort(Competitor),swap, shuffle, min, min(Competitor), max, max(Competitor), frequency, binarySearch, fill,synchronizedxxxx方法</p>
 ]]></content>
       <categories>
         <category>java基础</category>
