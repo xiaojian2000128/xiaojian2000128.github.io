@@ -24,15 +24,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"www.55555hub.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="git的介绍,git命令,git分支,idea集成git">
+<meta name="description" content="git的介绍和使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git的使用">
 <meta property="og:url" content="http://www.55555hub.xyz/2021/05/29/%E5%B7%A5%E5%85%B7/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="55555">
-<meta property="og:description" content="git的介绍,git命令,git分支,idea集成git">
+<meta property="og:description" content="git的介绍和使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-29T05:15:28.000Z">
-<meta property="article:modified_time" content="2021-05-29T11:27:23.251Z">
+<meta property="article:modified_time" content="2021-07-08T23:39:43.903Z">
 <meta property="article:author" content="霄 剑">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -246,7 +246,7 @@ mjx-container[display="true"] + br {
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -304,7 +304,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">git概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">git的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%92%8C%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%B8%AD%E5%BF%83"><span class="nav-number">1.2.</span> <span class="nav-text">git和代码托管中心</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">git常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E5%88%86%E6%94%AF"><span class="nav-number">3.</span> <span class="nav-text">git分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E8%BF%9C%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">git 远程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">git概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">git的工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%92%8C%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%B8%AD%E5%BF%83"><span class="nav-number">1.2.</span> <span class="nav-text">git和代码托管中心</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAgit%E4%BB%93%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">创建git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E8%B7%9F%E8%B8%AA%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">git跟踪文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81"><span class="nav-number">2.3.</span> <span class="nav-text">显示当前工作状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E6%8F%90%E4%BA%A4"><span class="nav-number">2.4.</span> <span class="nav-text">git提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E6%81%A2%E5%A4%8D"><span class="nav-number">2.5.</span> <span class="nav-text">git恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82%E5%AF%B9%E6%AF%94"><span class="nav-number">2.6.</span> <span class="nav-text">差异对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8Egit%E7%AE%A1%E7%90%86%E4%B8%AD%E7%A7%BB%E9%99%A4"><span class="nav-number">2.7.</span> <span class="nav-text">从git管理中移除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2"><span class="nav-number">2.8.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AB%E5%90%8D"><span class="nav-number">2.9.</span> <span class="nav-text">别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">3.1.</span> <span class="nav-text">远程仓库的管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">3.2.</span> <span class="nav-text">使用远程仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF"><span class="nav-number">4.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">分支管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%88%87%E6%8D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">分支切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="nav-number">4.3.</span> <span class="nav-text">分支合并</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">5.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">标签管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E6%A0%87%E7%AD%BE"><span class="nav-number">5.2.</span> <span class="nav-text">共享标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E5%87%BA%E6%A0%87%E7%AD%BE"><span class="nav-number">5.3.</span> <span class="nav-text">检出标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.</span> <span class="nav-text">远程分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">远程分支管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%8F%96"><span class="nav-number">6.2.</span> <span class="nav-text">拉取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E9%80%81"><span class="nav-number">6.3.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%9F%E8%B8%AA%E5%88%86%E6%94%AF"><span class="nav-number">6.4.</span> <span class="nav-text">跟踪分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E5%9F%BA"><span class="nav-number">7.</span> <span class="nav-text">变基</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AE%E8%97%8F%E5%92%8C%E6%B8%85%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">贮藏和清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E7%9A%84git%E5%91%BD%E4%BB%A4"><span class="nav-number">9.</span> <span class="nav-text">实用的git命令</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -320,7 +320,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -406,10 +406,16 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-05-29 13:15:28 / 修改时间：19:27:23" itemprop="dateCreated datePublished" datetime="2021-05-29T13:15:28+08:00">2021-05-29</time>
+      <time title="创建时间：2021-05-29 13:15:28" itemprop="dateCreated datePublished" datetime="2021-05-29T13:15:28+08:00">2021-05-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-09 07:39:43" itemprop="dateModified" datetime="2021-07-09T07:39:43+08:00">2021-07-09</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -428,18 +434,18 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>949</span>
+      <span>5.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
-            <div class="post-description">git的介绍,git命令,git分支,idea集成git</div>
+            <div class="post-description">git的介绍和使用</div>
         </div>
       </header>
 
@@ -450,14 +456,69 @@ mjx-container[display="true"] + br {
         <h2 id="git概述"><a href="#git概述" class="headerlink" title="git概述"></a>git概述</h2><p>git是一个免费的,开源的分布式版本控制工具.相对集中式版本控制工具,git的版本控制能在本地进行.</p>
 <h3 id="git的工作机制"><a href="#git的工作机制" class="headerlink" title="git的工作机制"></a>git的工作机制</h3><p>工作区(写代码)—&gt;git add—&gt;暂存区(临时存储)—&gt;git commit—&gt;本地库(历史版本)—&gt;git push—&gt;远程库</p>
 <h3 id="git和代码托管中心"><a href="#git和代码托管中心" class="headerlink" title="git和代码托管中心"></a>git和代码托管中心</h3><p>代码托管中心是基于网络服务器的远程代码仓库.局域网:gitLab,互联网:gitHub(国外),gitee(国内)</p>
-<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置用户签名</span></span><br><span class="line">git config --global user.name 用户名</span><br><span class="line"><span class="meta">#</span><span class="bash">设置用户邮箱</span></span><br><span class="line">git config --global user.email 邮箱</span><br><span class="line"><span class="meta">#</span><span class="bash">初始化本地库</span></span><br><span class="line">git init</span><br><span class="line"><span class="meta">#</span><span class="bash">查看本地库的状态</span></span><br><span class="line">git status </span><br><span class="line">git status -s</span><br><span class="line"><span class="meta">#</span><span class="bash">将新文件添加到暂存区||将修改的文件添加到暂存区</span></span><br><span class="line">git add 文件名</span><br><span class="line"><span class="meta">#</span><span class="bash">将新添加的文件从暂存中删掉,但工作区的文件还是存在</span></span><br><span class="line">git rm --cached 文件名</span><br><span class="line"><span class="meta">#</span><span class="bash">将暂存区的文件提交的本地库</span></span><br><span class="line"><span class="meta">#</span><span class="bash">提交全部的文件</span></span><br><span class="line">git commit -m "提交的注释"</span><br><span class="line"><span class="meta">#</span><span class="bash">提交指定的文件,在解决冲突的时,不能使用带文件名的方式</span></span><br><span class="line">git commit -m "提交的注释" 文件名</span><br><span class="line"><span class="meta">#</span><span class="bash">将工作区的修改文件直接提交,不能提交未追踪的(又可能失败,原因未知)</span></span><br><span class="line">git commit -a -m "提交的注释"</span><br><span class="line"><span class="meta">#</span><span class="bash">版本穿梭</span></span><br></pre></td></tr></table></figure>
-
-<p>tip:这里设置的用户签名和邮箱和GitHub上的账户没有任何关系</p>
-<h2 id="git分支"><a href="#git分支" class="headerlink" title="git分支"></a>git分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看分支</span></span><br><span class="line">git branch -v</span><br><span class="line"><span class="meta">#</span><span class="bash">增加分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"><span class="meta">#</span><span class="bash">切换分支</span></span><br><span class="line">git checkout 分支名</span><br><span class="line"><span class="meta">#</span><span class="bash">合并分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line"><span class="meta">#</span><span class="bash">新增分支并切换</span></span><br><span class="line">git checkout -b 分支名</span><br></pre></td></tr></table></figure>
-
-<p>tip:只有节点有前后关系才有可能直接fast-forward,没有注释,,不同的父节点’recursive’,有注释,这两种都会自动提交到本地仓库如果有冲突,需要自己手动解决,再自己手动提交到本地仓库 </p>
-<h2 id="git-远程"><a href="#git-远程" class="headerlink" title="git 远程"></a>git 远程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"><span class="meta">#</span><span class="bash">创建远程别名</span></span><br><span class="line">git remote add 别名 远程地址</span><br><span class="line"><span class="meta">#</span><span class="bash">推送到远程库</span></span><br><span class="line">git push 别名 分支名</span><br><span class="line"><span class="meta">#</span><span class="bash">拉取远程库</span></span><br><span class="line">git pull 别名 分支名</span><br><span class="line"><span class="meta">#</span><span class="bash">克隆远程库</span></span><br><span class="line">git clone 远程仓库地址</span><br></pre></td></tr></table></figure>
-
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="创建git仓库"><a href="#创建git仓库" class="headerlink" title="创建git仓库"></a>创建git仓库</h3><p>克隆远程仓库到本地: git clone &lt;url&gt; [自定义本地仓库名]</p>
+<p>将本地的某个文件夹纳入Git的管理: 在该文件夹下, 使用 git init</p>
+<h3 id="git跟踪文件"><a href="#git跟踪文件" class="headerlink" title="git跟踪文件"></a>git跟踪文件</h3><p>将文件纳入到git管理: git add 文件路径, 会将该文件放入到暂存区, 注意如果这个命令的路径指定范围包括了工作区且已修改的文件, 也会将其暂存</p>
+<p>让某些文件不被git管理: 配置忽略文件, 在.git同级目录下创建或修改.gitignore文件, 可以让这些文件被Git管理</p>
+<h3 id="显示当前工作状态"><a href="#显示当前工作状态" class="headerlink" title="显示当前工作状态"></a>显示当前工作状态</h3><p>查看暂存区, 工作区以及未跟踪的文件状态: git status [-s], 该命令也可以显示出当前所处的分支, -s可以用简洁方式显示, 左边是暂存区, 右边是工作区, A新跟踪的文件, M修改的文件, ??未跟踪的文件</p>
+<h3 id="git提交"><a href="#git提交" class="headerlink" title="git提交"></a>git提交</h3><p>暂存已修改的文件: git add 文件路径</p>
+<p>提交暂存区中的文件: git commit [-a] [-m “注释”]. -a, 把工作区跟踪的文件和暂存区一起提交, 如果工作区和暂存区的同时存在该文件, 则以工作区为准</p>
+<p>对上一提交进行修改, 例如修改提交注解, 和补交文件等等: git commit –amend, 还可以配合上-a, -m选项</p>
+<h3 id="git恢复"><a href="#git恢复" class="headerlink" title="git恢复"></a>git恢复</h3><p>进行提交时, 不对某个文件进行提交: git restore  –staged 文件路径, 也可以使用git reset HEAD 文件路径, 这个命令是使用HEAD指向的提交中的文件放入到暂存区中, git status中显示的区与区之间的差异</p>
+<p>将某个文件恢复到上次暂存或提交的样子: git restore 文件路径, 也可以使用git checkout – 文件路径</p>
+<h3 id="差异对比"><a href="#差异对比" class="headerlink" title="差异对比"></a>差异对比</h3><p>显示文件从上次暂存以来的改动: git diff [blob], blob是正则表达式的子集</p>
+<p>显示暂存区文件自上次提交以来的改动: git diff –staged/–cached [blob]</p>
+<p>查看某一次提交与它的上一次提交的差异: git show (分支名或哈希值), 与git log -p 显示的格式一致</p>
+<h3 id="从git管理中移除"><a href="#从git管理中移除" class="headerlink" title="从git管理中移除"></a>从git管理中移除</h3><p>跟踪了不需要的文件, 将其取消跟踪: git rm –cached [-f] &lt;file&gt;, 如果暂存区和工作区同时有该文件, 必须要加-f</p>
+<p>删除Git管理文件: 方法一: git rm [-f] &lt;file&gt;, 如果文件在暂存未提交或修改为暂存时, 需要加-f; 方法二: 直接删除, 提交时加-a, 也可以在硬盘中和Git中同时删除该文件</p>
+<p>重命名文件或移动文件: git mv &lt;source&gt; &lt;destination&gt;, 如果使用Git之外的方式, 还需要手动跟踪重命名或移动后的文件和暂存删除操作 </p>
+<h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><p>查看提交历史, 快速查找某次提交: git log [-p] [-n] [-S] [–stat]. -p 可以该次提交与上一次提交的改动; -n 显示的条数; –stat 显示出自上次提交以来每个文件修改了多少行, 有多少个文件被修改; 扩展选项, –after –after=”时间”,  时间的写法有两种, 其一: 1.day或2.weeks 其二: “yyyy-MM-dd”; –before; –author; –committer; –grep; -S -S “字符串”, 仅显示本地提交有增加或删除该字符串的提交</p>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>使用别名简化某些git命令的输入: git config –global alias.自定义的别名 git命令, 写好的别名将会存储到全局配置文件中, git命令不需要带git, 同时如果有空格, 要是单引号(Unix)或双引号(Windows)将整个命令包在里面</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h3 id="远程仓库的管理"><a href="#远程仓库的管理" class="headerlink" title="远程仓库的管理"></a>远程仓库的管理</h3><p>查看已有的远程仓库: git remote [-v]. -v 显示出该仓库的url地址</p>
+<p>添加远程仓库: git remote add &lt;远程仓库的名字&gt; &lt;url&gt;, 远程仓库的名字不可以省略, 任何要使用url的使用都可以使用远程仓库名来使用</p>
+<p>移除远程仓库: git remote remove 远程仓库名</p>
+<p>对远程仓库重命名: git remote rename oldName newName, 可以对clone时默认的仓库名origin进行改名</p>
+<p>查看某个远程仓库拥有的分支/查看本地分支与该仓库的分支的跟踪关系: git remote show 远程仓库名</p>
+<h3 id="使用远程仓库"><a href="#使用远程仓库" class="headerlink" title="使用远程仓库"></a>使用远程仓库</h3><p>从某个远程仓库中拉取数据但不更新: git fetch [远程仓库名], 如果省略仓库名, 默认是origin</p>
+<p>从某个远程仓库中拉取数据同时更新当前跟踪分支: git pull [&lt;远程仓库名&gt;], 如果当前分支有跟踪的远程分支, 该分支会合并远程分支到当前分支, 默认是origin. 这个命令和上个命令一样会拉取所有的分支, 但不会创建本地跟踪分支. 要想让本地分支去跟踪远程分支, 需要拉取远程分支所在的仓库. <strong>git pull只会更新当前分支</strong></p>
+<p>推送某个分支到某个远程仓库: git push [远程仓库名] [本地分支名], 如果不指定远程仓库, 则默认是origin, 如果不指定本地分支则默认是当前分支</p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p>当做一个与当前分支无关的事时, 例如, 修以前的BUG, 修完合并该分支. 或做一些明确知道会遗弃的事, 不合并, 事后删除就行, 可以创建一个新分支, 在该分支上操作: git branch 新分支名</p>
+<p>不需要该分支, 该分支被合并了或该分支只是用于test分支, 不需要进行合并: git branch -d 分支名, 如果该分支没有被合并过, 需要讲-d改为-D, 否则会提示 not fully merged</p>
+<p>查看所有的本地分支, 查看分支的合并情况: git branch [-v] [–merged/–no-merged] [分支名], -v: 用于显示该分支的最后一次提交注释;  –merged/–no-merged: 显示已经合并到该分支的和未合并到该分支的; 分子名: 用于指定分支, 不写意味者当前分支, 指定了, 就必须配合上–merged或–no-merged</p>
+<h3 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h3><p>切换分支: git checkout -b 分支名, 工作目录会切换到该分支的最新提交. 切换分支时, 需要保证当前工作环境干净, 否则不允许切换. 这个问题可以通过<strong>暂存和修补</strong>提交(现在先提交, 以后对这次提交进行修改). 但是如果两个分支指向同一次提交, 工作目录中可以有未提交文件. </p>
+<p>创建分支并切换分支: git checkout -b 新分支</p>
+<h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>将某个分支合并到当前分支: git merge 要进行合并的分支. 合并有三种情况: 1. fast-forward: 如果要合并的分支是当前分支的直接后继, 则会显示fast-forward; 2. recursive: 如果两个分支在不同路径下, 且没有修改相同的文件, 会变成三方合并, 会生成一个新的提交, 生成时, 需要输入提交注释; conflict:如果两个分支不在同一路径下, 且修改了相同的文件(也许是相同文件的同一地方), 会变成conflict. 该情况, 会修改冲突文件, 你需要手动解决冲突, 步骤, 将冲突文件改成自己想要的样子, 然后git add 该文件就可以解决冲突了. 提交时, 会自动把要冲突的分支合并进来</p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>对某次很重要的提交进行标记, 方便以后查找: git tag -a 标签名 [提交的hashi] -m “标签附注”, 如果不指定提交的hash, 默认为HEAD指向的提交</p>
+<p>查看标签列表: git tag [-l blob字符串]</p>
+<p> 查看该标签所指向提交的具体信息: git show 标签名</p>
+<p>删除本地标签: git tag -d 标签名</p>
+<h3 id="共享标签"><a href="#共享标签" class="headerlink" title="共享标签"></a>共享标签</h3><p>将本地的标签传送到远程仓库上: git push 远程仓库名 [本地标签名|–tags], 默认情况下, git push不会传送标签到远程仓库上. –tags, 会传送本地的所有标签</p>
+<p>删除共享标签: git push 远程仓库名 -delete 标签名</p>
+<h3 id="检出标签"><a href="#检出标签" class="headerlink" title="检出标签"></a>检出标签</h3><p>会出现分离状态的检出标签: git checkout 标签名, 此时HEAD不指向任何分支, 直接指向提交</p>
+<p>不会出现分离状态的检出标签: git checkout -b 新分支名 标签名</p>
+<h2 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h2><h3 id="远程分支管理"><a href="#远程分支管理" class="headerlink" title="远程分支管理"></a>远程分支管理</h3><p>在远程仓库上创建分支: git push 远程仓库名 本地分支名, 远程分支和本地分支不会有跟踪关系</p>
+<p>删除远程仓库上的分支: git push 远程仓库 –delete 远程分支名</p>
+<h3 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h3><p>更新本地仓库与远程仓库一致: git fetch 远程仓库, 会移动本地仓库中的远程仓库/分支名指针与远程仓库中的一致, 这个命令不会把远程分支合并进</p>
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><p>推送某个本地分支到某个仓库的远程分支: git push 远程仓库名 本地分支名[:远程分支名]. 如果省略远程分支名, 有相同名称的远程分支, 更新该分支; 没有相同名称的远程分支, 用本地分支名新建一支远程分支. 如果本地分支建立了跟踪分支, 可以省略本地分支名; 如果没有建立跟踪分支, 就必须要些本地分支名. 本质: 移动远程仓库/分支名指针到当前分支, 再发送到远程仓库</p>
+<h3 id="跟踪分支"><a href="#跟踪分支" class="headerlink" title="跟踪分支"></a>跟踪分支</h3><p>创建与远程分支名称的跟踪分支: git checkout 远程分支名, 如果这里远程分支带了远程仓库名, 将会出现HEAD分离状态, 使用git reflog可以获得分离的提交</p>
+<p>有多个远程仓库有相同的分支名, 创建跟踪分支: git checkout -t 远程仓库/远程分支名</p>
+<p>创建自定义名称的跟踪分支: git checkout -b 自定义跟踪分支名 远程仓库/远程分支名</p>
+<p>更改当前本地分支去跟踪另外一个远程分支: git branch -u 远程仓库/远程分支</p>
+<p>查看跟踪的情况: git branch -vv, 这个命名是根据本地数据显示的, 没有和服务器同步. 要想使用同步的, 先git fetch –all, 再git branch -vv</p>
+<h2 id="变基"><a href="#变基" class="headerlink" title="变基"></a>变基</h2><p>将两个分支合并成一条线: 1. git checkout 要被合并的分支; 2. git rebase 作为基底的分支; 3. git checkout 基底分支; 4. git merge 要被合并的分支. 简洁方式: git rebase 基底分支 要被合并的分支, git merge 要被合并的分支. 变基的本质是将两个分支的差异取出, 然后放到基底啊分支上. 只在本地仓库进行变基</p>
+<p>多分支进行变基: git rebase –onto 基底分支 需要进行排除的分支 需要进行合并的分支, 先包含需要合并的分支后, 在进行去除操作</p>
+<h2 id="贮藏和清理"><a href="#贮藏和清理" class="headerlink" title="贮藏和清理"></a>贮藏和清理</h2><p>要切换分支, 但当前分支的内容还没有保存, 又不想进行一次提交: git  stash [push] [-m 暂存注释], push可以省略</p>
+<p>应用某次贮藏: git stash (apply|pop) [–index] [stash_id], 会将贮藏的文件恢复到工作区, 也包括以前暂存了的文件. apply只会应用贮藏, 而pop应用后, 会删除. –index, 以前在暂存区的还原到暂存区, 以前在工作区的还原到工作区. 不写stash_id, 默认最近一次贮藏</p>
+<p>显示贮藏列表: git stash list</p>
+<p>删除某次贮藏: git stash drop stash_id</p>
+<p>清空全部贮藏: git stash clear</p>
+<p>从贮藏中创建一个分支: git stash branch 新分支名 [stash_id], 会切换到该分支, 也会删除原贮藏</p>
+<h2 id="实用的git命令"><a href="#实用的git命令" class="headerlink" title="实用的git命令"></a>实用的git命令</h2><p>选择文件暂存, 选择文件跟踪, 暂存一个文件的部分修改: git add -i, 可以进入交互式暂存</p>
+<p>从工作区移除未被忽略文件忽略的同时又没有被跟踪的文件: git clean -i [-n]. -n, 如果执行, 会被移除的文件, 这次并没有执行 </p>
+<p>恢复到某个先前版本, 将文件恢复到某次提交, 将分支和head移动到某次提交: git reset [提交的hash值] [路径名 [–patch]] (–soft|–mixed|–hard). 不写hash值, 默认head指定的提交; 如果指定路径名, 则只会针对该文件; –patch, 选择部分恢复; –soft, 仅移动分支和head的指向; –mixed, 还会将暂存区恢复成这次提交, 也是默认选项; –hard, 前两个的功能加上将工作区恢复成该次提交. git reset –hard和git checkout的区别: 前者会移动HEAD指向, 后者只会移动HEAD自身; 前者对工作区不安全, 强制覆盖, 后者安全, 如果当前工作环境不为空, 不会允许切换</p>
+<p>将某次提交后的所有提交压缩成一次提交: git reset 该次提交的hash值 –soft; 然后git 提交一次. 本质是利用暂存区里的文件, 进行一次提交</p>
+<p>撤销合并: git reset [“head^”|head<del>] –hard. head</del>默认选择第1父分支</p>
+<p>对某次提交之后的提交批量重命名: git rebase -i 该次提交; 将pick修改为edit, 退出; git commit –amend; 在vi中修改注释; git –continue. 如果有多个edit, 重复运行后三步. rebase不要在远程仓库运行, 也不要在已经上传到远程仓库的提交运行, 只在本地仓库还没有向远程仓库push的提交运行</p>
 
 
     </div>
@@ -494,6 +555,9 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/05/31/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Redis%E5%BC%80%E5%8F%91%E4%B8%8E%E8%BF%90%E7%BB%B4/%E7%AC%AC1%E7%AB%A0%E5%88%9D%E8%AF%86Redis/" rel="next" title="初识Redis">
+                  初识Redis <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -550,14 +614,14 @@ mjx-container[display="true"] + br {
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">31k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24 分钟</span>
+    <span title="站点阅读时长">28 分钟</span>
   </span>
 </div>
 
